@@ -1,2 +1,2 @@
-# CliniK
-An Open Source clinical app made with Python.
+# PySchool
+An Open Source system for school management
