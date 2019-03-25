@@ -1,9 +1,10 @@
 # Classe Pessoa
 class Pessoa:
 
-    def __init__(self, nome, nascimento, rg, cpf, telefone, rua, bairro, numero, cep, cidade, estado, email, senha, id = 0):
+    def __init__(self, nome, nascimento, sexo, rg, cpf, telefone, rua, bairro, numero, cep, cidade, estado, email, senha, estadoCivil, idPessoa = None, foto = None):
         self.__nome = nome
         self.__nascimento = nascimento
+        self.__sexo = sexo
         self.__rg = rg
         self.__cpf = cpf
         self.__telefone = telefone
@@ -15,7 +16,9 @@ class Pessoa:
         self.__estado = estado
         self.__email = email
         self.__senha = senha
-        self.__id = id
+        self.__estadoCivil = estadoCivil
+        self.__idPessoa = idPessoa
+        self.__foto = foto
 
     def getNome(self):
         return self.__nome
@@ -28,6 +31,12 @@ class Pessoa:
 
     def setNascimento(self, nascimento):
         self.__nascimento = nascimento
+
+    def getSexo(self):
+        return self.__sexo
+
+    def setSexo(self, sexo):
+        self.__sexo = sexo
 
     def getRg(self):
         return self.__rg
@@ -95,8 +104,20 @@ class Pessoa:
     def setSenha(self, senha):
         self.__senha = senha
 
-    def getId(self):
-        return self.__id
+    def getEstadoCivil(self):
+        return self.__estadoCivil
 
-    def setId(self, id):
-        self.__id = id
+    def setEstadoCivil(self, estadoCivil):
+        self.__estadoCivil = estadoCivil
+
+    def getIdPessoa(self):
+        return self.__idPessoa
+
+    def setId(self, idPessoa):
+        self.__idPessoa = idPessoa
+
+    def getFoto(self):
+        return self.__foto
+
+    def setFoto(self, foto):
+        self.__foto = foto
