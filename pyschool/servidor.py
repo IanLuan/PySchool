@@ -4,7 +4,7 @@ class servidor(Pessoa):
     def __init__(self, nome, nascimento, sexo, rg, cpf, telefone, rua, bairro, numero, cep, cidade, estado, email, senha, estadoCivil, idPessoa, foto, adm, cargo):
         super().__init__(nome, nascimento, sexo, rg, cpf, telefone, rua, bairro, numero, cep, cidade, estado, email, senha, estadoCivil, idPessoa, foto)
         self.__adm = adm
-        seff.__cargo = cargo
+        self.__cargo = cargo
     
     def getAdm(self):
         return self.__adm
