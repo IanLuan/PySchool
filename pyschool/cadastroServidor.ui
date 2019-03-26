@@ -16,6 +16,18 @@
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>952</width>
+    <height>760</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>952</width>
+    <height>760</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Cadastrar Servidor</string>
   </property>
