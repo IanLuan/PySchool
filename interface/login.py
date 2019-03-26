@@ -9,7 +9,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Login(object):
+class Ui_background(object):
     def setupUi(self, background):
         background.setObjectName("background")
         background.resize(350, 450)
@@ -19,12 +19,12 @@ class Login(object):
         sizePolicy.setHeightForWidth(background.sizePolicy().hasHeightForWidth())
         background.setSizePolicy(sizePolicy)
         background.setMaximumSize(QtCore.QSize(350, 450))
-        background.setStyleSheet("background-color: rgb(93, 115, 255)\n"
+        background.setStyleSheet("background-color:  rgb(21, 143, 181)\n"
 "")
         self.centralwidget = QtWidgets.QWidget(background)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(100, 64, 150, 77))
+        self.label.setGeometry(QtCore.QRect(75, 64, 200, 77))
         font = QtGui.QFont()
         font.setFamily("Noto Sans")
         font.setPointSize(22)
@@ -32,7 +32,7 @@ class Login(object):
         font.setItalic(True)
         font.setWeight(50)
         self.label.setFont(font)
-        self.label.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label.setStyleSheet("color: #fff;")
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.verticalWidget = QtWidgets.QWidget(self.centralwidget)
@@ -65,7 +65,7 @@ class Login(object):
         self.lineEdit_2.setSizePolicy(sizePolicy)
         self.lineEdit_2.setMaximumSize(QtCore.QSize(16777215, 35))
         self.lineEdit_2.setStyleSheet("QLineEdit { \n"
-"border: 2px solid white;\n"
+"border: 5px solid white;\n"
 "border-radius: 15px;\n"
 "background-color: rgb(255, 255, 255);\n"
 "}")
@@ -81,9 +81,10 @@ class Login(object):
         font.setItalic(False)
         font.setWeight(50)
         self.pushButton.setFont(font)
-        self.pushButton.setStyleSheet("border: 2px solid white;\n"
+        self.pushButton.setStyleSheet("border: 2px solid rgb(255, 123, 28);\n"
 "border-radius: 15px;\n"
-"background-color: rgb(255, 255, 255);")
+"background-color: rgb(255, 123, 28);\n"
+"color: #fff;")
         self.pushButton.setObjectName("pushButton")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_2.setGeometry(QtCore.QRect(100, 294, 150, 25))
@@ -119,7 +120,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     background = QtWidgets.QMainWindow()
-    ui = Login()
+    ui = Ui_background()
     ui.setupUi(background)
     background.show()
     sys.exit(app.exec_())
