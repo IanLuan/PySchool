@@ -12,13 +12,6 @@ from PyQt5.QtGui import QIcon, QPixmap
 
 class Ui_cadastroServidor(object):
 
-    def enviarFoto(self, event):
-        image = QFileDialog.getOpenFileName(None, 'Escolher foto', '', "Images(*.png *.jpeg *.jpg)")
-        imagePath = image[0]
-        pixmap = QPixmap(imagePath)
-        new_pixmap = pixmap.scaled(150, 180, QtCore.Qt.IgnoreAspectRatio)
-        self.lblFoto.setPixmap(new_pixmap)
-
     def setupUi(self, cadastroServidor):
         cadastroServidor.setObjectName("cadastroServidor")
         cadastroServidor.resize(952, 760)
@@ -458,14 +451,6 @@ class Ui_cadastroServidor(object):
         self.retranslateUi(cadastroServidor)
         self.cbEstadoCivil.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(cadastroServidor)
-
-        # Setando Ícone Inicial
-        pixmap = QPixmap('perfil.png')
-        new_pixmap = pixmap.scaled(120, 110, QtCore.Qt.IgnoreAspectRatio)
-        self.lblFoto.setPixmap(new_pixmap)
-
-        # Criando evento de adicionar imagem
-        self.lblFoto.mousePressEvent = self.enviarFoto
 
     def retranslateUi(self, cadastroServidor):
         _translate = QtCore.QCoreApplication.translate

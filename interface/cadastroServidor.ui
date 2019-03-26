@@ -680,6 +680,9 @@ background-color: rgb(255, 255, 255);</string>
       <property name="buttonSymbols">
        <enum>QAbstractSpinBox::NoButtons</enum>
       </property>
+      <property name="maximum">
+       <number>5000</number>
+      </property>
      </widget>
      <widget class="QComboBox" name="cbEstado">
       <property name="geometry">
