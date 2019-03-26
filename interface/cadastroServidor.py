@@ -172,12 +172,6 @@ class Ui_cadastroServidor(object):
         self.toolFoto.setGeometry(QtCore.QRect(660, 80, 71, 28))
         self.toolFoto.setStyleSheet("background-color: rgb(255, 123, 28);")
         self.toolFoto.setObjectName("toolFoto")
-
-        self.toolFoto.setCheckable(True)
-        self.toolFoto.toggle()
-
-        self.toolFoto.clicked.connect(self.adicionarFoto())
-
         self.lineNome = QtWidgets.QLineEdit(self.framePessoais)
         self.lineNome.setGeometry(QtCore.QRect(10, 80, 631, 28))
         self.lineNome.setStyleSheet("border: 1px solid grey;\n"
@@ -542,11 +536,6 @@ class Ui_cadastroServidor(object):
         self.lineTelefone.setInputMask(_translate("cadastroServidor", "(00) 0 0000-0000"))
         self.menuLalala.setTitle(_translate("cadastroServidor", "Cadastro"))
 
-    def adicionarFoto(self):
-        if self.toolFoto.clicked():
-                print("pressed")
-        else:
-                print("released")
 
 if __name__ == "__main__":
     import sys
