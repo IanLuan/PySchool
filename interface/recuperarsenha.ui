@@ -162,14 +162,28 @@ background-color: rgb(255, 255, 255);
        <property name="font">
         <font>
          <pointsize>11</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
         </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QDateEdit { 
-border: 8px solid white;
+border: 5px solid white;
 border-radius: 15px;
 background-color: rgb(255, 255, 255);
+fontsize: 30px;
+padding-bottom: 2px;
 }</string>
+       </property>
+       <property name="buttonSymbols">
+        <enum>QAbstractSpinBox::NoButtons</enum>
+       </property>
+       <property name="date">
+        <date>
+         <year>1999</year>
+         <month>1</month>
+         <day>1</day>
+        </date>
        </property>
       </widget>
      </item>
