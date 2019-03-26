@@ -80,11 +80,20 @@ class Ui_background(object):
         self.cpf.setObjectName("cpf")
         self.verticalLayout.addWidget(self.cpf)
         self.data = QtWidgets.QDateEdit(self.verticalWidget)
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        font.setBold(False)
+        font.setWeight(50)
+        self.data.setFont(font)
         self.data.setStyleSheet("QDateEdit { \n"
-"border: 8px solid white;\n"
+"border: 5px solid white;\n"
 "border-radius: 15px;\n"
 "background-color: rgb(255, 255, 255);\n"
+"fontsize: 30px;\n"
+"padding-bottom: 2px;\n"
 "}")
+        self.data.setButtonSymbols(QtWidgets.QAbstractSpinBox.NoButtons)
+        self.data.setDate(QtCore.QDate(1999, 1, 1))
         self.data.setObjectName("data")
         self.verticalLayout.addWidget(self.data)
         self.novasenha = QtWidgets.QLineEdit(self.verticalWidget)
