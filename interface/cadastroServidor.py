@@ -7,8 +7,18 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QApplication, QWidget, QInputDialog, QLineEdit, QFileDialog, QLabel
+from PyQt5.QtGui import QIcon, QPixmap
 
 class Ui_cadastroServidor(object):
+
+    def enviarFoto(self, event):
+        image = QFileDialog.getOpenFileName(None, 'Escolher foto', '', "Images(*.png *.jpeg *.jpg)")
+        imagePath = image[0]
+        pixmap = QPixmap(imagePath)
+        new_pixmap = pixmap.scaled(150, 180, QtCore.Qt.IgnoreAspectRatio)
+        self.lblFoto.setPixmap(new_pixmap)
+
     def setupUi(self, cadastroServidor):
         cadastroServidor.setObjectName("cadastroServidor")
         cadastroServidor.resize(952, 760)
@@ -73,7 +83,7 @@ class Ui_cadastroServidor(object):
         self.framezao.setFrameShadow(QtWidgets.QFrame.Raised)
         self.framezao.setObjectName("framezao")
         self.framePessoais = QtWidgets.QFrame(self.framezao)
-        self.framePessoais.setGeometry(QtCore.QRect(0, 30, 931, 241))
+        self.framePessoais.setGeometry(QtCore.QRect(0, 30, 931, 251))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -90,38 +100,33 @@ class Ui_cadastroServidor(object):
         self.lblPessoais.setAlignment(QtCore.Qt.AlignCenter)
         self.lblPessoais.setObjectName("lblPessoais")
         self.label_3 = QtWidgets.QLabel(self.framePessoais)
-        self.label_3.setGeometry(QtCore.QRect(10, 55, 181, 23))
+        self.label_3.setGeometry(QtCore.QRect(10, 45, 181, 23))
         self.label_3.setStyleSheet("font: 75 10pt \"Malgun Gothic\";\n"
 "color: rgb(136, 136, 136)")
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(self.framePessoais)
-        self.label_4.setGeometry(QtCore.QRect(10, 115, 55, 23))
+        self.label_4.setGeometry(QtCore.QRect(10, 112, 55, 23))
         self.label_4.setStyleSheet("color: rgb(136, 136, 136);\n"
 "font: 75 10pt \"Malgun Gothic\";")
         self.label_4.setObjectName("label_4")
         self.label_5 = QtWidgets.QLabel(self.framePessoais)
-        self.label_5.setGeometry(QtCore.QRect(10, 175, 111, 23))
+        self.label_5.setGeometry(QtCore.QRect(10, 180, 111, 23))
         self.label_5.setStyleSheet("color: rgb(136, 136, 136);\n"
 "font: 75 10pt \"Malgun Gothic\";")
         self.label_5.setObjectName("label_5")
         self.label_6 = QtWidgets.QLabel(self.framePessoais)
-        self.label_6.setGeometry(QtCore.QRect(470, 115, 121, 23))
+        self.label_6.setGeometry(QtCore.QRect(740, 180, 121, 23))
         self.label_6.setStyleSheet("color: rgb(136, 136, 136);\n"
 "font: 75 10pt \"Malgun Gothic\";")
         self.label_6.setObjectName("label_6")
-        self.lblFoto = QtWidgets.QLabel(self.framePessoais)
-        self.lblFoto.setGeometry(QtCore.QRect(750, 55, 131, 111))
-        self.lblFoto.setStyleSheet("border-radius: 10px;\n"
-"background-color: rgb(176, 176, 176);")
-        self.lblFoto.setObjectName("lblFoto")
         self.label_8 = QtWidgets.QLabel(self.framePessoais)
-        self.label_8.setGeometry(QtCore.QRect(660, 170, 55, 23))
+        self.label_8.setGeometry(QtCore.QRect(470, 112, 55, 23))
         self.label_8.setStyleSheet("color: rgb(136, 136, 136);\n"
 "font: 75 10pt \"Malgun Gothic\";")
         self.label_8.setTextFormat(QtCore.Qt.PlainText)
         self.label_8.setObjectName("label_8")
         self.cbEstadoCivil = QtWidgets.QComboBox(self.framePessoais)
-        self.cbEstadoCivil.setGeometry(QtCore.QRect(10, 200, 431, 28))
+        self.cbEstadoCivil.setGeometry(QtCore.QRect(10, 210, 431, 28))
         self.cbEstadoCivil.setStyleSheet("border: 1px solid grey;\n"
 "border-radius: 5px;\n"
 "font: 9pt \"Leelawadee UI Semilight\";\n"
@@ -134,21 +139,22 @@ class Ui_cadastroServidor(object):
         self.cbEstadoCivil.addItem("")
         self.cbEstadoCivil.addItem("")
         self.dateNascimento = QtWidgets.QDateEdit(self.framePessoais)
-        self.dateNascimento.setGeometry(QtCore.QRect(470, 140, 171, 28))
+        self.dateNascimento.setGeometry(QtCore.QRect(740, 210, 171, 28))
         self.dateNascimento.setStyleSheet("border: 1px solid grey;\n"
 "border-radius: 5px;\n"
 "font: 9pt \"Leelawadee UI Semilight\";\n"
 "background-color: rgb(255, 255, 255);")
+        self.dateNascimento.setButtonSymbols(QtWidgets.QAbstractSpinBox.NoButtons)
         self.dateNascimento.setMaximumDate(QtCore.QDate(3000, 12, 31))
         self.dateNascimento.setMinimumDate(QtCore.QDate(1900, 9, 14))
         self.dateNascimento.setObjectName("dateNascimento")
         self.label_10 = QtWidgets.QLabel(self.framePessoais)
-        self.label_10.setGeometry(QtCore.QRect(470, 175, 55, 16))
+        self.label_10.setGeometry(QtCore.QRect(470, 180, 55, 31))
         self.label_10.setStyleSheet("color: rgb(136, 136, 136);\n"
 "font: 75 10pt \"Malgun Gothic\";")
         self.label_10.setObjectName("label_10")
         self.cbSexo = QtWidgets.QComboBox(self.framePessoais)
-        self.cbSexo.setGeometry(QtCore.QRect(470, 200, 171, 28))
+        self.cbSexo.setGeometry(QtCore.QRect(470, 210, 251, 28))
         self.cbSexo.setStyleSheet("border: 1px solid grey;\n"
 "border-radius: 5px;\n"
 "font: 9pt \"Leelawadee UI Semilight\";\n"
@@ -164,16 +170,12 @@ class Ui_cadastroServidor(object):
         self.line_3.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_3.setObjectName("line_3")
         self.label_21 = QtWidgets.QLabel(self.framePessoais)
-        self.label_21.setGeometry(QtCore.QRect(660, 55, 55, 23))
+        self.label_21.setGeometry(QtCore.QRect(740, 45, 40, 23))
         self.label_21.setStyleSheet("color: rgb(136, 136, 136);\n"
 "font: 75 10pt \"Malgun Gothic\";")
         self.label_21.setObjectName("label_21")
-        self.toolFoto = QtWidgets.QToolButton(self.framePessoais)
-        self.toolFoto.setGeometry(QtCore.QRect(660, 80, 71, 28))
-        self.toolFoto.setStyleSheet("background-color: rgb(255, 123, 28);")
-        self.toolFoto.setObjectName("toolFoto")
         self.lineNome = QtWidgets.QLineEdit(self.framePessoais)
-        self.lineNome.setGeometry(QtCore.QRect(10, 80, 631, 28))
+        self.lineNome.setGeometry(QtCore.QRect(10, 75, 711, 28))
         self.lineNome.setStyleSheet("border: 1px solid grey;\n"
 "border-radius: 5px;\n"
 "font: 9pt \"Leelawadee UI Semilight\";\n"
@@ -187,31 +189,20 @@ class Ui_cadastroServidor(object):
 "background-color: rgb(255, 255, 255);")
         self.lineCpf.setObjectName("lineCpf")
         self.lineRg = QtWidgets.QLineEdit(self.framePessoais)
-        self.lineRg.setGeometry(QtCore.QRect(660, 200, 251, 28))
+        self.lineRg.setGeometry(QtCore.QRect(470, 140, 251, 28))
         self.lineRg.setStyleSheet("border: 1px solid grey;\n"
 "border-radius: 5px;\n"
 "font: 9pt \"Leelawadee UI Semilight\";\n"
 "background-color: rgb(255, 255, 255);")
         self.lineRg.setObjectName("lineRg")
-        self.lblPessoais.raise_()
-        self.label_3.raise_()
-        self.label_4.raise_()
-        self.label_5.raise_()
-        self.label_6.raise_()
-        self.label_8.raise_()
-        self.cbEstadoCivil.raise_()
-        self.dateNascimento.raise_()
-        self.label_10.raise_()
-        self.cbSexo.raise_()
-        self.line_3.raise_()
-        self.lblFoto.raise_()
-        self.label_21.raise_()
-        self.toolFoto.raise_()
-        self.lineNome.raise_()
-        self.lineCpf.raise_()
-        self.lineRg.raise_()
+        self.lblFoto = QtWidgets.QLabel(self.framePessoais)
+        self.lblFoto.setGeometry(QtCore.QRect(790, 40, 121, 141))
+        self.lblFoto.setStyleSheet("background-color: rgb(255, 123, 28);\n"
+"")
+        self.lblFoto.setObjectName("lblFoto")
+
         self.frameEndereco = QtWidgets.QFrame(self.framezao)
-        self.frameEndereco.setGeometry(QtCore.QRect(0, 280, 931, 181))
+        self.frameEndereco.setGeometry(QtCore.QRect(0, 290, 931, 171))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -234,7 +225,7 @@ class Ui_cadastroServidor(object):
 "color: rgb(136, 136, 136)")
         self.label_11.setObjectName("label_11")
         self.label_12 = QtWidgets.QLabel(self.frameEndereco)
-        self.label_12.setGeometry(QtCore.QRect(760, 47, 71, 16))
+        self.label_12.setGeometry(QtCore.QRect(740, 50, 71, 16))
         self.label_12.setStyleSheet("font: 25 10pt \"Malgun Gothic Semilight\";\n"
 "color: rgb(136, 136, 136)")
         self.label_12.setObjectName("label_12")
@@ -254,7 +245,7 @@ class Ui_cadastroServidor(object):
 "color: rgb(136, 136, 136)")
         self.label_15.setObjectName("label_15")
         self.label_16 = QtWidgets.QLabel(self.frameEndereco)
-        self.label_16.setGeometry(QtCore.QRect(760, 105, 55, 16))
+        self.label_16.setGeometry(QtCore.QRect(740, 110, 55, 16))
         self.label_16.setStyleSheet("font: 25 10pt \"Malgun Gothic Semilight\";\n"
 "color: rgb(136, 136, 136)")
         self.label_16.setObjectName("label_16")
@@ -266,14 +257,15 @@ class Ui_cadastroServidor(object):
 "background-color: rgb(255, 255, 255);")
         self.lineRua.setObjectName("lineRua")
         self.spinNumero = QtWidgets.QSpinBox(self.frameEndereco)
-        self.spinNumero.setGeometry(QtCore.QRect(760, 70, 161, 28))
+        self.spinNumero.setGeometry(QtCore.QRect(740, 70, 171, 28))
         self.spinNumero.setStyleSheet("border: 1px solid grey;\n"
 "border-radius: 5px;\n"
 "font: 9pt \"Leelawadee UI Semilight\";\n"
 "background-color: rgb(255, 255, 255);")
+        self.spinNumero.setButtonSymbols(QtWidgets.QAbstractSpinBox.NoButtons)
         self.spinNumero.setObjectName("spinNumero")
         self.cbEstado = QtWidgets.QComboBox(self.frameEndereco)
-        self.cbEstado.setGeometry(QtCore.QRect(760, 130, 161, 28))
+        self.cbEstado.setGeometry(QtCore.QRect(740, 130, 171, 28))
         self.cbEstado.setStyleSheet("border: 1px solid grey;\n"
 "border-radius: 5px;\n"
 "font: 9pt \"Leelawadee UI Semilight\";\n"
@@ -319,14 +311,14 @@ class Ui_cadastroServidor(object):
 "background-color: rgb(255, 255, 255);")
         self.lineBairro.setObjectName("lineBairro")
         self.lineCep = QtWidgets.QLineEdit(self.frameEndereco)
-        self.lineCep.setGeometry(QtCore.QRect(470, 70, 271, 28))
+        self.lineCep.setGeometry(QtCore.QRect(470, 70, 251, 28))
         self.lineCep.setStyleSheet("border: 1px solid grey;\n"
 "border-radius: 5px;\n"
 "font: 9pt \"Leelawadee UI Semilight\";\n"
 "background-color: rgb(255, 255, 255);")
         self.lineCep.setObjectName("lineCep")
         self.lineCidade = QtWidgets.QLineEdit(self.frameEndereco)
-        self.lineCidade.setGeometry(QtCore.QRect(470, 130, 271, 28))
+        self.lineCidade.setGeometry(QtCore.QRect(470, 130, 251, 28))
         self.lineCidade.setStyleSheet("border: 1px solid grey;\n"
 "border-radius: 5px;\n"
 "font: 9pt \"Leelawadee UI Semilight\";\n"
@@ -401,7 +393,7 @@ class Ui_cadastroServidor(object):
 "")
         self.rbNao.setObjectName("rbNao")
         self.lineSenha = QtWidgets.QLineEdit(self.frameComplementares)
-        self.lineSenha.setGeometry(QtCore.QRect(470, 150, 451, 28))
+        self.lineSenha.setGeometry(QtCore.QRect(470, 150, 441, 28))
         self.lineSenha.setStyleSheet("border: 1px solid grey;\n"
 "border-radius: 5px;\n"
 "font: 9pt \"Leelawadee UI Semilight\";\n"
@@ -427,7 +419,7 @@ class Ui_cadastroServidor(object):
 "background-color: rgb(255, 255, 255);")
         self.lineEmail.setObjectName("lineEmail")
         self.lineTelefone = QtWidgets.QLineEdit(self.frameComplementares)
-        self.lineTelefone.setGeometry(QtCore.QRect(470, 90, 271, 28))
+        self.lineTelefone.setGeometry(QtCore.QRect(470, 90, 251, 28))
         self.lineTelefone.setStyleSheet("border: 1px solid grey;\n"
 "border-radius: 5px;\n"
 "font: 9pt \"Leelawadee UI Semilight\";\n"
@@ -467,6 +459,14 @@ class Ui_cadastroServidor(object):
         self.cbEstadoCivil.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(cadastroServidor)
 
+        # Setando Ícone Inicial
+        pixmap = QPixmap('perfil.png')
+        new_pixmap = pixmap.scaled(120, 110, QtCore.Qt.IgnoreAspectRatio)
+        self.lblFoto.setPixmap(new_pixmap)
+
+        # Criando evento de adicionar imagem
+        self.lblFoto.mousePressEvent = self.enviarFoto
+
     def retranslateUi(self, cadastroServidor):
         _translate = QtCore.QCoreApplication.translate
         cadastroServidor.setWindowTitle(_translate("cadastroServidor", "Cadastrar Servidor"))
@@ -477,7 +477,6 @@ class Ui_cadastroServidor(object):
         self.label_4.setText(_translate("cadastroServidor", "CPF"))
         self.label_5.setText(_translate("cadastroServidor", "Estado Civil"))
         self.label_6.setText(_translate("cadastroServidor", "Nascimento"))
-        self.lblFoto.setText(_translate("cadastroServidor", "            FOTO"))
         self.label_8.setText(_translate("cadastroServidor", "RG"))
         self.cbEstadoCivil.setItemText(0, _translate("cadastroServidor", "Solteiro(a)"))
         self.cbEstadoCivil.setItemText(1, _translate("cadastroServidor", "Casado(a)"))
@@ -489,7 +488,6 @@ class Ui_cadastroServidor(object):
         self.cbSexo.setItemText(1, _translate("cadastroServidor", "Masculino"))
         self.cbSexo.setItemText(2, _translate("cadastroServidor", "Outro"))
         self.label_21.setText(_translate("cadastroServidor", "Foto"))
-        self.toolFoto.setText(_translate("cadastroServidor", "..."))
         self.lineCpf.setInputMask(_translate("cadastroServidor", "000.000.000-00"))
         self.label.setText(_translate("cadastroServidor", "Endereço"))
         self.label_11.setText(_translate("cadastroServidor", "Rua"))
