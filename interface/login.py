@@ -49,6 +49,9 @@ class Ui_background(object):
         self.lineEdit.setSizePolicy(sizePolicy)
         self.lineEdit.setMinimumSize(QtCore.QSize(20, 0))
         self.lineEdit.setMaximumSize(QtCore.QSize(16777215, 35))
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.lineEdit.setFont(font)
         self.lineEdit.setStyleSheet("QLineEdit { \n"
 "border: 5px solid white;\n"
 "border-radius: 15px;\n"
@@ -64,6 +67,9 @@ class Ui_background(object):
         sizePolicy.setHeightForWidth(self.lineEdit_2.sizePolicy().hasHeightForWidth())
         self.lineEdit_2.setSizePolicy(sizePolicy)
         self.lineEdit_2.setMaximumSize(QtCore.QSize(16777215, 35))
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.lineEdit_2.setFont(font)
         self.lineEdit_2.setStyleSheet("QLineEdit { \n"
 "border: 5px solid white;\n"
 "border-radius: 15px;\n"

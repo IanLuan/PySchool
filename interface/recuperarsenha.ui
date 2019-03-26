@@ -33,9 +33,9 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>75</x>
-      <y>64</y>
-      <width>200</width>
+      <x>1</x>
+      <y>18</y>
+      <width>349</width>
       <height>77</height>
      </rect>
     </property>
@@ -52,7 +52,7 @@
      <string notr="true">color: #fff;</string>
     </property>
     <property name="text">
-     <string>Bem-vindo!</string>
+     <string>Esqueceu a senha?</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -62,9 +62,9 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>146</y>
+      <y>100</y>
       <width>350</width>
-      <height>107</height>
+      <height>197</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -75,7 +75,7 @@
       <number>20</number>
      </property>
      <item>
-      <widget class="QLineEdit" name="lineEdit">
+      <widget class="QLineEdit" name="email">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
          <horstretch>0</horstretch>
@@ -115,7 +115,66 @@ background-color: rgb(255, 255, 255);
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_2">
+      <widget class="QLineEdit" name="cpf">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>20</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit { 
+border: 5px solid white;
+border-radius: 15px;
+background-color: rgb(255, 255, 255);
+}</string>
+       </property>
+       <property name="inputMask">
+        <string>000.000.000-00</string>
+       </property>
+       <property name="placeholderText">
+        <string>CPF</string>
+       </property>
+       <property name="clearButtonEnabled">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDateEdit" name="data">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QDateEdit { 
+border: 8px solid white;
+border-radius: 15px;
+background-color: rgb(255, 255, 255);
+}</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="novasenha">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
          <horstretch>0</horstretch>
@@ -144,7 +203,44 @@ background-color: rgb(255, 255, 255);
         <enum>QLineEdit::Password</enum>
        </property>
        <property name="placeholderText">
-        <string>senha</string>
+        <string>Nova senha</string>
+       </property>
+       <property name="clearButtonEnabled">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="novasenha2">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>35</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit { 
+border: 5px solid white;
+border-radius: 15px;
+background-color: rgb(255, 255, 255);
+}</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+       <property name="placeholderText">
+        <string>Confirme a nova senha</string>
        </property>
        <property name="clearButtonEnabled">
         <bool>true</bool>
@@ -157,7 +253,7 @@ background-color: rgb(255, 255, 255);
     <property name="geometry">
      <rect>
       <x>22</x>
-      <y>258</y>
+      <y>306</y>
       <width>307</width>
       <height>35</height>
      </rect>
@@ -177,40 +273,7 @@ background-color: rgb(255, 123, 28);
 color: #fff;</string>
     </property>
     <property name="text">
-     <string>Entrar</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>294</y>
-      <width>150</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-      <weight>50</weight>
-      <italic>false</italic>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: #fff</string>
-    </property>
-    <property name="text">
-     <string>Esqueceu a senha?</string>
-    </property>
-    <property name="autoDefault">
-     <bool>false</bool>
-    </property>
-    <property name="default">
-     <bool>false</bool>
-    </property>
-    <property name="flat">
-     <bool>true</bool>
+     <string>Confirmar</string>
     </property>
    </widget>
   </widget>
