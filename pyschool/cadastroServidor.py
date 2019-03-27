@@ -20,8 +20,7 @@ def carregarFoto(event):
 
         #Salvando na pasta
         nome_arquivo = imagePath.split("/")[-1]
-        url = "../database/images/" + nome_arquivo
-
+        url = "database/images/" + nome_arquivo
 
         #Tratando a existência de arquivos de mesmo nome
         cont = 1
@@ -30,9 +29,9 @@ def carregarFoto(event):
             url_noformat = url.split(".")[:-1][-1]
             if "(" in url_noformat:
                url_noformat = url_noformat.split("(")
-               url = ".." + url_noformat[0] + "(" + str(cont) + ")" + format
+               url = url_noformat[0] + "(" + str(cont) + ")" + format
             else:
-                url = ".." + url_noformat+ "(" + str(cont) + ")" + format
+                url = url_noformat+ "(" + str(cont) + ")" + format
             cont = cont + 1
 
         pixmap.save(url)
