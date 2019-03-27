@@ -118,10 +118,12 @@ class Ui_MatricularAluno(object):
         self.lblRg.setObjectName("lblRg")
         self.cbEstadoCivil = QtWidgets.QComboBox(self.framePessoais)
         self.cbEstadoCivil.setGeometry(QtCore.QRect(10, 182, 431, 28))
-        self.cbEstadoCivil.setStyleSheet("border: 1px solid grey;\n"
+        self.cbEstadoCivil.setStyleSheet("QComboBox {\n"
+"border: 1px solid grey;\n"
 "border-radius: 5px;\n"
 "font: 9pt \"Leelawadee UI Semilight\";\n"
-"background-color: rgb(255, 255, 255);")
+"background-color: rgb(255, 255, 255, 0);\n"
+"}")
         self.cbEstadoCivil.setMaxVisibleItems(5)
         self.cbEstadoCivil.setObjectName("cbEstadoCivil")
         self.cbEstadoCivil.addItem("")
@@ -149,7 +151,7 @@ class Ui_MatricularAluno(object):
         self.cbSexo.setStyleSheet("border: 1px solid grey;\n"
 "border-radius: 5px;\n"
 "font: 9pt \"Leelawadee UI Semilight\";\n"
-"background-color: rgb(255, 255, 255);")
+"background-color: rgb(255, 255, 255, 0);")
         self.cbSexo.setObjectName("cbSexo")
         self.cbSexo.addItem("")
         self.cbSexo.addItem("")
@@ -202,7 +204,8 @@ class Ui_MatricularAluno(object):
         self.cbSerie.setStyleSheet("border: 1px solid grey;\n"
 "border-radius: 5px;\n"
 "font: 9pt \"Leelawadee UI Semilight\";\n"
-"background-color: rgb(255, 255, 255);")
+"background-color: rgb(255, 255, 255, 0);")
+        self.cbSerie.setFrame(True)
         self.cbSerie.setObjectName("cbSerie")
         self.cbSerie.addItem("")
         self.cbSerie.addItem("")
@@ -226,7 +229,7 @@ class Ui_MatricularAluno(object):
         self.cbTipoSanguineo.setStyleSheet("border: 1px solid grey;\n"
 "border-radius: 5px;\n"
 "font: 9pt \"Leelawadee UI Semilight\";\n"
-"background-color: rgb(255, 255, 255);")
+"background-color: rgb(255, 255, 255, 0);")
         self.cbTipoSanguineo.setObjectName("cbTipoSanguineo")
         self.cbTipoSanguineo.addItem("")
         self.cbTipoSanguineo.addItem("")
