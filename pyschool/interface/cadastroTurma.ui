@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>background</class>
+ <widget class="QMainWindow" name="background">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>162</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>2000</width>
+    <height>450</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Cadastrar Turma</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">#centralwidget {
+background-color:  rgb(21, 143, 181);
+}</string>
+   </property>
+   <widget class="QComboBox" name="cbSerie">
+    <property name="geometry">
+     <rect>
+      <x>15</x>
+      <y>26</y>
+      <width>341</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <item>
+     <property name="text">
+      <string>3º ano - Ensino Médio</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2º ano - Ensino Médio</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1º ano - Ensino Médio</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Outro</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="lblEscolha">
+    <property name="geometry">
+     <rect>
+      <x>16</x>
+      <y>2</y>
+      <width>181</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 10pt &quot;Malgun Gothic&quot;;
+color:#fff;</string>
+    </property>
+    <property name="text">
+     <string>Escolha a série</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblTurma">
+    <property name="geometry">
+     <rect>
+      <x>376</x>
+      <y>2</y>
+      <width>117</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 10pt &quot;Malgun Gothic&quot;;
+color:#fff;</string>
+    </property>
+    <property name="text">
+     <string>Turma</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblMax">
+    <property name="geometry">
+     <rect>
+      <x>364</x>
+      <y>54</y>
+      <width>135</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 10pt &quot;Malgun Gothic&quot;;
+color:#fff;</string>
+    </property>
+    <property name="text">
+     <string>Máximo de Alunos</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinMax">
+    <property name="geometry">
+     <rect>
+      <x>378</x>
+      <y>80</y>
+      <width>99</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>30</number>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineGrupo">
+    <property name="geometry">
+     <rect>
+      <x>374</x>
+      <y>26</y>
+      <width>103</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>20</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>35</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit { 
+border: 5px solid white;
+border-radius: 15px;
+background-color: rgb(255, 255, 255);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="placeholderText">
+     <string>A</string>
+    </property>
+    <property name="clearButtonEnabled">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineSerie">
+    <property name="geometry">
+     <rect>
+      <x>16</x>
+      <y>78</y>
+      <width>343</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>20</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>35</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit { 
+border: 5px solid white;
+border-radius: 15px;
+background-color: rgb(255, 255, 255);
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="placeholderText">
+     <string notr="true">Série</string>
+    </property>
+    <property name="clearButtonEnabled">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnCadastrar">
+    <property name="geometry">
+     <rect>
+      <x>14</x>
+      <y>122</y>
+      <width>469</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid rgb(255, 123, 28);
+border-radius: 15px;
+background-color: rgb(255, 123, 28);
+color: #fff;</string>
+    </property>
+    <property name="text">
+     <string>Cadastrar</string>
+    </property>
+   </widget>
+   <zorder>lblEscolha</zorder>
+   <zorder>lblTurma</zorder>
+   <zorder>lblMax</zorder>
+   <zorder>cbSerie</zorder>
+   <zorder>spinMax</zorder>
+   <zorder>lineGrupo</zorder>
+   <zorder>lineSerie</zorder>
+   <zorder>btnCadastrar</zorder>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
