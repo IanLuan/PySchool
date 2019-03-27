@@ -13,6 +13,7 @@ MainWindow = QtWidgets.QMainWindow()
 tela = Ui_cadastroServidor()
 tela.setupUi(MainWindow)
 
+
 def carregarFoto(event):
     image = QFileDialog.getOpenFileName(None, 'Escolher foto', '', "Images(*.png *.jpeg *.jpg)")
     imagePath = image[0]
@@ -29,7 +30,7 @@ def carregarFoto(event):
 
         # Pegar o endereço da pessoa + a pasta do projeto
         url = "/database/images/"
-        urlCompleta = os.getcwd() + url
+        urlCompleta = os.path.dirname(os.path.abspath(__file__)) + url
 
         # Tratando existência
         repetido = False
@@ -38,9 +39,9 @@ def carregarFoto(event):
             repetido = True
             nome_arquivo = nome_arquivo.split(".")
             if cont == 1:
-                nome_arquivo = nome_arquivo[0] + "{}".format(cont) + "." + nome_arquivo[-1]
+                nome_arquivo = nome_arquivo[0] + "({})".format(cont) + "." + nome_arquivo[-1]
             else:
-                nome_arquivo = nome_arquivo[0][:-1] + "{}".format(cont) + "." + nome_arquivo[-1]
+                nome_arquivo = nome_arquivo[0][:-3] + "({})".format(cont) + "." + nome_arquivo[-1]
             cont += 1
 
         # Copia a imagem para a url dada
@@ -57,7 +58,7 @@ def cadastrarServidor():
     database.inserirServidor(servidor)
 
 #Definir ícone inicial
-pixmap = QPixmap("interface/icons/perfil.png")
+pixmap = QPixmap("perfil.png")
 new_pixmap = pixmap.scaled(120, 110, QtCore.Qt.IgnoreAspectRatio)
 tela.lblFoto.setPixmap(new_pixmap)
 
