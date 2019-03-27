@@ -1,8 +1,12 @@
 import sys
 import os.path
 import shutil
+#from pyschool.interface.cadastroServidorWindow import *
+#from pyschool.servidor import *
+#from pyschool.database import database
+from database import database
 from interface.cadastroServidorWindow import *
-from PyQt5.QtWidgets import *
+from servidor import *
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
@@ -45,6 +49,13 @@ def carregarFoto(event):
         else:
             shutil.copy(imagePath, urlCompleta)
 
+def cadastrarServidor():
+    servidor = Servidor(tela.lineNome.text(),tela.dateNascimento.text(),tela.cbSexo.currentText(),tela.lineRg.text(),
+                        tela.lineCpf.text(),tela.lineTelefone.text(),tela.lineRua.text(),tela.lineBairro.text(),tela.spinNumero.text(),tela.lineCep.text(),
+                        tela.lineCidade.text(),tela.cbEstado.currentText(),tela.lineEmail.text(),tela.lineSenha.text(),tela.cbEstadoCivil.currentText(),
+                        "foto",tela.rbSim.isChecked(),"Secretário")
+    database.inserirServidor(servidor)
+
 #Definir ícone inicial
 pixmap = QPixmap("interface/icons/perfil.png")
 new_pixmap = pixmap.scaled(120, 110, QtCore.Qt.IgnoreAspectRatio)
@@ -52,6 +63,9 @@ tela.lblFoto.setPixmap(new_pixmap)
 
 #Evento de carregar foto
 tela.lblFoto.mousePressEvent = carregarFoto
+
+#Botão cadastrar acionado
+tela.btnCadatrar.clicked.connect(cadastrarServidor)
 
 MainWindow.show()
 sys.exit(app.exec_())

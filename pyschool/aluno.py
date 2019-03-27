@@ -1,16 +1,21 @@
-from pessoa import Pessoa   
+#from pyschool.pessoa import Pessoa
+from pessoa import Pessoa
 
 class Aluno(Pessoa):
-    def __init__(self, nome, nascimento, sexo, rg, cpf, telefone, rua, bairro, numero, cep, cidade, estado, email, senha, estadoCivil, idPessoa, foto, matricula, matriculado, nomePai, nomeMae, serie, turma, tipoSanguineo, observacao):
-        super().__init__(nome, nascimento, sexo, rg, cpf, telefone, rua, bairro, numero, cep, cidade, estado, email, senha, estadoCivil, idPessoa, foto)
-        self.__matricula = matricula
-        self.__matriculado = matriculado
-        self.__nomePai = nomePai
-        self.__nomeMae = nomeMae
-        self.__serie = serie
-        self.__turma = turma
-        self,__tipoSanguineo = tipoSanguineo
-        self.__observacao = observacao
+    def __init__(self, nome, nascimento, sexo, rg, cpf, telefone, rua, bairro, numero, cep, cidade, estado, email, senha, estadoCivil, foto, matricula, matriculado, nomePai, telefonePai, cpfPai, nomeMae, telefoneMae, cpfMae, serie, turma, tipoSanguineo, observacao):
+        super().__init__(nome, nascimento, sexo, rg, cpf, telefone, rua, bairro, numero, cep, cidade, estado, email, senha, estadoCivil, foto)
+        self.__matricula = self.setMatricula(matricula)
+        self.__matriculado = self.setMatriculado(matriculado)
+        self.__nomePai = self.setNomePai(nomePai)
+        self.__telefonePai = self.setTelefonePai(telefonePai)
+        self.__cpfPai = self.setCpfPai(cpfPai)
+        self.__nomeMae = self.setNomeMae(nomeMae)
+        self.__telefoneMae = self.setTelefoneMae(telefoneMae)
+        self.__cpfMae = self.setCpfMae(cpfMae)
+        self.__serie = self.setSerie(serie)
+        self.__turma = self.setTurma(turma)
+        self.__tipoSanguineo = self.setTipoSanguineo(tipoSanguineo)
+        self.__observacao = self.setObservacao(observacao)
 
     def getMatricula(self):
         return self.__matricula
@@ -29,12 +34,36 @@ class Aluno(Pessoa):
     
     def setNomePai(self, nomePai):
         self.__nomePai = nomePai
-    
+
+    def getTelefonePai(self):
+        return self.__telefonePai
+
+    def setTelefonePai(self, telefonePai):
+        self.__telefonePai = telefonePai
+
+    def getCpfPai(self):
+        return self.__cpfPai
+
+    def setCpfPai(self, cpfPai):
+        self.__cpfPai = cpfPai
+
     def getNomeMae(self):
         return self.__nomeMae
     
     def setNomeMae(self, nomeMae):
         self.__nomeMae = nomeMae
+
+    def getTelefoneMae(self):
+        return self.__telefoneMae
+
+    def setTelefoneMae(self, telefoneMae):
+        self.__telefoneMae = telefoneMae
+
+    def getCpfMae(self):
+        return self.__cpfMae
+
+    def setCpfMae(self, cpfMae):
+        self.__cpfMae = cpfMae
     
     def getSerie(self):
         return self.__serie
