@@ -280,7 +280,7 @@ font: 75 10pt &quot;Malgun Gothic&quot;;</string>
        <string notr="true">border: 1px solid grey;
 border-radius: 5px;
 font: 9pt &quot;Leelawadee UI Semilight&quot;;
-background-color: rgb(255, 255, 255);</string>
+background-color: rgba(255, 255, 255, 0);</string>
       </property>
       <property name="currentIndex">
        <number>0</number>
