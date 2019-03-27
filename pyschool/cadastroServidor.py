@@ -13,14 +13,12 @@ MainWindow = QtWidgets.QMainWindow()
 tela = Ui_cadastroServidor()
 tela.setupUi(MainWindow)
 
-
 def carregarFoto(event):
     image = QFileDialog.getOpenFileName(None, 'Escolher foto', '', "Images(*.png *.jpeg *.jpg)")
     imagePath = image[0]
 
     if image[0] != "":
         pixmap = QPixmap(imagePath)
-        new_pixmap = pixmap.scaled(150, 180, QtCore.Qt.IgnoreAspectRatio)
 
         #Salvando na pasta
         nome_arquivo = imagePath.split("/")[-1]
@@ -48,12 +46,9 @@ def carregarFoto(event):
             shutil.copy(imagePath, urlCompleta)
 
         #Setando foto no label
-        #print(urlCompleta)
-        #tela.lblFoto.setPixmap(new_pixmap)
-        print(type(new_pixmap))
-        new_imagePath = os.path.join(urlCompleta, nome_arquivo)
-        print(type(new_imagePath))
-        tela.lblFoto.setPixmap(new_imagePath)
+        new_pixmap = QPixmap(os.path.join(urlCompleta, nome_arquivo))
+        new_pixmap = pixmap.scaled(150, 180, QtCore.Qt.IgnoreAspectRatio)
+        tela.lblFoto.setPixmap(new_pixmap)
 
 def cadastrarServidor():
     servidor = Servidor(tela.lineNome.text(),tela.dateNascimento.text(),tela.cbSexo.currentText(),tela.lineRg.text(),
