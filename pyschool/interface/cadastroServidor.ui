@@ -51,7 +51,7 @@
     <property name="geometry">
      <rect>
       <x>820</x>
-      <y>650</y>
+      <y>670</y>
       <width>111</width>
       <height>30</height>
      </rect>
@@ -83,8 +83,8 @@ box-shadow: 5px -9px 3px #000;
    <widget class="QPushButton" name="btnCancelar">
     <property name="geometry">
      <rect>
-      <x>26</x>
-      <y>650</y>
+      <x>10</x>
+      <y>670</y>
       <width>111</width>
       <height>30</height>
      </rect>
@@ -113,7 +113,7 @@ box-shadow: 5px -9px 3px #000;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>0</y>
+      <y>20</y>
       <width>931</width>
       <height>647</height>
      </rect>
@@ -280,7 +280,7 @@ font: 75 10pt &quot;Malgun Gothic&quot;;</string>
        <string notr="true">border: 1px solid grey;
 border-radius: 5px;
 font: 9pt &quot;Leelawadee UI Semilight&quot;;
-background-color: rgba(255, 255, 255, 0);</string>
+background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="currentIndex">
        <number>0</number>
@@ -494,6 +494,9 @@ background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>icons/perfil.png</pixmap>
       </property>
      </widget>
     </widget>
