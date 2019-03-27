@@ -47,6 +47,8 @@ def carregarFoto(event):
 
         #Setando foto no label
         new_pixmap = QPixmap(os.path.join(urlCompleta, nome_arquivo))
+        print("##########################################################################################3")
+        print(os.path.join(urlCompleta, nome_arquivo))
         new_pixmap = pixmap.scaled(150, 180, QtCore.Qt.IgnoreAspectRatio)
         tela.lblFoto.setPixmap(new_pixmap)
 
@@ -58,9 +60,9 @@ def cadastrarServidor():
     database.inserirServidor(servidor)
 
 #Definir ícone inicial
-#pixmap = QPixmap("perfil.png")
-#new_pixmap = pixmap.scaled(120, 110, QtCore.Qt.IgnoreAspectRatio)
-#tela.lblFoto.setPixmap(new_pixmap)
+pixmap = QPixmap(os.path.dirname(os.path.abspath(__file__))+"/interface/icons/perfil.png")
+new_pixmap = pixmap.scaled(120, 110, QtCore.Qt.IgnoreAspectRatio)
+tela.lblFoto.setPixmap(new_pixmap)
 
 #Evento de carregar foto
 tela.lblFoto.mousePressEvent = carregarFoto
