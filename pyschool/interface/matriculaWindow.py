@@ -217,7 +217,7 @@ class Ui_MatricularAluno(object):
         self.cbSerie.addItem("")
         self.cbSerie.addItem("")
         self.lblTipoSanguineo = QtWidgets.QLabel(self.framePessoais)
-        self.lblTipoSanguineo.setGeometry(QtCore.QRect(244, 212, 105, 31))
+        self.lblTipoSanguineo.setGeometry(QtCore.QRect(240, 212, 125, 31))
         self.lblTipoSanguineo.setStyleSheet("color: rgb(136, 136, 136);\n"
 "font: 75 10pt \"Malgun Gothic\";")
         self.lblTipoSanguineo.setObjectName("lblTipoSanguineo")
@@ -237,12 +237,12 @@ class Ui_MatricularAluno(object):
         self.cbTipoSanguineo.addItem("")
         self.cbTipoSanguineo.addItem("")
         self.lblTelefone = QtWidgets.QLabel(self.framePessoais)
-        self.lblTelefone.setGeometry(QtCore.QRect(370, 212, 105, 31))
+        self.lblTelefone.setGeometry(QtCore.QRect(374, 212, 105, 31))
         self.lblTelefone.setStyleSheet("color: rgb(136, 136, 136);\n"
 "font: 75 10pt \"Malgun Gothic\";")
         self.lblTelefone.setObjectName("lblTelefone")
         self.lineTelefoneAluno = QtWidgets.QLineEdit(self.framePessoais)
-        self.lineTelefoneAluno.setGeometry(QtCore.QRect(370, 240, 111, 28))
+        self.lineTelefoneAluno.setGeometry(QtCore.QRect(374, 240, 111, 28))
         self.lineTelefoneAluno.setStyleSheet("border: 1px solid grey;\n"
 "border-radius: 5px;\n"
 "font: 9pt \"Leelawadee UI Semilight\";\n"
@@ -505,7 +505,7 @@ class Ui_MatricularAluno(object):
 "background-color: rgb(255, 255, 255);")
         self.lineCpfMae.setObjectName("lineCpfMae")
         self.lblTelefonePai = QtWidgets.QLabel(self.frameEndereco_3)
-        self.lblTelefonePai.setGeometry(QtCore.QRect(436, 138, 109, 23))
+        self.lblTelefonePai.setGeometry(QtCore.QRect(436, 138, 123, 23))
         self.lblTelefonePai.setStyleSheet("color: rgb(136, 136, 136);\n"
 "font: 75 10pt \"Malgun Gothic\";")
         self.lblTelefonePai.setObjectName("lblTelefonePai")
@@ -517,14 +517,14 @@ class Ui_MatricularAluno(object):
 "background-color: rgb(255, 255, 255);")
         self.lineTelefonePai.setObjectName("lineTelefonePai")
         self.lineTelefoneMae = QtWidgets.QLineEdit(self.frameEndereco_3)
-        self.lineTelefoneMae.setGeometry(QtCore.QRect(566, 162, 111, 28))
+        self.lineTelefoneMae.setGeometry(QtCore.QRect(578, 162, 111, 28))
         self.lineTelefoneMae.setStyleSheet("border: 1px solid grey;\n"
 "border-radius: 5px;\n"
 "font: 9pt \"Leelawadee UI Semilight\";\n"
 "background-color: rgb(255, 255, 255);")
         self.lineTelefoneMae.setObjectName("lineTelefoneMae")
         self.lblTelefoneMae = QtWidgets.QLabel(self.frameEndereco_3)
-        self.lblTelefoneMae.setGeometry(QtCore.QRect(566, 138, 109, 23))
+        self.lblTelefoneMae.setGeometry(QtCore.QRect(578, 138, 139, 23))
         self.lblTelefoneMae.setStyleSheet("color: rgb(136, 136, 136);\n"
 "font: 75 10pt \"Malgun Gothic\";")
         self.lblTelefoneMae.setObjectName("lblTelefoneMae")

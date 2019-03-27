@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'cadastroServidor.ui'
 #
-# Created by: PyQt5 UI code generator 5.11.3
+# Created by: PyQt5 UI code generator 5.12
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -10,17 +10,17 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication, QWidget, QInputDialog, QLineEdit, QFileDialog, QLabel
 from PyQt5.QtGui import QIcon, QPixmap
 
-class Ui_cadastroServidor(object):
 
+class Ui_cadastroServidor(object):
     def setupUi(self, cadastroServidor):
         cadastroServidor.setObjectName("cadastroServidor")
-        cadastroServidor.resize(952, 760)
+        cadastroServidor.resize(952, 735)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(cadastroServidor.sizePolicy().hasHeightForWidth())
         cadastroServidor.setSizePolicy(sizePolicy)
-        cadastroServidor.setMinimumSize(QtCore.QSize(952, 760))
+        cadastroServidor.setMinimumSize(QtCore.QSize(952, 200))
         cadastroServidor.setMaximumSize(QtCore.QSize(952, 760))
         cadastroServidor.setLayoutDirection(QtCore.Qt.LeftToRight)
         cadastroServidor.setStyleSheet("background-color: rgb(21, 143, 181)")
@@ -33,7 +33,7 @@ class Ui_cadastroServidor(object):
         self.centralwidget.setStyleSheet("backgroundcolor: rgb(255,255,255)")
         self.centralwidget.setObjectName("centralwidget")
         self.btnCadatrar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnCadatrar.setGeometry(QtCore.QRect(820, 680, 111, 30))
+        self.btnCadatrar.setGeometry(QtCore.QRect(820, 650, 111, 30))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -49,7 +49,7 @@ class Ui_cadastroServidor(object):
 "")
         self.btnCadatrar.setObjectName("btnCadatrar")
         self.btnCancelar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnCancelar.setGeometry(QtCore.QRect(10, 680, 111, 30))
+        self.btnCancelar.setGeometry(QtCore.QRect(26, 650, 111, 30))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -63,7 +63,7 @@ class Ui_cadastroServidor(object):
 "box-shadow: 5px -9px 3px #000;")
         self.btnCancelar.setObjectName("btnCancelar")
         self.framezao = QtWidgets.QFrame(self.centralwidget)
-        self.framezao.setGeometry(QtCore.QRect(10, 10, 931, 661))
+        self.framezao.setGeometry(QtCore.QRect(10, 0, 931, 647))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -87,7 +87,7 @@ class Ui_cadastroServidor(object):
         self.framePessoais.setFrameShadow(QtWidgets.QFrame.Raised)
         self.framePessoais.setObjectName("framePessoais")
         self.lblPessoais = QtWidgets.QLabel(self.framePessoais)
-        self.lblPessoais.setGeometry(QtCore.QRect(0, -10, 931, 31))
+        self.lblPessoais.setGeometry(QtCore.QRect(0, -4, 931, 39))
         self.lblPessoais.setStyleSheet("font: 25 12pt \"Malgun Gothic Semilight\";\n"
 "color: rgb(21, 143, 181);")
         self.lblPessoais.setAlignment(QtCore.Qt.AlignCenter)
@@ -192,8 +192,8 @@ class Ui_cadastroServidor(object):
         self.lblFoto.setGeometry(QtCore.QRect(790, 40, 121, 141))
         self.lblFoto.setStyleSheet("background-color: rgb(255, 123, 28);\n"
 "")
+        self.lblFoto.setText("")
         self.lblFoto.setObjectName("lblFoto")
-
         self.frameEndereco = QtWidgets.QFrame(self.framezao)
         self.frameEndereco.setGeometry(QtCore.QRect(0, 290, 931, 171))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
@@ -256,6 +256,7 @@ class Ui_cadastroServidor(object):
 "font: 9pt \"Leelawadee UI Semilight\";\n"
 "background-color: rgb(255, 255, 255);")
         self.spinNumero.setButtonSymbols(QtWidgets.QAbstractSpinBox.NoButtons)
+        self.spinNumero.setMaximum(5000)
         self.spinNumero.setObjectName("spinNumero")
         self.cbEstado = QtWidgets.QComboBox(self.frameEndereco)
         self.cbEstado.setGeometry(QtCore.QRect(740, 130, 171, 28))
@@ -435,18 +436,10 @@ class Ui_cadastroServidor(object):
         self.btnCadatrar.raise_()
         self.btnCancelar.raise_()
         cadastroServidor.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(cadastroServidor)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 952, 26))
-        self.menubar.setStyleSheet("backgroundcolor: rgb(59, 59, 59)")
-        self.menubar.setObjectName("menubar")
-        self.menuLalala = QtWidgets.QMenu(self.menubar)
-        self.menuLalala.setObjectName("menuLalala")
-        cadastroServidor.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(cadastroServidor)
         self.statusbar.setStyleSheet("backgroundcolor: #000000")
         self.statusbar.setObjectName("statusbar")
         cadastroServidor.setStatusBar(self.statusbar)
-        self.menubar.addAction(self.menuLalala.menuAction())
 
         self.retranslateUi(cadastroServidor)
         self.cbEstadoCivil.setCurrentIndex(0)
@@ -517,7 +510,8 @@ class Ui_cadastroServidor(object):
         self.rbNao.setText(_translate("cadastroServidor", "Não"))
         self.label_9.setText(_translate("cadastroServidor", "Telefone"))
         self.lineTelefone.setInputMask(_translate("cadastroServidor", "(00) 0 0000-0000"))
-        self.menuLalala.setTitle(_translate("cadastroServidor", "Cadastro"))
+
+
 
 
 if __name__ == "__main__":
@@ -528,4 +522,3 @@ if __name__ == "__main__":
     ui.setupUi(cadastroServidor)
     cadastroServidor.show()
     sys.exit(app.exec_())
-

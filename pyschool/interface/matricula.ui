@@ -595,9 +595,9 @@ background-color: rgb(255, 255, 255);</string>
      <widget class="QLabel" name="lblTipoSanguineo">
       <property name="geometry">
        <rect>
-        <x>244</x>
+        <x>240</x>
         <y>212</y>
-        <width>105</width>
+        <width>125</width>
         <height>31</height>
        </rect>
       </property>
@@ -671,7 +671,7 @@ background-color: rgb(255, 255, 255);</string>
      <widget class="QLabel" name="lblTelefone">
       <property name="geometry">
        <rect>
-        <x>370</x>
+        <x>374</x>
         <y>212</y>
         <width>105</width>
         <height>31</height>
@@ -688,7 +688,7 @@ font: 75 10pt &quot;Malgun Gothic&quot;;</string>
      <widget class="QLineEdit" name="lineTelefoneAluno">
       <property name="geometry">
        <rect>
-        <x>370</x>
+        <x>374</x>
         <y>240</y>
         <width>111</width>
         <height>28</height>
@@ -1449,7 +1449,7 @@ background-color: rgb(255, 255, 255);</string>
        <rect>
         <x>436</x>
         <y>138</y>
-        <width>109</width>
+        <width>123</width>
         <height>23</height>
        </rect>
       </property>
@@ -1486,7 +1486,7 @@ background-color: rgb(255, 255, 255);</string>
      <widget class="QLineEdit" name="lineTelefoneMae">
       <property name="geometry">
        <rect>
-        <x>566</x>
+        <x>578</x>
         <y>162</y>
         <width>111</width>
         <height>28</height>
@@ -1508,9 +1508,9 @@ background-color: rgb(255, 255, 255);</string>
      <widget class="QLabel" name="lblTelefoneMae">
       <property name="geometry">
        <rect>
-        <x>566</x>
+        <x>578</x>
         <y>138</y>
-        <width>109</width>
+        <width>139</width>
         <height>23</height>
        </rect>
       </property>

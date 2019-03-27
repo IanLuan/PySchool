@@ -1,6 +1,7 @@
 import sys
 import os.path
 from interface.cadastroServidorWindow import *
+from PyQt5.QtWidgets import *
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
