@@ -24,14 +24,8 @@ def carregarFoto(event):
         nome_arquivo = imagePath.split("/")[-1]
 
         # Pegar o endereço da pessoa + a pasta do projeto
-        url = "/PySchool/pyschool/database/images/"
+        url = "/database/images/"
         urlCompleta = os.getcwd() + url
-        
-        # Pegar Url das Imagens
-        urlImages = url.split("/")
-        urlImages = [x for x in urlImages if x != ""]
-        urlImages = urlImages[2] +"/"+ urlImages[3] + "/"
-
 
         # Tratando existência
         repetido = False
@@ -44,18 +38,6 @@ def carregarFoto(event):
             else:
                 nome_arquivo = nome_arquivo[0][:-1] + "{}".format(cont) + "." + nome_arquivo[-1]
             cont += 1
-
-        #Tem que ver como tratar a existência
-        """cont = 1
-        while os.path.exists(url):
-            format = "." + url.split(".")[-1]
-            url_noformat = url.split(".")[:-1][-1]
-            if "(" in url_noformat:
-               url_noformat = url_noformat.split("(")
-               url = url_noformat[0] + "(" + str(cont) + ")" + format
-            else:
-                url = url_noformat+ "(" + str(cont) + ")" + format
-            cont = cont + 1"""
 
         # Copia a imagem para a url dada
         if repetido:
