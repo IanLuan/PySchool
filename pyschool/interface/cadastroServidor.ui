@@ -1027,7 +1027,7 @@ color: rgb(136, 136, 136)</string>
        <string>Email</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="lineCargo">
+     <widget class="QComboBox" name="cbCargo">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -1075,6 +1075,9 @@ background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string>Não</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineSenha">

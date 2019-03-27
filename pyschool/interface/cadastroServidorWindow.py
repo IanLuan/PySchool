@@ -7,8 +7,6 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import *
-from PyQt5.QtGui import *
 
 class Ui_cadastroServidor(object):
     def setupUi(self, cadastroServidor):
@@ -369,13 +367,13 @@ class Ui_cadastroServidor(object):
         self.label_20.setStyleSheet("font: 25 10pt \"Malgun Gothic Semilight\";\n"
 "color: rgb(136, 136, 136)")
         self.label_20.setObjectName("label_20")
-        self.lineCargo = QtWidgets.QComboBox(self.frameComplementares)
-        self.lineCargo.setGeometry(QtCore.QRect(10, 90, 431, 28))
-        self.lineCargo.setStyleSheet("border: 1px solid grey;\n"
+        self.cbCargo = QtWidgets.QComboBox(self.frameComplementares)
+        self.cbCargo.setGeometry(QtCore.QRect(10, 90, 431, 28))
+        self.cbCargo.setStyleSheet("border: 1px solid grey;\n"
 "border-radius: 5px;\n"
 "font: 9pt \"Leelawadee UI Semilight\";\n"
 "background-color: rgb(255, 255, 255);")
-        self.lineCargo.setObjectName("lineCargo")
+        self.cbCargo.setObjectName("cbCargo")
         self.rbSim = QtWidgets.QRadioButton(self.frameComplementares)
         self.rbSim.setGeometry(QtCore.QRect(760, 90, 61, 20))
         self.rbSim.setStyleSheet("font: 9pt \"Leelawadee UI Semilight\";\n"
@@ -385,6 +383,7 @@ class Ui_cadastroServidor(object):
         self.rbNao.setGeometry(QtCore.QRect(820, 90, 95, 20))
         self.rbNao.setStyleSheet("font: 9pt \"Leelawadee UI Semilight\";\n"
 "")
+        self.rbNao.setChecked(True)
         self.rbNao.setObjectName("rbNao")
         self.lineSenha = QtWidgets.QLineEdit(self.frameComplementares)
         self.lineSenha.setGeometry(QtCore.QRect(470, 150, 441, 28))
