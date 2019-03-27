@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>952</width>
-    <height>760</height>
+    <height>735</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,7 +19,7 @@
   <property name="minimumSize">
    <size>
     <width>952</width>
-    <height>760</height>
+    <height>200</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -51,7 +51,7 @@
     <property name="geometry">
      <rect>
       <x>820</x>
-      <y>680</y>
+      <y>650</y>
       <width>111</width>
       <height>30</height>
      </rect>
@@ -83,8 +83,8 @@ box-shadow: 5px -9px 3px #000;
    <widget class="QPushButton" name="btnCancelar">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>680</y>
+      <x>26</x>
+      <y>650</y>
       <width>111</width>
       <height>30</height>
      </rect>
@@ -113,9 +113,9 @@ box-shadow: 5px -9px 3px #000;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>10</y>
+      <y>0</y>
       <width>931</width>
-      <height>661</height>
+      <height>647</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -165,7 +165,7 @@ border-radius: 7px;
         <x>0</x>
         <y>-4</y>
         <width>931</width>
-        <height>31</height>
+        <height>39</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1194,25 +1194,6 @@ border-radius: 0.2px;
    <zorder>framezao</zorder>
    <zorder>btnCadatrar</zorder>
    <zorder>btnCancelar</zorder>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>952</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">backgroundcolor: rgb(59, 59, 59)</string>
-   </property>
-   <widget class="QMenu" name="menuLalala">
-    <property name="title">
-     <string>Cadastro</string>
-    </property>
-   </widget>
-   <addaction name="menuLalala"/>
   </widget>
   <widget class="QStatusBar" name="statusbar">
    <property name="styleSheet">
