@@ -38,7 +38,7 @@ def carregarFoto(event):
         pixmap.save(url)
 
 #Definir ícone inicial
-pixmap = QPixmap("../interface/icons/perfil.png")
+pixmap = QPixmap("interface/icons/perfil.png")
 new_pixmap = pixmap.scaled(120, 110, QtCore.Qt.IgnoreAspectRatio)
 tela.lblFoto.setPixmap(new_pixmap)
 
