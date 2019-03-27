@@ -58,9 +58,9 @@ def cadastrarServidor():
     database.inserirServidor(servidor)
 
 #Definir ícone inicial
-pixmap = QPixmap("perfil.png")
-new_pixmap = pixmap.scaled(120, 110, QtCore.Qt.IgnoreAspectRatio)
-tela.lblFoto.setPixmap(new_pixmap)
+#pixmap = QPixmap("perfil.png")
+#new_pixmap = pixmap.scaled(120, 110, QtCore.Qt.IgnoreAspectRatio)
+#tela.lblFoto.setPixmap(new_pixmap)
 
 #Evento de carregar foto
 tela.lblFoto.mousePressEvent = carregarFoto

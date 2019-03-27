@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>952</width>
-    <height>735</height>
+    <height>722</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -50,8 +50,8 @@
    <widget class="QPushButton" name="btnCadatrar">
     <property name="geometry">
      <rect>
-      <x>820</x>
-      <y>670</y>
+      <x>830</x>
+      <y>660</y>
       <width>111</width>
       <height>30</height>
      </rect>
@@ -84,7 +84,7 @@ box-shadow: 5px -9px 3px #000;
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>670</y>
+      <y>660</y>
       <width>111</width>
       <height>30</height>
      </rect>
@@ -113,7 +113,7 @@ box-shadow: 5px -9px 3px #000;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>20</y>
+      <y>0</y>
       <width>931</width>
       <height>647</height>
      </rect>

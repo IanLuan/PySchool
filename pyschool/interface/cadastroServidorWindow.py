@@ -2,19 +2,16 @@
 
 # Form implementation generated from reading ui file 'cadastroServidor.ui'
 #
-# Created by: PyQt5 UI code generator 5.12
+# Created by: PyQt5 UI code generator 5.11.3
 #
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QApplication, QWidget, QInputDialog, QLineEdit, QFileDialog, QLabel
-from PyQt5.QtGui import QIcon, QPixmap
-
 
 class Ui_cadastroServidor(object):
     def setupUi(self, cadastroServidor):
         cadastroServidor.setObjectName("cadastroServidor")
-        cadastroServidor.resize(952, 735)
+        cadastroServidor.resize(952, 722)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -33,7 +30,7 @@ class Ui_cadastroServidor(object):
         self.centralwidget.setStyleSheet("backgroundcolor: rgb(255,255,255)")
         self.centralwidget.setObjectName("centralwidget")
         self.btnCadatrar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnCadatrar.setGeometry(QtCore.QRect(820, 650, 111, 30))
+        self.btnCadatrar.setGeometry(QtCore.QRect(830, 660, 111, 30))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -49,7 +46,7 @@ class Ui_cadastroServidor(object):
 "")
         self.btnCadatrar.setObjectName("btnCadatrar")
         self.btnCancelar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnCancelar.setGeometry(QtCore.QRect(26, 650, 111, 30))
+        self.btnCancelar.setGeometry(QtCore.QRect(10, 660, 111, 30))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -193,6 +190,7 @@ class Ui_cadastroServidor(object):
         self.lblFoto.setStyleSheet("background-color: rgb(255, 123, 28);\n"
 "")
         self.lblFoto.setText("")
+        self.lblFoto.setPixmap(QtGui.QPixmap("icons/perfil.png"))
         self.lblFoto.setObjectName("lblFoto")
         self.frameEndereco = QtWidgets.QFrame(self.framezao)
         self.frameEndereco.setGeometry(QtCore.QRect(0, 290, 931, 171))
@@ -512,8 +510,6 @@ class Ui_cadastroServidor(object):
         self.lineTelefone.setInputMask(_translate("cadastroServidor", "(00) 0 0000-0000"))
 
 
-
-
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
@@ -522,3 +518,4 @@ if __name__ == "__main__":
     ui.setupUi(cadastroServidor)
     cadastroServidor.show()
     sys.exit(app.exec_())
+
