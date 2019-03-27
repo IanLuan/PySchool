@@ -1,6 +1,6 @@
 import sys
 import os.path
-from interface.cadastroServidorWindow import *
+from interface/cadastroServidorWindow import *
 from PyQt5.QtWidgets import *
 
 app = QtWidgets.QApplication(sys.argv)
@@ -43,6 +43,9 @@ tela.lblFoto.setPixmap(new_pixmap)
 
 #Evento de carregar foto
 tela.lblFoto.mousePressEvent = carregarFoto
+
+#Botão cadastrar
+tela.btnCadastrar
 
 MainWindow.show()
 sys.exit(app.exec_())
