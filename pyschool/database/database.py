@@ -1,8 +1,12 @@
 import dataset
 
-def inserirServidor(servidor):
+def criarBanco():
     db = dataset.connect('sqlite:///database/database.db')
     table = db.create_table('servidor')
+
+def inserirServidor(servidor):
+    db = dataset.connect('sqlite:///database/database.db')
+    table = db.load_table('servidor')
 
     #data = dict(nome=servidor.getNome(), nascimento=servidor.getNascimento(), sexo=servidor.getSexo(),rg=servidor.getRg(),cpf=servidor.getCpf(),
     #            telefone=servidor.getTelefone(),rua=servidor.getRua(),bairro=servidor.getBairro(),numero=servidor.getNumero(),cep=servidor.getCep(),
@@ -15,4 +19,3 @@ def inserirServidor(servidor):
                 foto=servidor.foto,adm=servidor.adm,cargo=servidor.cargo)
 
     table.insert(data)
-
