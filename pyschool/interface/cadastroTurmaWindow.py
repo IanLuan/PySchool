@@ -92,7 +92,7 @@ class CadastroTurmaTela(object):
 "border-radius: 15px;\n"
 "background-color: rgb(255, 255, 255);\n"
 "}")
-        self.lineSerie.setText("")
+        self.lineSerie.setText(self.cbSerie.currentText())
         self.lineSerie.setReadOnly(True)
         self.lineSerie.setPlaceholderText("Série")
         self.lineSerie.setClearButtonEnabled(True)

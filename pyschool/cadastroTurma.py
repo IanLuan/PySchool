@@ -14,9 +14,10 @@ tela.setupUi(MainWindow)
 def escolherSerie():
     if tela.cbSerie.currentText() == "Outro":
         tela.lineSerie.setReadOnly(False)
+        tela.lineSerie.setText("")
     else:
         tela.lineSerie.setReadOnly(True)
-        tela.lineSerie.setText("")
+        tela.lineSerie.setText(tela.cbSerie.currentText())
     
 
 def cadastrarTurma():
@@ -41,6 +42,7 @@ def cadastrarTurma():
      
 
 # Escolhendo Série
+tela.lineSerie.setText(tela.cbSerie.currentText())
 tela.cbSerie.currentTextChanged.connect(escolherSerie)
 tela.btnCadastrar.clicked.connect(cadastrarTurma)
 
