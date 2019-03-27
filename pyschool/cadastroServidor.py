@@ -12,7 +12,13 @@ def enviarFoto(event):
     if image[0] != "":
         pixmap = QPixmap(imagePath)
         new_pixmap = pixmap.scaled(150, 180, QtCore.Qt.IgnoreAspectRatio)
+
+        #Setando foto no label
         tela.lblFoto.setPixmap(new_pixmap)
+
+        #Salvando na pasta
+        url = "../database/images/servidor.png"
+        pixmap.save(url, "PNG")
 
 #Definir ícone inicial
 pixmap = QPixmap("../interface/icons/perfil.png")
