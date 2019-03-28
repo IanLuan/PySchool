@@ -21,7 +21,6 @@ def escolherSerie():
         tela.lineSerie.setText(tela.cbSerie.currentText())
 
 def cadastrarTurma():
-
     # Pegar dados
     if tela.lineSerie.text() != "":
         serie = tela.lineSerie.text()
@@ -29,7 +28,6 @@ def cadastrarTurma():
         serie = tela.cbSerie.currentText()
 
     turma = Turma(serie, tela.lineGrupo.text(), tela.spinMax.text(), True)
-
 
     # Salvar no Banco
     database.inserirTurma(turma)
@@ -40,7 +38,6 @@ def cadastrarTurma():
     tela.lineGrupo.setText("")
     tela.spinMax.setValue(30)
 
-     
 
 # Escolhendo Série
 tela.lineSerie.setText(tela.cbSerie.currentText())

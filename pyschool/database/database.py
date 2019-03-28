@@ -9,7 +9,8 @@ def inserirEndereco(endereco):
     table.insert(data)
 
 def retornarIdEndereco():
-    db = dataset.connect('sqlite:///database/database.db')
+    #db = dataset.connect('sqlite:///database/database.db')
+    db = dataset.connect('sqlite:///pyschool/database/database.db')
 
     statement = "SELECT * FROM endereco WHERE id = (SELECT MAX(id) FROM endereco)"
 
@@ -33,7 +34,7 @@ def inserirCargo(cargo):
     table.insert(data)
 
 def inserirTurma(turma):
-    db = dataset.connect('sqlite:///database.db')
+    db = dataset.connect('sqlite:///database/database.db')
     table = db['turma']
 
     data = dict(serie=turma.getSerie(),grupo=turma.getGrupo(),maxAlunos=turma.getMaxAlunos(),status=turma.getStatus())
