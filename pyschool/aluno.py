@@ -2,8 +2,8 @@
 from pessoa import Pessoa
 
 class Aluno(Pessoa):
-    def __init__(self, nome, nascimento, sexo, rg, cpf, telefone, rua, bairro, numero, cep, cidade, estado, email, senha, estadoCivil, foto, matricula, matriculado, nomePai, telefonePai, cpfPai, nomeMae, telefoneMae, cpfMae, serie, turma, tipoSanguineo, observacao):
-        super().__init__(nome, nascimento, sexo, rg, cpf, telefone, rua, bairro, numero, cep, cidade, estado, email, senha, estadoCivil, foto)
+    def __init__(self, nome, nascimento, sexo, rg, cpf, telefone, endereco, email, senha, estadoCivil, foto, matricula, matriculado, nomePai, telefonePai, cpfPai, nomeMae, telefoneMae, cpfMae, serie, turma, tipoSanguineo, observacao):
+        super().__init__(nome, nascimento, sexo, rg, cpf, telefone, endereco, email, senha, estadoCivil, foto)
         self.__matricula = self.setMatricula(matricula)
         self.__matriculado = self.setMatriculado(matriculado)
         self.__nomePai = self.setNomePai(nomePai)

@@ -3,6 +3,7 @@ import os.path
 import shutil
 from pyschool.interface.cadastroServidorWindow import *
 from pyschool.servidor import *
+from pyschool.endereco import *
 from pyschool.database import database
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
@@ -10,6 +11,7 @@ from PyQt5.QtGui import *
 #from database import database
 #from interface.cadastroServidorWindow import *
 #from servidor import *
+#from endereco import *
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
@@ -59,9 +61,14 @@ def carregarFoto(event):
 
 
 def cadastrarServidor():
+    endereco = Endereco(tela.lineRua.text(),tela.lineBairro.text(),tela.spinNumero.text(),tela.lineCep.text(),
+                        tela.lineCidade.text(),tela.cbEstado.currentText())
+    database.inserirEndereco(endereco)
+
+    id_endereco = database.retornarIdEndereco()
+
     servidor = Servidor(tela.lineNome.text(),tela.dateNascimento.text(),tela.cbSexo.currentText(),tela.lineRg.text(),
-                        tela.lineCpf.text(),tela.lineTelefone.text(),tela.lineRua.text(),tela.lineBairro.text(),tela.spinNumero.text(),tela.lineCep.text(),
-                        tela.lineCidade.text(),tela.cbEstado.currentText(),tela.lineEmail.text(),tela.lineSenha.text(),tela.cbEstadoCivil.currentText(),
+                        tela.lineCpf.text(),tela.lineTelefone.text(),id_endereco, tela.lineEmail.text(),tela.lineSenha.text(),tela.cbEstadoCivil.currentText(),
                         foto,tela.rbSim.isChecked(),tela.cbCargo.currentText())
     database.inserirServidor(servidor)
 

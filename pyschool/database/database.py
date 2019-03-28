@@ -1,13 +1,27 @@
 import dataset
-from pyschool.turma import turma
+
+def inserirEndereco(endereco):
+    db = dataset.connect('sqlite:///database/database.db')
+    table = db['endereco']
+
+    data = dict(rua=endereco.getRua(),bairro=endereco.getBairro(),numero=endereco.getBairro(),cep=endereco.getCep(),cidade=endereco.getCidade(),
+                estado=endereco.getEstado())
+    table.insert(data)
+
+def retornarIdEndereco():
+    db = dataset.connect('sqlite:///database/database.db')
+
+    statement = "SELECT * FROM endereco WHERE id = (SELECT MAX(id) FROM endereco)"
+
+    for row in db.query(statement):
+        return row['id']
 
 def inserirServidor(servidor):
     db = dataset.connect('sqlite:///database/database.db')
     table = db['servidor']
 
     data = dict(nome=servidor.getNome(), nascimento=servidor.getNascimento(), sexo=servidor.getSexo(),rg=servidor.getRg(),cpf=servidor.getCpf(),
-                telefone=servidor.getTelefone(),rua=servidor.getRua(),bairro=servidor.getBairro(),numero=servidor.getNumero(),cep=servidor.getCep(),
-                cidade=servidor.getCidade(),estado=servidor.getEstado(),email=servidor.getEmail(),senha=servidor.getSenha(),estadoCivil=servidor.getEstadoCivil(),
+                telefone=servidor.getTelefone(), id_endereco = servidor.getEndereco(), email=servidor.getEmail(),senha=servidor.getSenha(),estadoCivil=servidor.getEstadoCivil(),
                 foto=servidor.getFoto(),adm=servidor.getAdm(),cargo=servidor.getCargo())
     table.insert(data)
 
@@ -25,14 +39,47 @@ def inserirTurma(turma):
     data = dict(serie=turma.getSerie(),grupo=turma.getGrupo(),maxAlunos=turma.getMaxAlunos(),status=turma.getStatus())
     table.insert(data)
 
-def mostrarTurmasAtivas():
+def mostrarSeries():
     db = dataset.connect('sqlite:///database/database.db')
-    turmasAtivas = []
-    for x in db['turma']:
-        turmasAtivas.append(Turma(x['serie'], x['grupo'], x['maxAlunos'], x['status']))
-    return turmasAtivas
+    table = db['turma']
 
-def mostrarTurmas():
+    series = []
+    for row in table.distinct('serie'):
+        series.append(row['nome'])
+
+    return series
+
+def mostrarSeriesAtivas():
+    db = dataset.connect('sqlite:///database/database.db')
+    series = []
+
+    statement = 'SELECT DISTINCT serie FROM turma where status=1'
+    for row in db.query(statement):
+        series.append(row['serie'])
+
+    return series
+
+def mostrarGruposAtivos(serie):
+    db = dataset.connect('sqlite:///database/database.db')
+    grupos = []
+
+    statement = 'SELECT DISTINCT grupo FROM turma where serie="{}"'.format(serie) + ' and status=1'
+
+    for row in db.query(statement):
+        grupos.append(row['grupo'])
+
+    return grupos
+
+def mostrarQuantidadeMax(serie, grupo):
+    db = dataset.connect('sqlite:///database/database.db')
+    quantidade = 0
+
+    statement = 'SELECT maxAlunos FROM turma where serie="{}"'.format(serie) + ' and status=1 and grupo="{}"'.format(grupo)
+
+    for row in db.query(statement):
+        quantidade = row['maxAlunis']
+
+    return quantidade
 
 def mostrarCargos():
     db = dataset.connect('sqlite:///database/database.db')

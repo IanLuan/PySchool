@@ -4,8 +4,8 @@ from pessoa import Pessoa
 from database import database
 
 class Servidor(Pessoa):
-   def __init__(self, nome, nascimento, sexo, rg, cpf, telefone, rua, bairro, numero, cep, cidade, estado, email, senha, estadoCivil, foto, adm, cargo):
-        super().__init__(nome, nascimento, sexo, rg, cpf, telefone, rua, bairro, numero, cep, cidade, estado, email, senha, estadoCivil, foto)
+   def __init__(self, nome, nascimento, sexo, rg, cpf, telefone, endereco, email, senha, estadoCivil, foto, adm, cargo):
+        super().__init__(nome, nascimento, sexo, rg, cpf, telefone, endereco, email, senha, estadoCivil, foto)
         self.__adm = adm
         self.__cargo = cargo
 
