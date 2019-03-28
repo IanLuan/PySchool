@@ -15,7 +15,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QDialog{
-background-color: rgb(255, 255, 255)
+background-color: rgb(21, 143, 181)
 }</string>
   </property>
   <widget class="QPushButton" name="btnConfirmar">
@@ -47,7 +47,7 @@ box-shadow: 5px -9px 3px #000;
      <x>10</x>
      <y>0</y>
      <width>381</width>
-     <height>9</height>
+     <height>10</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -66,10 +66,15 @@ border-radius: 0.2px;
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>20</y>
+     <y>10</y>
      <width>381</width>
-     <height>341</height>
+     <height>351</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QScrollArea{
+background-color:rgb(255, 255, 255): 
+}</string>
    </property>
    <property name="verticalScrollBarPolicy">
     <enum>Qt::ScrollBarAlwaysOn</enum>
@@ -86,20 +91,12 @@ border-radius: 0.2px;
       <x>0</x>
       <y>0</y>
       <width>358</width>
-      <height>339</height>
+      <height>349</height>
      </rect>
     </property>
-    <widget class="QWidget" name="verticalLayoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>381</width>
-       <height>520</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout"/>
-    </widget>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255,255,255)</string>
+    </property>
    </widget>
   </widget>
  </widget>

@@ -45,7 +45,9 @@
     </sizepolicy>
    </property>
    <property name="styleSheet">
-    <string notr="true">backgroundcolor: rgb(255,255,255)</string>
+    <string notr="true">QWidget{
+backgroundcolor: rgb(255,255,255)
+}</string>
    </property>
    <widget class="QPushButton" name="btnCadatrar">
     <property name="geometry">
@@ -125,9 +127,10 @@ box-shadow: 5px -9px 3px #000;</string>
      </sizepolicy>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
+     <string notr="true">QFrame{
+background-color: rgb(255, 255, 255);
 border-radius: 7px;
-</string>
+}</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -931,7 +934,9 @@ background-color: rgb(255, 255, 255);</string>
       </sizepolicy>
      </property>
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">QFrame{
+background-color: rgb(255, 255, 255)
+}</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::StyledPanel</enum>

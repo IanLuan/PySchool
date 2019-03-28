@@ -13,7 +13,7 @@ class Ui_Dialog(object):
         Dialog.setObjectName("Dialog")
         Dialog.resize(400, 414)
         Dialog.setStyleSheet("QDialog{\n"
-"background-color: rgb(255, 255, 255)\n"
+"background-color: rgb(21, 143, 181)\n"
 "}")
         self.btnConfirmar = QtWidgets.QPushButton(Dialog)
         self.btnConfirmar.setGeometry(QtCore.QRect(140, 370, 111, 31))
@@ -27,7 +27,7 @@ class Ui_Dialog(object):
 "")
         self.btnConfirmar.setObjectName("btnConfirmar")
         self.frameLaranja = QtWidgets.QFrame(Dialog)
-        self.frameLaranja.setGeometry(QtCore.QRect(10, 0, 381, 9))
+        self.frameLaranja.setGeometry(QtCore.QRect(10, 0, 381, 10))
         self.frameLaranja.setStyleSheet("background-color: rgb(255, 123, 28);\n"
 "border-radius: 0.2px;\n"
 "")
@@ -35,20 +35,18 @@ class Ui_Dialog(object):
         self.frameLaranja.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frameLaranja.setObjectName("frameLaranja")
         self.scrollArea = QtWidgets.QScrollArea(Dialog)
-        self.scrollArea.setGeometry(QtCore.QRect(10, 20, 381, 341))
+        self.scrollArea.setGeometry(QtCore.QRect(10, 10, 381, 351))
+        self.scrollArea.setStyleSheet("QScrollArea{\n"
+"background-color:rgb(255, 255, 255): \n"
+"}")
         self.scrollArea.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
         self.scrollArea.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 358, 339))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 358, 349))
+        self.scrollAreaWidgetContents.setStyleSheet("background-color: rgb(255,255,255)")
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
-        self.verticalLayoutWidget = QtWidgets.QWidget(self.scrollAreaWidgetContents)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 381, 520))
-        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout.setObjectName("verticalLayout")
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
 
         self.retranslateUi(Dialog)
