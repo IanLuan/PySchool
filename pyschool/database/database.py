@@ -1,9 +1,5 @@
 import dataset
-
-def criarBanco():
-    db = dataset.connect('sqlite:///database/database.db')
-    table = db.create_table('servidor')
-    table = db.create_table('cargo')
+from pyschool.turma import turma
 
 def inserirServidor(servidor):
     db = dataset.connect('sqlite:///database/database.db')
@@ -22,10 +18,25 @@ def inserirCargo(cargo):
     data = dict(nome=cargo.getNome())
     table.insert(data)
 
+def inserirTurma(turma):
+    db = dataset.connect('sqlite:///database/database.db')
+    table = db['turma']
+
+    data = dict(serie=turma.getSerie(),grupo=turma.getGrupo(),maxAlunos=turma.getMaxAlunos(),status=turma.getStatus())
+    table.insert(data)
+
+def mostrarTurmasAtivas():
+    db = dataset.connect('sqlite:///database/database.db')
+    turmasAtivas = []
+    for x in db['turma']:
+        turmasAtivas.append(Turma(x['serie'], x['grupo'], x['maxAlunos'], x['status']))
+    return turmasAtivas
+
+def mostrarTurmas():
+
 def mostrarCargos():
     db = dataset.connect('sqlite:///database/database.db')
     cargos = []
     for x in db['cargo']:
         cargos.append(x['nome'])
-
     return cargos

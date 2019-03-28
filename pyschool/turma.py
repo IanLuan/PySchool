@@ -1,8 +1,9 @@
 class Turma:
-    def __init__(self, serie, grupo, maxAlunos):
+    def __init__(self, serie, grupo, maxAlunos, status=False):
         self.__serie = serie
         self.__grupo = grupo
         self.__maxAlunos = maxAlunos
+        self.__status = status
     
     def getSerie(self):
         return self.__serie
@@ -21,4 +22,9 @@ class Turma:
     
     def setMaxAlunos(self, maxAlunos):
         self.__maxAlunos = maxAlunos
-    
+
+    def getStatus(self):
+        return self.__status
+
+    def setStatus(self, status):
+        self.__status = status

@@ -18,7 +18,6 @@ def escolherSerie():
     else:
         tela.lineSerie.setReadOnly(True)
         tela.lineSerie.setText(tela.cbSerie.currentText())
-    
 
 def cadastrarTurma():
 
