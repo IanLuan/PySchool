@@ -8,7 +8,7 @@ from turma import Turma
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
-tela = CadastroTurmaTela()
+tela = Ui_CadastroTurma()
 tela.setupUi(MainWindow)
 
 def escolherSerie():
@@ -36,7 +36,6 @@ def cadastrarTurma():
     tela.lineSerie.setText("")
     tela.lineGrupo.setText("")
     tela.spinMax.setValue(30)
-
 
      
 
