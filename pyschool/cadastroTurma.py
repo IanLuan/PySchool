@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from interface.cadastroTurmaWindow import *
 
+import database.database as database
 from turma import Turma
 
 app = QtWidgets.QApplication(sys.argv)
@@ -27,10 +28,11 @@ def cadastrarTurma():
     else:
         serie = tela.cbSerie.currentText()
 
-    turma = Turma(serie, tela.lineGrupo.text(), tela.spinMax.text())
+    turma = Turma(serie, tela.lineGrupo.text(), tela.spinMax.text(), True)
 
 
     # Salvar no Banco
+    database.inserirTurma(turma)
 
     # Limpar campos
     tela.cbSerie.setCurrentIndex(0)
