@@ -33,6 +33,7 @@ def cadastrarTurma():
     # Salvar no Banco
 
     # Limpar campos
+    tela.cbSerie.setCurrentIndex(0)
     tela.lineSerie.setText("")
     tela.lineGrupo.setText("")
     tela.spinMax.setValue(30)
