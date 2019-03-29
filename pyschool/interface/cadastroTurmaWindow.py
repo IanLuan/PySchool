@@ -144,8 +144,6 @@ class Ui_CadastroTurma(object):
         self.lblEscolha_2.setText(_translate("CadastroTurma", "Série escolhida"))
 
 
-
-
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)

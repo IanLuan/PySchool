@@ -8,20 +8,19 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-
-class Ui_background(object):
-    def setupUi(self, background):
-        background.setObjectName("background")
-        background.resize(500, 110)
+class Ui_cadastroCargo(object):
+    def setupUi(self, cadastroCargo):
+        cadastroCargo.setObjectName("cadastroCargo")
+        cadastroCargo.resize(500, 110)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(background.sizePolicy().hasHeightForWidth())
-        background.setSizePolicy(sizePolicy)
-        background.setMaximumSize(QtCore.QSize(2000, 450))
-        background.setStyleSheet("background-color:  rgb(21, 143, 181)\n"
+        sizePolicy.setHeightForWidth(cadastroCargo.sizePolicy().hasHeightForWidth())
+        cadastroCargo.setSizePolicy(sizePolicy)
+        cadastroCargo.setMaximumSize(QtCore.QSize(2000, 450))
+        cadastroCargo.setStyleSheet("background-color:  rgb(21, 143, 181)\n"
 "")
-        self.centralwidget = QtWidgets.QWidget(background)
+        self.centralwidget = QtWidgets.QWidget(cadastroCargo)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalWidget = QtWidgets.QWidget(self.centralwidget)
         self.verticalWidget.setGeometry(QtCore.QRect(0, 0, 500, 110))
@@ -61,25 +60,23 @@ class Ui_background(object):
 "color: #fff;")
         self.btnCadastrar.setObjectName("btnCadastrar")
         self.verticalLayout.addWidget(self.btnCadastrar)
-        background.setCentralWidget(self.centralwidget)
+        cadastroCargo.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(background)
-        QtCore.QMetaObject.connectSlotsByName(background)
+        self.retranslateUi(cadastroCargo)
+        QtCore.QMetaObject.connectSlotsByName(cadastroCargo)
 
-    def retranslateUi(self, background):
+    def retranslateUi(self, cadastroCargo):
         _translate = QtCore.QCoreApplication.translate
-        background.setWindowTitle(_translate("background", "Cadastrar Cargo"))
-        self.lineCargo.setPlaceholderText(_translate("background", "Nome do Cargo"))
-        self.btnCadastrar.setText(_translate("background", "Cadastrar"))
-
-
+        cadastroCargo.setWindowTitle(_translate("cadastroCargo", "Cadastrar Cargo"))
+        self.lineCargo.setPlaceholderText(_translate("cadastroCargo", "Nome do Cargo"))
+        self.btnCadastrar.setText(_translate("cadastroCargo", "Cadastrar"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    background = QtWidgets.QMainWindow()
-    ui = Ui_background()
-    ui.setupUi(background)
-    background.show()
+    cadastroCargo = QtWidgets.QMainWindow()
+    ui = Ui_cadastroCargo()
+    ui.setupUi(cadastroCargo)
+    cadastroCargo.show()
     sys.exit(app.exec_())

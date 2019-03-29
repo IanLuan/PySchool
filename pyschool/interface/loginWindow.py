@@ -8,20 +8,19 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-
-class Ui_background(object):
-    def setupUi(self, background):
-        background.setObjectName("background")
-        background.resize(350, 450)
+class Ui_login(object):
+    def setupUi(self, login):
+        login.setObjectName("login")
+        login.resize(350, 450)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(background.sizePolicy().hasHeightForWidth())
-        background.setSizePolicy(sizePolicy)
-        background.setMaximumSize(QtCore.QSize(350, 450))
-        background.setStyleSheet("background-color:  rgb(21, 143, 181)\n"
+        sizePolicy.setHeightForWidth(login.sizePolicy().hasHeightForWidth())
+        login.setSizePolicy(sizePolicy)
+        login.setMaximumSize(QtCore.QSize(350, 450))
+        login.setStyleSheet("background-color:  rgb(21, 143, 181)\n"
 "")
-        self.centralwidget = QtWidgets.QWidget(background)
+        self.centralwidget = QtWidgets.QWidget(login)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(75, 64, 200, 77))
@@ -105,19 +104,19 @@ class Ui_background(object):
         self.pushButton_2.setDefault(False)
         self.pushButton_2.setFlat(True)
         self.pushButton_2.setObjectName("pushButton_2")
-        background.setCentralWidget(self.centralwidget)
+        login.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(background)
-        QtCore.QMetaObject.connectSlotsByName(background)
+        self.retranslateUi(login)
+        QtCore.QMetaObject.connectSlotsByName(login)
 
-    def retranslateUi(self, background):
+    def retranslateUi(self, login):
         _translate = QtCore.QCoreApplication.translate
-        background.setWindowTitle(_translate("background", "MainWindow"))
-        self.label.setText(_translate("background", "Bem-vindo!"))
-        self.lineEdit.setPlaceholderText(_translate("background", "email"))
-        self.lineEdit_2.setPlaceholderText(_translate("background", "senha"))
-        self.pushButton.setText(_translate("background", "Entrar"))
-        self.pushButton_2.setText(_translate("background", "Esqueceu a senha?"))
+        login.setWindowTitle(_translate("login", "MainWindow"))
+        self.label.setText(_translate("login", "Bem-vindo!"))
+        self.lineEdit.setPlaceholderText(_translate("login", "email"))
+        self.lineEdit_2.setPlaceholderText(_translate("login", "senha"))
+        self.pushButton.setText(_translate("login", "Entrar"))
+        self.pushButton_2.setText(_translate("login", "Esqueceu a senha?"))
 
 
 
@@ -125,8 +124,8 @@ class Ui_background(object):
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    background = QtWidgets.QMainWindow()
-    ui = Ui_background()
-    ui.setupUi(background)
-    background.show()
+    login = QtWidgets.QMainWindow()
+    ui = Ui_login()
+    ui.setupUi(login)
+    login.show()
     sys.exit(app.exec_())

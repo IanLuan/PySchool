@@ -47,7 +47,7 @@
    <property name="styleSheet">
     <string notr="true">backgroundcolor: rgb(255,255,255)</string>
    </property>
-   <widget class="QPushButton" name="btnCadatrar">
+   <widget class="QPushButton" name="btnCadastrar">
     <property name="geometry">
      <rect>
       <x>830</x>
@@ -1198,7 +1198,7 @@ border-radius: 0.2px;
     <zorder>frameComplementares</zorder>
    </widget>
    <zorder>framezao</zorder>
-   <zorder>btnCadatrar</zorder>
+   <zorder>btnCadastrar</zorder>
    <zorder>btnCancelar</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar">

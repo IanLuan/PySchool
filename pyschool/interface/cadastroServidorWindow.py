@@ -29,22 +29,22 @@ class Ui_cadastroServidor(object):
         self.centralwidget.setSizePolicy(sizePolicy)
         self.centralwidget.setStyleSheet("backgroundcolor: rgb(255,255,255)")
         self.centralwidget.setObjectName("centralwidget")
-        self.btnCadatrar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnCadatrar.setGeometry(QtCore.QRect(830, 660, 111, 30))
+        self.btnCadastrar = QtWidgets.QPushButton(self.centralwidget)
+        self.btnCadastrar.setGeometry(QtCore.QRect(830, 660, 111, 30))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btnCadatrar.sizePolicy().hasHeightForWidth())
-        self.btnCadatrar.setSizePolicy(sizePolicy)
-        self.btnCadatrar.setFocusPolicy(QtCore.Qt.StrongFocus)
-        self.btnCadatrar.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.btnCadatrar.setStyleSheet("font: 25 10pt \"Malgun Gothic Semilight\";\n"
+        sizePolicy.setHeightForWidth(self.btnCadastrar.sizePolicy().hasHeightForWidth())
+        self.btnCadastrar.setSizePolicy(sizePolicy)
+        self.btnCadastrar.setFocusPolicy(QtCore.Qt.StrongFocus)
+        self.btnCadastrar.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.btnCadastrar.setStyleSheet("font: 25 10pt \"Malgun Gothic Semilight\";\n"
 "border: 0.7px solid grey;\n"
 "border-radius: 10px;\n"
 "background-color: rgb(255, 123, 28);\n"
 "box-shadow: 5px -9px 3px #000;\n"
 "")
-        self.btnCadatrar.setObjectName("btnCadatrar")
+        self.btnCadastrar.setObjectName("btnCadastrar")
         self.btnCancelar = QtWidgets.QPushButton(self.centralwidget)
         self.btnCancelar.setGeometry(QtCore.QRect(10, 660, 111, 30))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Expanding)
@@ -432,7 +432,7 @@ class Ui_cadastroServidor(object):
         self.frameEndereco.raise_()
         self.frameComplementares.raise_()
         self.framezao.raise_()
-        self.btnCadatrar.raise_()
+        self.btnCadastrar.raise_()
         self.btnCancelar.raise_()
         cadastroServidor.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(cadastroServidor)
@@ -447,7 +447,7 @@ class Ui_cadastroServidor(object):
     def retranslateUi(self, cadastroServidor):
         _translate = QtCore.QCoreApplication.translate
         cadastroServidor.setWindowTitle(_translate("cadastroServidor", "Cadastrar Servidor"))
-        self.btnCadatrar.setText(_translate("cadastroServidor", "Cadastrar"))
+        self.btnCadastrar.setText(_translate("cadastroServidor", "Cadastrar"))
         self.btnCancelar.setText(_translate("cadastroServidor", "Cancelar"))
         self.lblPessoais.setText(_translate("cadastroServidor", "Informações Pessoais"))
         self.label_3.setText(_translate("cadastroServidor", "Nome Completo"))

@@ -108,7 +108,7 @@ definirIcone()
 tela.lblFoto.mousePressEvent = carregarFoto
 
 #Botão cadastrar acionado
-tela.btnCadatrar.clicked.connect(cadastrarServidor)
+tela.btnCadastrar.clicked.connect(cadastrarServidor)
 
 MainWindow.show()
 sys.exit(app.exec_())
