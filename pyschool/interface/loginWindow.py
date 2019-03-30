@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'login.ui'
 #
-# Created by: PyQt5 UI code generator 5.12
+# Created by: PyQt5 UI code generator 5.11.3
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -22,88 +22,88 @@ class Ui_login(object):
 "")
         self.centralwidget = QtWidgets.QWidget(login)
         self.centralwidget.setObjectName("centralwidget")
-        self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(75, 64, 200, 77))
+        self.lblBemVindo = QtWidgets.QLabel(self.centralwidget)
+        self.lblBemVindo.setGeometry(QtCore.QRect(75, 64, 200, 77))
         font = QtGui.QFont()
         font.setFamily("Noto Sans")
         font.setPointSize(22)
         font.setBold(False)
         font.setItalic(True)
         font.setWeight(50)
-        self.label.setFont(font)
-        self.label.setStyleSheet("color: #fff;")
-        self.label.setAlignment(QtCore.Qt.AlignCenter)
-        self.label.setObjectName("label")
+        self.lblBemVindo.setFont(font)
+        self.lblBemVindo.setStyleSheet("color: #fff;")
+        self.lblBemVindo.setAlignment(QtCore.Qt.AlignCenter)
+        self.lblBemVindo.setObjectName("lblBemVindo")
         self.verticalWidget = QtWidgets.QWidget(self.centralwidget)
         self.verticalWidget.setGeometry(QtCore.QRect(0, 146, 350, 107))
         self.verticalWidget.setObjectName("verticalWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalWidget)
         self.verticalLayout.setContentsMargins(20, 0, 20, 0)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.lineEdit = QtWidgets.QLineEdit(self.verticalWidget)
+        self.lineEmail = QtWidgets.QLineEdit(self.verticalWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEdit.sizePolicy().hasHeightForWidth())
-        self.lineEdit.setSizePolicy(sizePolicy)
-        self.lineEdit.setMinimumSize(QtCore.QSize(20, 0))
-        self.lineEdit.setMaximumSize(QtCore.QSize(16777215, 35))
+        sizePolicy.setHeightForWidth(self.lineEmail.sizePolicy().hasHeightForWidth())
+        self.lineEmail.setSizePolicy(sizePolicy)
+        self.lineEmail.setMinimumSize(QtCore.QSize(20, 0))
+        self.lineEmail.setMaximumSize(QtCore.QSize(16777215, 35))
         font = QtGui.QFont()
         font.setPointSize(11)
-        self.lineEdit.setFont(font)
-        self.lineEdit.setStyleSheet("QLineEdit { \n"
+        self.lineEmail.setFont(font)
+        self.lineEmail.setStyleSheet("QLineEdit { \n"
 "border: 5px solid white;\n"
 "border-radius: 15px;\n"
 "background-color: rgb(255, 255, 255);\n"
 "}")
-        self.lineEdit.setClearButtonEnabled(True)
-        self.lineEdit.setObjectName("lineEdit")
-        self.verticalLayout.addWidget(self.lineEdit)
-        self.lineEdit_2 = QtWidgets.QLineEdit(self.verticalWidget)
+        self.lineEmail.setClearButtonEnabled(True)
+        self.lineEmail.setObjectName("lineEmail")
+        self.verticalLayout.addWidget(self.lineEmail)
+        self.lineSenha = QtWidgets.QLineEdit(self.verticalWidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEdit_2.sizePolicy().hasHeightForWidth())
-        self.lineEdit_2.setSizePolicy(sizePolicy)
-        self.lineEdit_2.setMaximumSize(QtCore.QSize(16777215, 35))
+        sizePolicy.setHeightForWidth(self.lineSenha.sizePolicy().hasHeightForWidth())
+        self.lineSenha.setSizePolicy(sizePolicy)
+        self.lineSenha.setMaximumSize(QtCore.QSize(16777215, 35))
         font = QtGui.QFont()
         font.setPointSize(11)
-        self.lineEdit_2.setFont(font)
-        self.lineEdit_2.setStyleSheet("QLineEdit { \n"
+        self.lineSenha.setFont(font)
+        self.lineSenha.setStyleSheet("QLineEdit { \n"
 "border: 5px solid white;\n"
 "border-radius: 15px;\n"
 "background-color: rgb(255, 255, 255);\n"
 "}")
-        self.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.lineEdit_2.setClearButtonEnabled(True)
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.verticalLayout.addWidget(self.lineEdit_2)
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(22, 258, 307, 35))
+        self.lineSenha.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.lineSenha.setClearButtonEnabled(True)
+        self.lineSenha.setObjectName("lineSenha")
+        self.verticalLayout.addWidget(self.lineSenha)
+        self.btnEntrar = QtWidgets.QPushButton(self.centralwidget)
+        self.btnEntrar.setGeometry(QtCore.QRect(22, 258, 307, 35))
         font = QtGui.QFont()
         font.setPointSize(14)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
-        self.pushButton.setFont(font)
-        self.pushButton.setStyleSheet("border: 2px solid rgb(255, 123, 28);\n"
+        self.btnEntrar.setFont(font)
+        self.btnEntrar.setStyleSheet("border: 2px solid rgb(255, 123, 28);\n"
 "border-radius: 15px;\n"
 "background-color: rgb(255, 123, 28);\n"
 "color: #fff;")
-        self.pushButton.setObjectName("pushButton")
-        self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(100, 294, 150, 25))
+        self.btnEntrar.setObjectName("btnEntrar")
+        self.lblEsqueceu = QtWidgets.QPushButton(self.centralwidget)
+        self.lblEsqueceu.setGeometry(QtCore.QRect(100, 294, 150, 25))
         font = QtGui.QFont()
         font.setPointSize(11)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
-        self.pushButton_2.setFont(font)
-        self.pushButton_2.setStyleSheet("color: #fff")
-        self.pushButton_2.setAutoDefault(False)
-        self.pushButton_2.setDefault(False)
-        self.pushButton_2.setFlat(True)
-        self.pushButton_2.setObjectName("pushButton_2")
+        self.lblEsqueceu.setFont(font)
+        self.lblEsqueceu.setStyleSheet("color: #fff")
+        self.lblEsqueceu.setAutoDefault(False)
+        self.lblEsqueceu.setDefault(False)
+        self.lblEsqueceu.setFlat(True)
+        self.lblEsqueceu.setObjectName("lblEsqueceu")
         login.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(login)
@@ -111,14 +111,12 @@ class Ui_login(object):
 
     def retranslateUi(self, login):
         _translate = QtCore.QCoreApplication.translate
-        login.setWindowTitle(_translate("login", "MainWindow"))
-        self.label.setText(_translate("login", "Bem-vindo!"))
-        self.lineEdit.setPlaceholderText(_translate("login", "email"))
-        self.lineEdit_2.setPlaceholderText(_translate("login", "senha"))
-        self.pushButton.setText(_translate("login", "Entrar"))
-        self.pushButton_2.setText(_translate("login", "Esqueceu a senha?"))
-
-
+        login.setWindowTitle(_translate("login", "Login"))
+        self.lblBemVindo.setText(_translate("login", "Bem-vindo!"))
+        self.lineEmail.setPlaceholderText(_translate("login", "email"))
+        self.lineSenha.setPlaceholderText(_translate("login", "senha"))
+        self.btnEntrar.setText(_translate("login", "Entrar"))
+        self.lblEsqueceu.setText(_translate("login", "Esqueceu a senha?"))
 
 
 if __name__ == "__main__":
@@ -129,3 +127,4 @@ if __name__ == "__main__":
     ui.setupUi(login)
     login.show()
     sys.exit(app.exec_())
+

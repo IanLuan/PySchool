@@ -5,16 +5,16 @@ import shutil
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 
-from interface.escolherMateriasDialog import *
-#from pyschool.interface.escolherMateriasDialog import *
-from database import database
-#from pyschool.database import database
-from interface.cadastroProfessorWindow import *
-#from pyschool.interface.cadastroProfessorWindow import *
-from endereco import *
-#from pyschool.endereco import *
-from professor import *
-#from pyschool.professor import *
+#from interface.escolherMateriasDialog import *
+from pyschool.interface.escolherMateriasDialog import *
+#from database import database
+from pyschool.database import database
+#from interface.cadastroProfessorWindow import *
+from pyschool.interface.cadastroProfessorWindow import *
+#from endereco import *
+from pyschool.endereco import *
+#from professor import *
+from pyschool.professor import *
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
@@ -47,10 +47,12 @@ def escolherMaterias():
 
     materias = database.mostrarMaterias()
 
-    for i, v in enumerate(materias):
-        materias[i] = QCheckBox(v)
-        materias[i].setStyleSheet("font: 25 15pt \"Malgun Gothic Semilight\";\n")
-        dialog.layout.addWidget(materias[i])
+    #Adicionar os widgets na tela uma só vez
+    if dialog.layout.isEmpty():
+        for i, v in enumerate(materias):
+            materias[i] = QCheckBox(v)
+            materias[i].setStyleSheet("font: 25 15pt \"Malgun Gothic Semilight\";\n")
+            dialog.layout.addWidget(materias[i])
 
     dialog.btnConfirmar.clicked.connect(confirmarMaterias)
 
@@ -130,6 +132,10 @@ def cadastrarProfessor():
     definirIcone()
     tela.lineMaterias.setText("")
 
+    index = dialog.layout.count()
+    for x in range(index):
+        dialog.layout.itemAt(x).widget().setCheckState(False)
+
 #Definir ícone inicial
 def definirIcone():
     global foto
@@ -138,6 +144,9 @@ def definirIcone():
     new_pixmap = pixmap.scaled(120, 110, QtCore.Qt.IgnoreAspectRatio)
     tela.lblFoto.setPixmap(new_pixmap)
     foto = os.path.dirname(os.path.abspath(__file__))+"/interface/icons/perfil.png"
+
+#Bloqueando line edit
+tela.lineMaterias.setReadOnly(True)
 
 #Definindo ícone inicial
 definirIcone()

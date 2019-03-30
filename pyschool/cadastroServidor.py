@@ -1,17 +1,19 @@
 import sys
 import os.path
 import shutil
-from pyschool.interface.cadastroServidorWindow import *
-from pyschool.servidor import *
-from pyschool.endereco import *
-from pyschool.database import database
+
+#from pyschool.interface.cadastroServidorWindow import *
+#from pyschool.servidor import *
+#from pyschool.endereco import *
+#from pyschool.database import database
+
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 
-#from database import database
-#from interface.cadastroServidorWindow import *
-#from servidor import *
-#from endereco import *
+from database import database
+from interface.cadastroServidorWindow import *
+from servidor import *
+from endereco import *
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()

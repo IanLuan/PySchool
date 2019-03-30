@@ -2,7 +2,7 @@ import dataset
 
 #Inserção em ensino: matéria que relaciona professor e matéria
 def inserirEnsino(id_professor, materias):
-    db = dataset.connect('sqlite:///../pyschool/database/database.db')
+    db = dataset.connect('sqlite:///database/database.db')
     table = db['ensino']
 
     for x in materias:
@@ -10,7 +10,7 @@ def inserirEnsino(id_professor, materias):
         table.insert(data)
 
 def inserirEndereco(endereco):
-    db = dataset.connect('sqlite:///../pyschool/database/database.db')
+    db = dataset.connect('sqlite:///database/database.db')
     table = db['endereco']
 
     data = dict(rua=endereco.getRua(),bairro=endereco.getBairro(),numero=endereco.getBairro(),cep=endereco.getCep(),cidade=endereco.getCidade(),
@@ -18,7 +18,7 @@ def inserirEndereco(endereco):
     table.insert(data)
 
 def retornarUltimoId(tabela):
-    db = dataset.connect('sqlite:///../pyschool/database/database.db')
+    db = dataset.connect('sqlite:///database/database.db')
 
     statement = "SELECT * FROM {} WHERE id = (SELECT MAX(id) FROM {})".format(tabela,tabela)
 
@@ -26,7 +26,7 @@ def retornarUltimoId(tabela):
         return row['id']
 
 def retornarIdMateria(materia):
-    db = dataset.connect('sqlite:///../pyschool/database/database.db')
+    db = dataset.connect('sqlite:///database/database.db')
 
     statement = "SELECT id FROM materia WHERE nome='{}'".format(materia)
 
@@ -34,7 +34,7 @@ def retornarIdMateria(materia):
         return row['id']
 
 def inserirServidor(servidor):
-    db = dataset.connect('sqlite:///../pyschool/database/database.db')
+    db = dataset.connect('sqlite:///database/database.db')
     table = db['servidor']
 
     data = dict(nome=servidor.getNome(), nascimento=servidor.getNascimento(), sexo=servidor.getSexo(),rg=servidor.getRg(),cpf=servidor.getCpf(),
@@ -43,7 +43,7 @@ def inserirServidor(servidor):
     table.insert(data)
 
 def inserirProfessor(professor):
-    db = dataset.connect('sqlite:///../pyschool/database/database.db')
+    db = dataset.connect('sqlite:///database/database.db')
     table = db['professor']
 
     data = dict(nome=professor.getNome(), nascimento=professor.getNascimento(), sexo=professor.getSexo(),rg=professor.getRg(),cpf=professor.getCpf(),
@@ -52,14 +52,14 @@ def inserirProfessor(professor):
     table.insert(data)
 
 def inserirTurma(turma):
-    db = dataset.connect('sqlite:///../pyschool/database/database.db')
+    db = dataset.connect('sqlite:////database/database.db')
     table = db['turma']
 
     data = dict(serie=turma.getSerie(),grupo=turma.getGrupo(),maxAlunos=turma.getMaxAlunos(),status=turma.getStatus())
     table.insert(data)
 
 def mostrarSeries():
-    db = dataset.connect('sqlite:///../pyschool/database/database.db')
+    db = dataset.connect('sqlite:///database/database.db')
     table = db['turma']
 
     series = []
@@ -69,7 +69,7 @@ def mostrarSeries():
     return series
 
 def mostrarSeriesAtivas():
-    db = dataset.connect('sqlite:///../pyschool/database/database.db')
+    db = dataset.connect('sqlite:///database/database.db')
     series = []
 
     statement = 'SELECT DISTINCT serie FROM turma where status=1'
@@ -79,7 +79,7 @@ def mostrarSeriesAtivas():
     return series
 
 def mostrarGruposAtivos(serie):
-    db = dataset.connect('sqlite:///../pyschool/database/database.db')
+    db = dataset.connect('sqlite:///database/database.db')
     grupos = []
 
     statement = 'SELECT DISTINCT grupo FROM turma where serie="{}"'.format(serie) + ' and status=1'
@@ -90,7 +90,7 @@ def mostrarGruposAtivos(serie):
     return grupos
 
 def mostrarQuantidadeMax(serie, grupo):
-    db = dataset.connect('sqlite:///../pyschool/database/database.db')
+    db = dataset.connect('sqlite:///database/database.db')
     quantidade = 0
 
     statement = 'SELECT maxAlunos FROM turma where serie="{}"'.format(serie) + ' and status=1 and grupo="{}"'.format(grupo)
@@ -101,14 +101,14 @@ def mostrarQuantidadeMax(serie, grupo):
     return quantidade
 
 def inserirCargo(nome_cargo):
-    db = dataset.connect('sqlite:///../pyschool/database/database.db')
+    db = dataset.connect('sqlite:///database/database.db')
     table = db['cargo']
 
     data = dict(nome=nome_cargo)
     table.insert(data)
 
 def mostrarCargos():
-    db = dataset.connect('sqlite:///../pyschool/database/database.db')
+    db = dataset.connect('sqlite:///database/database.db')
     cargos = []
     for x in db['cargo']:
         print("a")
@@ -116,14 +116,14 @@ def mostrarCargos():
     return cargos
 
 def inserirMateria(nome_materia):
-    db = dataset.connect('sqlite:///../pyschool/database/database.db')
+    db = dataset.connect('sqlite:///database/database.db')
     table = db['materia']
 
     data = dict(nome=nome_materia)
     table.insert(data)
 
 def mostrarMaterias():
-    db = dataset.connect('sqlite:///../pyschool/database/database.db')
+    db = dataset.connect('sqlite:///database/database.db')
     materias = []
     for x in db['materia']:
         materias.append(x['nome'])
