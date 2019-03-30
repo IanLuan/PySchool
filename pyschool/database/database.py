@@ -1,6 +1,32 @@
 import dataset
 
 #Inserção em ensino: matéria que relaciona professor e matéria
+
+def autenticar(email,senha):
+    db = dataset.connect('sqlite:///database/database.db')
+
+    statement = "SELECT id FROM professor WHERE email='{}' and senha='{}'".format(email,senha)
+
+    id = None
+    type = None
+
+    for row in db.query(statement):
+        id = row['id']
+        type = "professor"
+
+    statement = "SELECT id FROM servidor WHERE email='{}' and senha='{}'".format(email, senha)
+
+    for row in db.query(statement):
+        id = row['id']
+        type = "servidor"
+
+   # statement = "SELECT id FROM administrador WHERE email='{}' and senha='{}'".format(email, senha)
+
+   #for row in db.query(statement):
+   #     id = row['id']
+
+    return id, type
+
 def inserirEnsino(id_professor, materias):
     db = dataset.connect('sqlite:///database/database.db')
     table = db['ensino']
