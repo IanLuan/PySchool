@@ -1,11 +1,8 @@
 import sys
-from pyschool.interface.cadastroMateriaWindow import *
-from pyschool.database import database
+from interface.cadastroMateriaWindow import *
+from database import database
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
-
-#from database import database
-#from interface.cadastroServidorWindow import *
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
