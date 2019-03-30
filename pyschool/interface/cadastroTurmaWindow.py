@@ -117,7 +117,7 @@ class Ui_CadastroTurma(object):
 "color:#fff;")
         self.lblEscolha_2.setObjectName("lblEscolha_2")
         self.btnMaterias = QtWidgets.QPushButton(self.centralwidget)
-        self.btnMaterias.setGeometry(QtCore.QRect(15, 132, 121, 30))
+        self.btnMaterias.setGeometry(QtCore.QRect(15, 132, 147, 30))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -126,9 +126,9 @@ class Ui_CadastroTurma(object):
         font = QtGui.QFont()
         font.setFamily("Noto Sans")
         font.setPointSize(10)
-        font.setBold(True)
+        font.setBold(False)
         font.setItalic(False)
-        font.setWeight(75)
+        font.setWeight(50)
         self.btnMaterias.setFont(font)
         self.btnMaterias.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.btnMaterias.setLayoutDirection(QtCore.Qt.LeftToRight)
@@ -141,7 +141,7 @@ class Ui_CadastroTurma(object):
 "")
         self.btnMaterias.setObjectName("btnMaterias")
         self.lineMaterias = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineMaterias.setGeometry(QtCore.QRect(140, 132, 345, 31))
+        self.lineMaterias.setGeometry(QtCore.QRect(168, 132, 317, 31))
         self.lineMaterias.setStyleSheet("QLineEdit { \n"
 "border: 5px solid white;\n"
 "border-radius: 15px;\n"
@@ -150,7 +150,7 @@ class Ui_CadastroTurma(object):
         self.lineMaterias.setReadOnly(True)
         self.lineMaterias.setObjectName("lineMaterias")
         self.lblMateria = QtWidgets.QLabel(self.centralwidget)
-        self.lblMateria.setGeometry(QtCore.QRect(144, 110, 55, 23))
+        self.lblMateria.setGeometry(QtCore.QRect(180, 110, 55, 23))
         self.lblMateria.setStyleSheet("font: 25 10pt \"Malgun Gothic Semilight\";\n"
 "color: #fff;")
         self.lblMateria.setObjectName("lblMateria")
