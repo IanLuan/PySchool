@@ -90,7 +90,7 @@ def mostrarSeries():
 
     series = []
     for row in table.distinct('serie'):
-        series.append(row['nome'])
+        series.append(row['serie'])
 
     return series
 
@@ -153,4 +153,15 @@ def mostrarMaterias():
     materias = []
     for x in db['materia']:
         materias.append(x['nome'])
+    return materias
+
+def mostrarMateriasProfessor():
+    db = dataset.connect('sqlite:///database/database.db')
+    materias = []
+
+    statement = "select materia.nome as materia, professor.nome as professor from ensino, materia, professor where ensino.id_professor = professor.id and ensino.id_materia = materia.id order by materia.nome"
+
+    for row in db.query(statement):
+        materias.append((row['materia'],row['professor']))
+
     return materias

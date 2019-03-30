@@ -2,12 +2,11 @@
 
 # Form implementation generated from reading ui file 'cadastroTurma.ui'
 #
-# Created by: PyQt5 UI code generator 5.12
+# Created by: PyQt5 UI code generator 5.11.3
 #
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
 
 class Ui_CadastroTurma(object):
     def setupUi(self, CadastroTurma):
@@ -33,10 +32,6 @@ class Ui_CadastroTurma(object):
         self.cbSerie.setAutoFillBackground(True)
         self.cbSerie.setStyleSheet("")
         self.cbSerie.setObjectName("cbSerie")
-        self.cbSerie.addItem("")
-        self.cbSerie.addItem("")
-        self.cbSerie.addItem("")
-        self.cbSerie.addItem("")
         self.lblEscolha = QtWidgets.QLabel(self.centralwidget)
         self.lblEscolha.setGeometry(QtCore.QRect(16, 2, 181, 23))
         self.lblEscolha.setStyleSheet("font: 75 10pt \"Malgun Gothic\";\n"
@@ -174,10 +169,6 @@ class Ui_CadastroTurma(object):
     def retranslateUi(self, CadastroTurma):
         _translate = QtCore.QCoreApplication.translate
         CadastroTurma.setWindowTitle(_translate("CadastroTurma", "Cadastrar Turma"))
-        self.cbSerie.setItemText(0, _translate("CadastroTurma", "3º ano - Ensino Médio"))
-        self.cbSerie.setItemText(1, _translate("CadastroTurma", "2º ano - Ensino Médio"))
-        self.cbSerie.setItemText(2, _translate("CadastroTurma", "1º ano - Ensino Médio"))
-        self.cbSerie.setItemText(3, _translate("CadastroTurma", "Outro"))
         self.lblEscolha.setText(_translate("CadastroTurma", "Escolha a série"))
         self.lblTurma.setText(_translate("CadastroTurma", "Turma"))
         self.lblMax.setText(_translate("CadastroTurma", "Máximo de Alunos"))
@@ -188,8 +179,6 @@ class Ui_CadastroTurma(object):
         self.lblMateria.setText(_translate("CadastroTurma", "Matérias"))
 
 
-
-
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
@@ -198,3 +187,4 @@ if __name__ == "__main__":
     ui.setupUi(CadastroTurma)
     CadastroTurma.show()
     sys.exit(app.exec_())
+

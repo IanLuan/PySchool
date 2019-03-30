@@ -22,7 +22,10 @@ materias_confirmadas = ""
 
 def escolherMaterias():
 
-    materias = database.mostrarMaterias()
+    materias = database.mostrarMateriasProfessor()
+
+    for i, mat_prof in enumerate(materias):
+        materias[i] = mat_prof[0] + " - Prof. "+ mat_prof[1]
 
     #Adicionar os widgets na tela uma só vez
     if dialog.layout.isEmpty():
@@ -58,7 +61,8 @@ def verificarMaterias(event):
     
     msg = QMessageBox()
     msg.setWindowTitle("Matérias")
-    msg.setText(", ".join(materias_confirmadas))
+    msg.setIcon(QMessageBox.Information)
+    msg.setText("\n".join(materias_confirmadas))
     msg.show()
     msg.exec_()
 
@@ -89,6 +93,10 @@ def cadastrarTurma():
     tela.lineGrupo.setText("")
     tela.spinMax.setValue(30)
 
+#Adicionando Séries ao CbBox
+series = database.mostrarSeries()
+series.append("Outro")
+tela.cbSerie.addItems(series)
 
 # Escolhendo Série
 tela.lineSerie.setText(tela.cbSerie.currentText())

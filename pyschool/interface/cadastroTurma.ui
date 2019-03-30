@@ -61,26 +61,6 @@ background-color:  rgb(21, 143, 181);
     <property name="styleSheet">
      <string notr="true"/>
     </property>
-    <item>
-     <property name="text">
-      <string>3º ano - Ensino Médio</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>2º ano - Ensino Médio</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>1º ano - Ensino Médio</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Outro</string>
-     </property>
-    </item>
    </widget>
    <widget class="QLabel" name="lblEscolha">
     <property name="geometry">

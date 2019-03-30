@@ -3,9 +3,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 #from database import database
 #from interface.login import *
-from pyschool.interface.homeAdmWindow import *
-from pyschool.interface.homeServidorWindow import *
-from pyschool.interface.homeProfessorWindow import *
+
 from pyschool.interface.loginWindow import *
 from pyschool.database import database
 from pessoa import Pessoa
@@ -26,25 +24,13 @@ def logar():
         id, type = pessoa.autenticar(email, senha)
 
         if type == "professor":
-            MainWindowProfessor = QtWidgets.QMainWindow()
-            homeProfessor = Ui_homeProfessor()
-            homeProfessor.setupUi(MainWindowProfessor)
-            MainWindowProfessor.show()
-            MainWindowProfessor.exec_()
+            pass
 
         elif type == "servidor":
-            MainWindowServidor = QtWidgets.QMainWindow()
-            homeServidor = Ui_HomeServidor()
-            homeServidor.setupUi(MainWindowServidor)
-            MainWindowServidor.show()
-            MainWindowServidor.exec_()
+            pass
             
         elif type == "administrador":
-            MainWindowAdm = QtWidgets.QMainWindow()
-            homeAdm = Ui_homeAdm()
-            homeAdm.setupUi(MainWindowAdm)
-            MainWindowAdm.show()
-            MainWindowAdm.exec_()
+            pass
 
     except UserWarning:
         msg = QMessageBox(None)
