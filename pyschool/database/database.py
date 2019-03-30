@@ -27,6 +27,30 @@ def autenticar(email,senha):
 
     return id, type
 
+def inserirClasse(materias):
+    db = dataset.connect('sqlite:///database/database.db')
+
+    id_professores = []
+    id_turma = retornarUltimoId("turma")
+
+    for x in materias:
+        mat_prof = x.split(" - ")
+        professor = mat_prof[1]
+        professor = professor.replace('Prof. ', '')
+
+        print(professor)
+
+        statement = "SELECT id FROM professor WHERE nome = '{}'".format(professor)
+        for row in db.query(statement):
+            id_professores.append(row['id'])
+
+    print(id_professores)
+    table = db['classe']
+
+    for x in id_professores:
+        data = dict(id_professor=x, id_turma=id_turma)
+        table.insert(data)
+
 def inserirEnsino(id_professor, materias):
     db = dataset.connect('sqlite:///database/database.db')
     table = db['ensino']
@@ -137,7 +161,6 @@ def mostrarCargos():
     db = dataset.connect('sqlite:///database/database.db')
     cargos = []
     for x in db['cargo']:
-        print("a")
         cargos.append(x['nome'])
     return cargos
 

@@ -66,7 +66,6 @@ def verificarMaterias(event):
     msg.show()
     msg.exec_()
 
-
 def escolherSerie():
     if tela.cbSerie.currentText() == "Outro":
         tela.lineSerie.setReadOnly(False)
@@ -87,11 +86,20 @@ def cadastrarTurma():
     # Salvar no Banco
     database.inserirTurma(turma)
 
+    # Criando classe
+    database.inserirClasse(materias_confirmadas)
+
     # Limpar campos
     tela.cbSerie.setCurrentIndex(0)
     tela.lineSerie.setText("")
     tela.lineGrupo.setText("")
+    tela.lineMaterias.setText("")
     tela.spinMax.setValue(30)
+
+    #Limpando checkbox
+    index = dialog.layout.count()
+    for x in range(index):
+        dialog.layout.itemAt(x).widget().setCheckState(False)
 
 #Adicionando Séries ao CbBox
 series = database.mostrarSeries()
