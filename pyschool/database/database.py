@@ -78,7 +78,7 @@ def inserirProfessor(professor):
     table.insert(data)
 
 def inserirTurma(turma):
-    db = dataset.connect('sqlite:////database/database.db')
+    db = dataset.connect('sqlite:///database/database.db')
     table = db['turma']
 
     data = dict(serie=turma.getSerie(),grupo=turma.getGrupo(),maxAlunos=turma.getMaxAlunos(),status=turma.getStatus())
