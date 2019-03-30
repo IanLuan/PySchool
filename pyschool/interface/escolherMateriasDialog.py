@@ -31,16 +31,7 @@ class Ui_Dialog(object):
         self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 358, 339))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
 
-        listCheckBox = ["Checkbox_1", "Checkbox_2", "Checkbox_3", "Checkbox_4", "Checkbox_5",
-                        "Checkbox_6", "Checkbox_7", "Checkbox_8", "Checkbox_9", "Checkbox_10", "Checkbox_6",
-                        "Checkbox_7", "Checkbox_8", "Checkbox_9", "Checkbox_10"]
-
-        layout = QVBoxLayout(self.scrollAreaWidgetContents)
-
-        for i, v in enumerate(listCheckBox):
-            listCheckBox[i] = QCheckBox(v)
-            layout.addWidget(listCheckBox[i])
-
+        self.layout = QVBoxLayout(self.scrollAreaWidgetContents)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.scrollAreaWidgetContents.setStyleSheet("background-color: rgb(255, 255, 255)")
 

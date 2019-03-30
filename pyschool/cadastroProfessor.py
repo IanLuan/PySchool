@@ -1,33 +1,65 @@
 import sys
 import os.path
 import shutil
-from pyschool.interface.cadastroProfessorWindow import *
-from pyschool.interface.confirmarMateriaWindow import *
-from pyschool.servidor import *
-from pyschool.endereco import *
-from pyschool.database import database
+
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 
-#from database import database
-#from interface.cadastroServidorWindow import *
-#from servidor import *
-#from endereco import *
+from interface.escolherMateriasDialog import *
+#from pyschool.interface.escolherMateriasDialog import *
+from database import database
+#from pyschool.database import database
+from interface.cadastroProfessorWindow import *
+#from pyschool.interface.cadastroProfessorWindow import *
+from endereco import *
+#from pyschool.endereco import *
+from professor import *
+#from pyschool.professor import *
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
 tela = Ui_cadastroProfessor()
 tela.setupUi(MainWindow)
 
-global foto
-foto = ""
+Dialog = QtWidgets.QDialog()
+dialog = Ui_Dialog()
+dialog.setupUi(Dialog)
+
+def confirmarMaterias():
+
+    index = dialog.layout.count()
+    itens = []
+    for x in range(index):
+        itens.append(dialog.layout.itemAt(x).widget())
+
+    materias_selecionadas = []
+
+    for x in itens:
+        if x.isChecked():
+            materias_selecionadas.append(x.text())
+    Dialog.close()
+
+    tela.lineMaterias.setText(", ".join(materias_selecionadas))
+    global materias_confirmadas
+    materias_confirmadas = materias_selecionadas
 
 def escolherMaterias():
 
-    dialog = Ui_Dialog()
-    dialog.show()
+    materias = database.mostrarMaterias()
+
+    for i, v in enumerate(materias):
+        materias[i] = QCheckBox(v)
+        materias[i].setStyleSheet("font: 25 15pt \"Malgun Gothic Semilight\";\n")
+        dialog.layout.addWidget(materias[i])
+
+    dialog.btnConfirmar.clicked.connect(confirmarMaterias)
+
+    Dialog.show()
+    Dialog.exec_()
 
 def carregarFoto(event):
+
+    global foto
     image = QFileDialog.getOpenFileName(None, 'Escolher foto', '', "Images(*.png *.jpeg *.jpg)")
     imagePath = image[0]
 
@@ -70,12 +102,16 @@ def cadastrarProfessor():
                         tela.lineCidade.text(),tela.cbEstado.currentText())
     database.inserirEndereco(endereco)
 
-    id_endereco = database.retornarIdEndereco()
+    id_endereco = database.retornarUltimoId("endereco")
 
-    #servidor = Servidor(tela.lineNome.text(),tela.dateNascimento.text(),tela.cbSexo.currentText(),tela.lineRg.text(),
-    #                    tela.lineCpf.text(),tela.lineTelefone.text(),id_endereco, tela.lineEmail.text(),tela.lineSenha.text(),tela.cbEstadoCivil.currentText(),
-    #                    foto,tela.rbSim.isChecked(),tela.cbCargo.currentText())
-    #database.inserirServidor(servidor)
+    professor = Professor(tela.lineNome.text(),tela.dateNascimento.text(),tela.cbSexo.currentText(),tela.lineRg.text(),
+                        tela.lineCpf.text(),tela.lineTelefone.text(),id_endereco, tela.lineEmail.text(),tela.lineSenha.text(),tela.cbEstadoCivil.currentText(),
+                        foto,materias_confirmadas)
+    database.inserirProfessor(professor)
+
+
+    id_professor = database.retornarUltimoId("professor")
+    database.inserirEnsino(id_professor, materias_confirmadas)
 
     tela.lineNome.setText("")
     tela.cbSexo.setCurrentIndex(0)
@@ -96,6 +132,7 @@ def cadastrarProfessor():
 
 #Definir ícone inicial
 def definirIcone():
+    global foto
     pixmap = QPixmap(os.path.dirname(os.path.abspath(__file__))+"/interface/icons/perfil.png")
     tela.lblFoto.setText(os.path.dirname(os.path.abspath(__file__))+"/interface/icons/perfil.png")
     new_pixmap = pixmap.scaled(120, 110, QtCore.Qt.IgnoreAspectRatio)

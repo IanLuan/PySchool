@@ -18,10 +18,8 @@ MainWindow = QtWidgets.QMainWindow()
 tela = Ui_cadastroServidor()
 tela.setupUi(MainWindow)
 
-global foto
-foto = ""
-
 def carregarFoto(event):
+    global foto
     image = QFileDialog.getOpenFileName(None, 'Escolher foto', '', "Images(*.png *.jpeg *.jpg)")
     imagePath = image[0]
 
@@ -59,13 +57,12 @@ def carregarFoto(event):
         new_pixmap = new_pixmap.scaled(150, 180, QtCore.Qt.IgnoreAspectRatio)
         tela.lblFoto.setPixmap(new_pixmap)
 
-
 def cadastrarServidor():
     endereco = Endereco(tela.lineRua.text(),tela.lineBairro.text(),tela.spinNumero.text(),tela.lineCep.text(),
                         tela.lineCidade.text(),tela.cbEstado.currentText())
     database.inserirEndereco(endereco)
 
-    id_endereco = database.retornarIdEndereco()
+    id_endereco = database.retornarUltimoId("endereco")
 
     servidor = Servidor(tela.lineNome.text(),tela.dateNascimento.text(),tela.cbSexo.currentText(),tela.lineRg.text(),
                         tela.lineCpf.text(),tela.lineTelefone.text(),id_endereco, tela.lineEmail.text(),tela.lineSenha.text(),tela.cbEstadoCivil.currentText(),
@@ -92,6 +89,7 @@ def cadastrarServidor():
 
 #Definir ícone inicial
 def definirIcone():
+    global foto
     pixmap = QPixmap(os.path.dirname(os.path.abspath(__file__))+"/interface/icons/perfil.png")
     tela.lblFoto.setText(os.path.dirname(os.path.abspath(__file__))+"/interface/icons/perfil.png")
     new_pixmap = pixmap.scaled(120, 110, QtCore.Qt.IgnoreAspectRatio)

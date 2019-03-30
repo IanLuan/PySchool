@@ -1,5 +1,14 @@
 import dataset
 
+#Inserção em ensino: matéria que relaciona professor e matéria
+def inserirEnsino(id_professor, materias):
+    db = dataset.connect('sqlite:///../pyschool/database/database.db')
+    table = db['ensino']
+
+    for x in materias:
+        data = dict(id_professor=id_professor, id_materia=retornarIdMateria(x))
+        table.insert(data)
+
 def inserirEndereco(endereco):
     db = dataset.connect('sqlite:///../pyschool/database/database.db')
     table = db['endereco']
@@ -8,10 +17,18 @@ def inserirEndereco(endereco):
                 estado=endereco.getEstado())
     table.insert(data)
 
-def retornarIdEndereco():
+def retornarUltimoId(tabela):
     db = dataset.connect('sqlite:///../pyschool/database/database.db')
 
-    statement = "SELECT * FROM endereco WHERE id = (SELECT MAX(id) FROM endereco)"
+    statement = "SELECT * FROM {} WHERE id = (SELECT MAX(id) FROM {})".format(tabela,tabela)
+
+    for row in db.query(statement):
+        return row['id']
+
+def retornarIdMateria(materia):
+    db = dataset.connect('sqlite:///../pyschool/database/database.db')
+
+    statement = "SELECT id FROM materia WHERE nome='{}'".format(materia)
 
     for row in db.query(statement):
         return row['id']
@@ -23,6 +40,15 @@ def inserirServidor(servidor):
     data = dict(nome=servidor.getNome(), nascimento=servidor.getNascimento(), sexo=servidor.getSexo(),rg=servidor.getRg(),cpf=servidor.getCpf(),
                 telefone=servidor.getTelefone(), id_endereco = servidor.getEndereco(), email=servidor.getEmail(),senha=servidor.getSenha(),estadoCivil=servidor.getEstadoCivil(),
                 foto=servidor.getFoto(),adm=servidor.getAdm(),cargo=servidor.getCargo())
+    table.insert(data)
+
+def inserirProfessor(professor):
+    db = dataset.connect('sqlite:///../pyschool/database/database.db')
+    table = db['professor']
+
+    data = dict(nome=professor.getNome(), nascimento=professor.getNascimento(), sexo=professor.getSexo(),rg=professor.getRg(),cpf=professor.getCpf(),
+                telefone=professor.getTelefone(), id_endereco = professor.getEndereco(), email=professor.getEmail(),senha=professor.getSenha(),estadoCivil=professor.getEstadoCivil(),
+                foto=professor.getFoto())
     table.insert(data)
 
 def inserirTurma(turma):
