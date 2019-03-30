@@ -17,6 +17,8 @@ Dialog = QtWidgets.QDialog()
 dialog = Ui_Dialog()
 dialog.setupUi(Dialog)
 
+global materias_confirmadas
+materias_confirmadas = ""
 
 def escolherMaterias():
 
