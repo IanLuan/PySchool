@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'homeServidor.ui'
+# Form implementation generated from reading ui file 'homeAdm.ui'
 #
 # Created by: PyQt5 UI code generator 5.12
 #
@@ -12,14 +12,14 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(680, 350)
+        MainWindow.resize(680, 370)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
         MainWindow.setSizePolicy(sizePolicy)
         MainWindow.setMinimumSize(QtCore.QSize(680, 200))
-        MainWindow.setMaximumSize(QtCore.QSize(680, 400))
+        MainWindow.setMaximumSize(QtCore.QSize(680, 600))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setStyleSheet("#centralwidget {\n"
 "background-color:  rgb(21, 143, 181);\n"
@@ -114,8 +114,50 @@ class Ui_MainWindow(object):
         self.btnTurmas.setIcon(icon4)
         self.btnTurmas.setIconSize(QtCore.QSize(32, 32))
         self.btnTurmas.setObjectName("btnTurmas")
+        self.btnServidores = QtWidgets.QPushButton(self.centralwidget)
+        self.btnServidores.setGeometry(QtCore.QRect(20, 240, 200, 90))
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.btnServidores.setFont(font)
+        self.btnServidores.setStyleSheet("border: 2px solid rgb(255, 123, 28);\n"
+"border-radius: 15px;\n"
+"background-color: rgb(255, 123, 28);\n"
+"color: #fff;")
+        self.btnServidores.setIcon(icon2)
+        self.btnServidores.setIconSize(QtCore.QSize(32, 32))
+        self.btnServidores.setObjectName("btnServidores")
+        self.btnExit = QtWidgets.QPushButton(self.centralwidget)
+        self.btnExit.setGeometry(QtCore.QRect(620, 334, 32, 32))
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.btnExit.setFont(font)
+        self.btnExit.setStyleSheet("")
+        self.btnExit.setText("")
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap("icons/exit.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.btnExit.setIcon(icon5)
+        self.btnExit.setIconSize(QtCore.QSize(32, 32))
+        self.btnExit.setFlat(True)
+        self.btnExit.setObjectName("btnExit")
+        self.btnCargos = QtWidgets.QPushButton(self.centralwidget)
+        self.btnCargos.setGeometry(QtCore.QRect(240, 240, 200, 90))
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.btnCargos.setFont(font)
+        self.btnCargos.setStyleSheet("border: 2px solid rgb(255, 123, 28);\n"
+"border-radius: 15px;\n"
+"background-color: rgb(255, 123, 28);\n"
+"color: #fff;")
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap("icons/work.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.btnCargos.setIcon(icon6)
+        self.btnCargos.setIconSize(QtCore.QSize(32, 32))
+        self.btnCargos.setObjectName("btnCargos")
         self.btnPerfil = QtWidgets.QPushButton(self.centralwidget)
-        self.btnPerfil.setGeometry(QtCore.QRect(20, 240, 200, 90))
+        self.btnPerfil.setGeometry(QtCore.QRect(460, 240, 200, 90))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
@@ -124,25 +166,11 @@ class Ui_MainWindow(object):
 "border-radius: 15px;\n"
 "background-color: rgb(255, 123, 28);\n"
 "color: #fff;")
-        icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("icons/person.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.btnPerfil.setIcon(icon5)
+        icon7 = QtGui.QIcon()
+        icon7.addPixmap(QtGui.QPixmap("icons/config.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.btnPerfil.setIcon(icon7)
         self.btnPerfil.setIconSize(QtCore.QSize(32, 32))
         self.btnPerfil.setObjectName("btnPerfil")
-        self.btnExit = QtWidgets.QPushButton(self.centralwidget)
-        self.btnExit.setGeometry(QtCore.QRect(620, 293, 32, 32))
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        self.btnExit.setFont(font)
-        self.btnExit.setStyleSheet("")
-        self.btnExit.setText("")
-        icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("icons/exit.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.btnExit.setIcon(icon6)
-        self.btnExit.setIconSize(QtCore.QSize(32, 32))
-        self.btnExit.setFlat(True)
-        self.btnExit.setObjectName("btnExit")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -157,8 +185,10 @@ class Ui_MainWindow(object):
         self.btnMaterias.setText(_translate("MainWindow", "Matérias"))
         self.btnProfessores.setText(_translate("MainWindow", "Professores"))
         self.btnTurmas.setText(_translate("MainWindow", "Turmas"))
-        self.btnPerfil.setText(_translate("MainWindow", "Perfil do Servidor"))
-        self.btnExit.setToolTip(_translate("MainWindow", "Sair"))
+        self.btnServidores.setText(_translate("MainWindow", "Servidores"))
+        self.btnExit.setToolTip(_translate("MainWindow", "<html><head/><body style=\"background-color: #fff;\"><p>Sair</p></body></html>"))
+        self.btnCargos.setText(_translate("MainWindow", "Cargos"))
+        self.btnPerfil.setText(_translate("MainWindow", "Perfil do Adm"))
 
 
 

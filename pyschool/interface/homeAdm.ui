@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>680</width>
-    <height>350</height>
+    <height>370</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -25,7 +25,7 @@
   <property name="maximumSize">
    <size>
     <width>680</width>
-    <height>400</height>
+    <height>600</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -250,7 +250,7 @@ color: #fff;</string>
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnPerfil">
+   <widget class="QPushButton" name="btnServidores">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -272,11 +272,11 @@ background-color: rgb(255, 123, 28);
 color: #fff;</string>
     </property>
     <property name="text">
-     <string>Perfil do Servidor</string>
+     <string>Servidores</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/person.png</normaloff>icons/person.png</iconset>
+      <normaloff>icons/alunos.png</normaloff>icons/alunos.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -289,7 +289,7 @@ color: #fff;</string>
     <property name="geometry">
      <rect>
       <x>620</x>
-      <y>293</y>
+      <y>334</y>
       <width>32</width>
       <height>32</height>
      </rect>
@@ -301,7 +301,7 @@ color: #fff;</string>
      </font>
     </property>
     <property name="toolTip">
-     <string>Sair</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body style=&quot;background-color: #fff;&quot;&gt;&lt;p&gt;Sair&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="styleSheet">
      <string notr="true"/>
@@ -321,6 +321,76 @@ color: #fff;</string>
     </property>
     <property name="flat">
      <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnCargos">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>240</y>
+      <width>200</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid rgb(255, 123, 28);
+border-radius: 15px;
+background-color: rgb(255, 123, 28);
+color: #fff;</string>
+    </property>
+    <property name="text">
+     <string>Cargos</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icons/work.png</normaloff>icons/work.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnPerfil">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>240</y>
+      <width>200</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid rgb(255, 123, 28);
+border-radius: 15px;
+background-color: rgb(255, 123, 28);
+color: #fff;</string>
+    </property>
+    <property name="text">
+     <string>Perfil do Adm</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icons/config.png</normaloff>icons/config.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
     </property>
    </widget>
   </widget>
