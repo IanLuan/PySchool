@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>cadastroServidor</class>
- <widget class="QMainWindow" name="cadastroServidor">
+ <class>cadastroProfessor</class>
+ <widget class="QMainWindow" name="cadastroProfessor">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -1138,7 +1138,7 @@ box-shadow: 5px -9px 3px #000;
        <string>Definir Matérias</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEmail_2">
+     <widget class="QLineEdit" name="lineMaterias">
       <property name="geometry">
        <rect>
         <x>220</x>
