@@ -10,7 +10,7 @@ import shutil
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 
-from database import database
+from database.database import Database
 from interface.cadastroServidorWindow import *
 from servidor import *
 from administrador import *
@@ -20,6 +20,8 @@ app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
 tela = Ui_cadastroServidor()
 tela.setupUi(MainWindow)
+
+database = Database()
 
 def carregarFoto(event):
     global foto

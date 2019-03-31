@@ -5,8 +5,10 @@ from PyQt5.QtGui import *
 from interface.cadastroTurmaWindow import *
 from interface.escolherMateriasDialog import *
 
-import database.database as database
+from database.database import Database
 from turma import Turma
+
+database = Database()
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()

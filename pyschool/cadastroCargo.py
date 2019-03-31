@@ -2,8 +2,10 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from cargo import Cargo
-from database import database
+from database.database import Database
 from interface.cadastroCargoWindow import *
+
+database = Database()
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()

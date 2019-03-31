@@ -7,14 +7,15 @@ from PyQt5.QtGui import *
 
 #from interface.escolherMateriasDialog import *
 from pyschool.interface.escolherMateriasDialog import *
-#from database import database
-from pyschool.database import database
+from database.database import Database
 #from interface.cadastroProfessorWindow import *
 from pyschool.interface.cadastroProfessorWindow import *
 #from endereco import *
 from pyschool.endereco import *
 #from professor import *
 from pyschool.professor import *
+
+database = Database()
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()

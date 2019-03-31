@@ -5,23 +5,16 @@ import shutil
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 
-#from interface.escolherMateriasDialog import *
-from pyschool.interface.escolherMateriasDialog import *
-#from database import database
-from pyschool.database import database
-#from interface.cadastroProfessorWindow import *
-from pyschool.interface.perfilProfessorWindow import *
-#from endereco import *
-from pyschool.endereco import *
-#from professor import *
-from pyschool.professor import *
+from interface.perfilProfessorWindow import *
+from database.database import Database
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
 tela = Ui_perfilProfessor()
 tela.setupUi(MainWindow)
+database_professor = Database()
 
-professor = database.mostrarDadosProfessor(4)
+professor = database_professor.mostrarDadosProfessor(4)
 tela.lineNome.setText(professor.getNome())
 tela.cbSexo.setCurrentText(professor.getSexo())
 tela.lineRg.setText(professor.getRg())

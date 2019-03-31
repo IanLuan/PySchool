@@ -2,261 +2,226 @@ import dataset
 from endereco import *
 from professor import *
 
-#PROFESSOR
-def inserirProfessor(professor):
-    db = dataset.connect('sqlite:///database/database.db')
-    table = db['professor']
-
-    data = dict(nome=professor.getNome(), nascimento=professor.getNascimento(), sexo=professor.getSexo(),rg=professor.getRg(),cpf=professor.getCpf(),
-                telefone=professor.getTelefone(), id_endereco = professor.getEndereco(), email=professor.getEmail(),senha=professor.getSenha(),estadoCivil=professor.getEstadoCivil(),
-                foto=professor.getFoto())
-    table.insert(data)
-
-def mostrarDadosProfessor(id):
-    db = dataset.connect('sqlite:///database/database.db')
-
-    statement = "select professor.nome as nome, nascimento, sexo, rg, cpf, telefone, email, estadoCivil, foto, materia.nome as materia, rua," \
-                " numero, bairro, cidade, estado, cep from professor, ensino, materia, endereco where professor.id = '{}' and ensino.id_professor='{}' " \
-                "and materia.id = ensino.id_materia and professor.id_endereco = endereco.id".format(id,id)
-
-    materias = []
-
-    for row in db.query(statement):
-        nome = row['nome']
-        nascimento = row['nascimento']
-        sexo = row['sexo']
-        rg = row['rg']
-        email = row['email']
-        estadoCivil = row['estadoCivil']
-        foto = row['foto']
-        cpf = row['cpf']
-        telefone = row['telefone']
-        rua = row['rua']
-        numero = row['numero']
-        bairro = row['bairro']
-        cidade = row['cidade']
-        estado = row['estado']
-        cep = row['cep']
-        materias.append(row['materia'])
-
-    endereco = Endereco(rua, bairro, numero, cep, cidade, estado)
-    professor = Professor(nome, nascimento, sexo, rg, cpf, telefone, endereco, email, None, estadoCivil, foto, materias)
-
-    return professor
-
-#MATÉRIA
-def retornarIdMateria(materia):
-    db = dataset.connect('sqlite:///database/database.db')
-
-    statement = "SELECT id FROM materia WHERE nome='{}'".format(materia)
-
-    for row in db.query(statement):
-        return row['id']
-
-def inserirMateria(nome_materia):
-    db = dataset.connect('sqlite:///database/database.db')
-    table = db['materia']
+class Database:
+
+    def __init__(self):
+        self.db = dataset.connect('sqlite:///database/database.db')
+        self.table_professor = self.db['professor']
+        self.table_materia = self.db['materia']
+        self.table_aluno = self.db['aluno']
+        self.table_servidor = self.db['servidor']
+        self.table_administrdor = self.db['administrador']
+        self.table_cargo = self.db['cargo']
+        self.table_endereco = self.db['endereco']
+        self.table_turma = self.db['turma']
+        self.table_classe = self.db['classe']
+        self.table_ensino = self.db['ensino']
+
+    #PROFESSOR
+    def inserirProfessor(self, professor):
+        data = dict(nome=professor.getNome(), nascimento=professor.getNascimento(), sexo=professor.getSexo(),rg=professor.getRg(),cpf=professor.getCpf(),
+                    telefone=professor.getTelefone(), id_endereco = professor.getEndereco(), email=professor.getEmail(),senha=professor.getSenha(),estadoCivil=professor.getEstadoCivil(),
+                    foto=professor.getFoto())
+        self.table_professor.insert(data)
+
+    def mostrarDadosProfessor(self, id):
+        statement = "select professor.nome as nome, nascimento, sexo, rg, cpf, telefone, email, estadoCivil, foto, materia.nome as materia " \
+                    "from professor, ensino, materia where professor.id = '{}' and ensino.id_professor='{}' " \
+                    "and materia.id = ensino.id_materia".format(id,id)
+
+        materias = []
+
+        for row in self.db.query(statement):
+            nome = row['nome']
+            nascimento = row['nascimento']
+            sexo = row['sexo']
+            rg = row['rg']
+            email = row['email']
+            estadoCivil = row['estadoCivil']
+            foto = row['foto']
+            cpf = row['cpf']
+            telefone = row['telefone']
+            materias.append(row['materia'])
+
+        professor = Professor(nome, nascimento, sexo, rg, cpf, telefone, self.mostrarEndereco(id), email, None, estadoCivil, foto, materias)
+        return professor
+
+    #MATÉRIA
+    def retornarIdMateria(self, materia):
+        statement = "SELECT id FROM materia WHERE nome='{}'".format(materia)
+
+        for row in self.db.query(statement):
+            return row['id']
+
+    def inserirMateria(self, nome_materia):
+        data = dict(nome=nome_materia)
+        self.table_materia.insert(data)
 
-    data = dict(nome=nome_materia)
-    table.insert(data)
+    def mostrarMaterias(self):
+        materias = []
+        for x in self.db['materia']:
+            materias.append(x['nome'])
+        return materias
 
-def mostrarMaterias():
-    db = dataset.connect('sqlite:///database/database.db')
-    materias = []
-    for x in db['materia']:
-        materias.append(x['nome'])
-    return materias
+    #ALUNO
+
+    #CARGO
+    def inserirCargo(self, nome_cargo):
+        data = dict(nome=nome_cargo)
+        self.table_cargo.insert(data)
+
+    def mostrarCargos(self):
+        cargos = []
+        for x in self.db['cargo']:
+            cargos.append(x['nome'])
+        return cargos
+
+    #SERVIDOR
+    def inserirServidor(self,servidor):
+        data = dict(nome=servidor.getNome(), nascimento=servidor.getNascimento(), sexo=servidor.getSexo(),rg=servidor.getRg(),cpf=servidor.getCpf(),
+                    telefone=servidor.getTelefone(), id_endereco = servidor.getEndereco(), email=servidor.getEmail(),senha=servidor.getSenha(),estadoCivil=servidor.getEstadoCivil(),
+                    foto=servidor.getFoto(),cargo=servidor.getCargo())
+        self.table_servidor.insert(data)
+
+    #ADMINISTRADOR
+    def inserirAdministrador(self, administrador):
+        data = dict(nome=administrador.getNome(), nascimento=administrador.getNascimento(), sexo=administrador.getSexo(),rg=administrador.getRg(),
+                    cpf=administrador.getCpf(), telefone=administrador.getTelefone(), id_endereco = administrador.getEndereco(), email=administrador.getEmail(),
+                    senha=administrador.getSenha(),estadoCivil=administrador.getEstadoCivil(),foto=administrador.getFoto(),cargo=administrador.getCargo())
+        self.table_administrador.insert(data)
 
-#ALUNO
+    #TURMA
+    def inserirTurma(self, turma):
+        data = dict(serie=turma.getSerie(),grupo=turma.getGrupo(),maxAlunos=turma.getMaxAlunos(),status=turma.getStatus())
+        self.table_turma.insert(data)
 
-#CARGO
-def inserirCargo(nome_cargo):
-    db = dataset.connect('sqlite:///database/database.db')
-    table = db['cargo']
+    def mostrarSeries(self):
+        series = []
+        for row in self.table_turma.distinct('serie'):
+            series.append(row['serie'])
 
-    data = dict(nome=nome_cargo)
-    table.insert(data)
+        return series
 
-def mostrarCargos():
-    db = dataset.connect('sqlite:///database/database.db')
-    cargos = []
-    for x in db['cargo']:
-        cargos.append(x['nome'])
-    return cargos
+    def mostrarSeriesAtivas(self):
+        series = []
 
-#SERVIDOR
-def inserirServidor(servidor):
-    db = dataset.connect('sqlite:///database/database.db')
-    table = db['servidor']
+        statement = 'SELECT DISTINCT serie FROM turma where status=1'
+        for row in self.db.query(statement):
+            series.append(row['serie'])
 
-    data = dict(nome=servidor.getNome(), nascimento=servidor.getNascimento(), sexo=servidor.getSexo(),rg=servidor.getRg(),cpf=servidor.getCpf(),
-                telefone=servidor.getTelefone(), id_endereco = servidor.getEndereco(), email=servidor.getEmail(),senha=servidor.getSenha(),estadoCivil=servidor.getEstadoCivil(),
-                foto=servidor.getFoto(),cargo=servidor.getCargo())
-    table.insert(data)
+        return series
 
-#ADMINISTRADOR
-def inserirAdministrador(administrador):
-    db = dataset.connect('sqlite:///database/database.db')
-    table = db['administrador']
+    def mostrarGruposAtivos(self, serie):
+        grupos = []
 
-    data = dict(nome=administrador.getNome(), nascimento=administrador.getNascimento(), sexo=administrador.getSexo(),rg=administrador.getRg(),
-                cpf=administrador.getCpf(), telefone=administrador.getTelefone(), id_endereco = administrador.getEndereco(), email=administrador.getEmail(),
-                senha=administrador.getSenha(),estadoCivil=administrador.getEstadoCivil(),foto=administrador.getFoto(),cargo=administrador.getCargo())
-    table.insert(data)
+        statement = 'SELECT DISTINCT grupo FROM turma where serie="{}"'.format(serie) + ' and status=1'
 
-#TURMA
-def inserirTurma(turma):
-    db = dataset.connect('sqlite:///database/database.db')
-    table = db['turma']
+        for row in self.db.query(statement):
+            grupos.append(row['grupo'])
 
-    data = dict(serie=turma.getSerie(),grupo=turma.getGrupo(),maxAlunos=turma.getMaxAlunos(),status=turma.getStatus())
-    table.insert(data)
+        return grupos
 
-def mostrarSeries():
-    db = dataset.connect('sqlite:///database/database.db')
-    table = db['turma']
+    def mostrarQuantidadeMax(self, serie, grupo):
+        quantidade = 0
 
-    series = []
-    for row in table.distinct('serie'):
-        series.append(row['serie'])
+        statement = 'SELECT maxAlunos FROM turma where serie="{}"'.format(serie) + ' and status=1 and grupo="{}"'.format(grupo)
 
-    return series
+        for row in self.db.query(statement):
+            quantidade = row['maxAlunis']
 
-def mostrarSeriesAtivas():
-    db = dataset.connect('sqlite:///database/database.db')
-    series = []
+        return quantidade
 
-    statement = 'SELECT DISTINCT serie FROM turma where status=1'
-    for row in db.query(statement):
-        series.append(row['serie'])
 
-    return series
+    #PESSOA
+    def autenticar(self, email, senha):
+        statement = "SELECT id FROM professor WHERE email='{}' and senha='{}'".format(email, senha)
 
-def mostrarGruposAtivos(serie):
-    db = dataset.connect('sqlite:///database/database.db')
-    grupos = []
+        id = None
+        type = None
 
-    statement = 'SELECT DISTINCT grupo FROM turma where serie="{}"'.format(serie) + ' and status=1'
+        for row in self.db.query(statement):
+            id = row['id']
+            type = "professor"
 
-    for row in db.query(statement):
-        grupos.append(row['grupo'])
+        statement = "SELECT id FROM servidor WHERE email='{}' and senha='{}'".format(email, senha)
 
-    return grupos
+        for row in self.db.query(statement):
+            id = row['id']
+            type = "servidor"
 
-def mostrarQuantidadeMax(serie, grupo):
-    db = dataset.connect('sqlite:///database/database.db')
-    quantidade = 0
+        statement = "SELECT id FROM administrador WHERE email='{}' and senha='{}'".format(email, senha)
 
-    statement = 'SELECT maxAlunos FROM turma where serie="{}"'.format(serie) + ' and status=1 and grupo="{}"'.format(grupo)
+        for row in self.db.query(statement):
+            id = row['id']
 
-    for row in db.query(statement):
-        quantidade = row['maxAlunis']
+        return id, type
 
-    return quantidade
+    #CLASSE (Relação de professor e turma)
+    def inserirClasse(self, materias):
+        id_professores = []
+        id_turma = retornarUltimoId("turma")
 
+        for x in materias:
+            mat_prof = x.split(" - ")
+            professor = mat_prof[1]
+            professor = professor.replace('Prof. ', '')
 
-#PESSOA
-def autenticar(email, senha):
-    db = dataset.connect('sqlite:///database/database.db')
+            statement = "SELECT id FROM professor WHERE nome = '{}'".format(professor)
+            for row in self.db.query(statement):
+                id_professores.append(row['id'])
 
-    statement = "SELECT id FROM professor WHERE email='{}' and senha='{}'".format(email, senha)
+        for x in id_professores:
+            data = dict(id_professor=x, id_turma=id_turma)
+            self.table_classe.insert(data)
 
-    id = None
-    type = None
+    #ENSINO (Relação de professor e matéria)
+    def inserirEnsino(self, id_professor, materias):
+        for x in materias:
+            data = dict(id_professor=id_professor, id_materia=retornarIdMateria(x))
+            self.table_ensino.insert(data)
 
-    for row in db.query(statement):
-        id = row['id']
-        type = "professor"
+    def mostrarMateriasProfessor(self):
+        materias = []
 
-    statement = "SELECT id FROM servidor WHERE email='{}' and senha='{}'".format(email, senha)
+        statement = "select materia.nome as materia, professor.nome as professor from ensino, materia, professor where ensino.id_professor = professor.id and ensino.id_materia = materia.id order by materia.nome"
 
-    for row in db.query(statement):
-        id = row['id']
-        type = "servidor"
+        for row in self.db.query(statement):
+            materias.append((row['materia'],row['professor']))
 
-    statement = "SELECT id FROM administrador WHERE email='{}' and senha='{}'".format(email, senha)
+        return materias
 
-    for row in db.query(statement):
-        id = row['id']
+    #ENDERECO
+    def inserirEndereco(self, endereco):
+        data = dict(rua=endereco.getRua(),bairro=endereco.getBairro(),numero=endereco.getNumero(),cep=endereco.getCep(),cidade=endereco.getCidade(),
+                    estado=endereco.getEstado())
+        self.table_endereco.insert(data)
 
-    return id, type
+    def mostrarEndereco(self, id):
+        statement = "select rua, numero, bairro, cidade, estado, cep from professor, ensino, endereco where professor.id = '{}' and ensino.id_professor = '{}' and professor.id_endereco = endereco.id".format(id, id)
 
+        for row in self.db.query(statement):
+            rua = row['rua']
+            numero = row['numero']
+            bairro = row['bairro']
+            cidade = row['cidade']
+            estado = row['estado']
+            cep = row['cep']
 
-#CLASSE (Relação de professor e turma)
-def inserirClasse(materias):
-    db = dataset.connect('sqlite:///database/database.db')
+        endereco = Endereco(rua, bairro, numero, cep, cidade, estado)
+        return endereco
 
-    id_professores = []
-    id_turma = retornarUltimoId("turma")
+    #UTEIS
+    def retornarUltimoId(self, tabela):
+        statement = "SELECT * FROM {} WHERE id = (SELECT MAX(id) FROM {})".format(tabela,tabela)
 
-    for x in materias:
-        mat_prof = x.split(" - ")
-        professor = mat_prof[1]
-        professor = professor.replace('Prof. ', '')
+        for row in self.db.query(statement):
+            return row['id']
 
-        statement = "SELECT id FROM professor WHERE nome = '{}'".format(professor)
-        for row in db.query(statement):
-            id_professores.append(row['id'])
+    def existe(self, nome, table):
+        statement = 'SELECT id FROM {} where nome="{}"'.format(table, nome)
+        existe = False
 
-    table = db['classe']
+        for row in self.db.query(statement):
+            existe = True
 
-    for x in id_professores:
-        data = dict(id_professor=x, id_turma=id_turma)
-        table.insert(data)
-
-
-#ENSINO (Relação de professor e matéria)
-def inserirEnsino(id_professor, materias):
-    db = dataset.connect('sqlite:///database/database.db')
-    table = db['ensino']
-
-    for x in materias:
-        data = dict(id_professor=id_professor, id_materia=retornarIdMateria(x))
-        table.insert(data)
-
-def mostrarMateriasProfessor():
-    db = dataset.connect('sqlite:///database/database.db')
-    materias = []
-
-    statement = "select materia.nome as materia, professor.nome as professor from ensino, materia, professor where ensino.id_professor = professor.id and ensino.id_materia = materia.id order by materia.nome"
-
-    for row in db.query(statement):
-        materias.append((row['materia'],row['professor']))
-
-    return materias
-
-
-#ENDERECO
-def inserirEndereco(endereco):
-    db = dataset.connect('sqlite:///database/database.db')
-    table = db['endereco']
-
-    data = dict(rua=endereco.getRua(),bairro=endereco.getBairro(),numero=endereco.getNumero(),cep=endereco.getCep(),cidade=endereco.getCidade(),
-                estado=endereco.getEstado())
-    table.insert(data)
-
-#UTEIS
-def retornarUltimoId(tabela):
-    db = dataset.connect('sqlite:///database/database.db')
-
-    statement = "SELECT * FROM {} WHERE id = (SELECT MAX(id) FROM {})".format(tabela,tabela)
-
-    for row in db.query(statement):
-        return row['id']
-
-def existe(nome, table):
-    db = dataset.connect('sqlite:///database/database.db')
-
-    statement = 'SELECT id FROM {} where nome="{}"'.format(table, nome)
-    existe = False
-
-    for row in db.query(statement):
-        existe = True
-
-    return True
-
-
-
-
-
-
+        return True

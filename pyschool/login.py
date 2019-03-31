@@ -1,12 +1,12 @@
 import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
-#from database import database
-#from interface.login import *
 
-from pyschool.interface.loginWindow import *
-from pyschool.database import database
+#from interface.loginWindow import *
+from database.database import Database
 from pessoa import Pessoa
+
+database = Database()
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()

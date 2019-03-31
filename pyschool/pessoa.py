@@ -1,5 +1,3 @@
-from database import database
-
 # Classe Pessoa
 class Pessoa:
 
@@ -103,7 +101,8 @@ class Pessoa:
         self.__foto = foto
 
     def autenticar(self, nome, email):
-        id, type = database.autenticar(nome, email)
+        #database = Database()
+        #id, type = database.autenticar(nome, email)
 
         if id == None:
             raise UserWarning

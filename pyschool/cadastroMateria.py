@@ -1,9 +1,11 @@
 import sys
 from interface.cadastroMateriaWindow import *
-from database import database
+from database.database import Database
 from materia import Materia
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
+
+database = Database()
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
