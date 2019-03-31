@@ -101,6 +101,13 @@ def cadastrarTurma():
     for x in range(index):
         dialog.layout.itemAt(x).widget().setCheckState(False)
 
+    #Setando novas turmas ao cbBox
+    tela.cbSerie.clear()
+    series = []
+    series = database.mostrarSeries()
+    series.append("Outro")
+    tela.cbSerie.addItems(series)
+
 #Adicionando Séries ao CbBox
 series = database.mostrarSeries()
 series.append("Outro")
