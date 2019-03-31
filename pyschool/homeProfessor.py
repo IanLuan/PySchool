@@ -11,7 +11,7 @@ MainWindow = QtWidgets.QMainWindow()
 tela = Ui_homeProfessor()
 tela.setupUi(MainWindow)
 
-def populate():
+def adicionarTurmas():
 
     turmas = [("história", 50), ("matemática", 25), ("ciências", 35)] 
 
@@ -29,7 +29,7 @@ tela.model.setHorizontalHeaderLabels(['Turmas', 'Alunos'])
 tela.table.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
 tela.table.setColumnWidth(0, 560)
 tela.table.setColumnWidth(1, 70)
-populate()
+adicionarTurmas()
 
 
 
