@@ -1,6 +1,7 @@
 import dataset
 
 #Inserção em ensino: matéria que relaciona professor e matéria
+<<<<<<< Updated upstream
 
 def autenticar(email,senha):
     db = dataset.connect('sqlite:///database/database.db')
@@ -51,6 +52,8 @@ def inserirClasse(materias):
         data = dict(id_professor=x, id_turma=id_turma)
         table.insert(data)
 
+=======
+>>>>>>> Stashed changes
 def inserirEnsino(id_professor, materias):
     db = dataset.connect('sqlite:///database/database.db')
     table = db['ensino']

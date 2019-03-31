@@ -2,16 +2,17 @@
 
 # Form implementation generated from reading ui file 'cadastroServidor.ui'
 #
-# Created by: PyQt5 UI code generator 5.11.3
+# Created by: PyQt5 UI code generator 5.12
 #
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+
 class Ui_cadastroServidor(object):
     def setupUi(self, cadastroServidor):
         cadastroServidor.setObjectName("cadastroServidor")
-        cadastroServidor.resize(952, 722)
+        cadastroServidor.resize(952, 685)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -30,7 +31,7 @@ class Ui_cadastroServidor(object):
         self.centralwidget.setStyleSheet("backgroundcolor: rgb(255,255,255)")
         self.centralwidget.setObjectName("centralwidget")
         self.btnCadastrar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnCadastrar.setGeometry(QtCore.QRect(830, 660, 111, 30))
+        self.btnCadastrar.setGeometry(QtCore.QRect(830, 652, 111, 30))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -46,7 +47,7 @@ class Ui_cadastroServidor(object):
 "")
         self.btnCadastrar.setObjectName("btnCadastrar")
         self.btnCancelar = QtWidgets.QPushButton(self.centralwidget)
-        self.btnCancelar.setGeometry(QtCore.QRect(10, 660, 111, 30))
+        self.btnCancelar.setGeometry(QtCore.QRect(10, 652, 111, 30))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -435,10 +436,6 @@ class Ui_cadastroServidor(object):
         self.btnCadastrar.raise_()
         self.btnCancelar.raise_()
         cadastroServidor.setCentralWidget(self.centralwidget)
-        self.statusbar = QtWidgets.QStatusBar(cadastroServidor)
-        self.statusbar.setStyleSheet("backgroundcolor: #000000")
-        self.statusbar.setObjectName("statusbar")
-        cadastroServidor.setStatusBar(self.statusbar)
 
         self.retranslateUi(cadastroServidor)
         self.cbEstadoCivil.setCurrentIndex(0)
@@ -511,6 +508,8 @@ class Ui_cadastroServidor(object):
         self.lineTelefone.setInputMask(_translate("cadastroServidor", "(00) 0 0000-0000"))
 
 
+
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
@@ -519,4 +518,3 @@ if __name__ == "__main__":
     ui.setupUi(cadastroServidor)
     cadastroServidor.show()
     sys.exit(app.exec_())
-
