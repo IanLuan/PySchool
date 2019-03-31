@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MatricularAluno</class>
- <widget class="QMainWindow" name="MatricularAluno">
+ <class>matricularAluno</class>
+ <widget class="QMainWindow" name="matricularAluno">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -29,7 +29,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Cadastrar Servidor</string>
+   <string>Matricular Aluno</string>
   </property>
   <property name="layoutDirection">
    <enum>Qt::LeftToRight</enum>
@@ -50,8 +50,8 @@
    <widget class="QPushButton" name="btnCadatrar">
     <property name="geometry">
      <rect>
-      <x>820</x>
-      <y>630</y>
+      <x>830</x>
+      <y>640</y>
       <width>111</width>
       <height>30</height>
      </rect>
@@ -83,8 +83,8 @@ box-shadow: 5px -9px 3px #000;
    <widget class="QPushButton" name="btnCancelar">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>630</y>
+      <x>10</x>
+      <y>640</y>
       <width>111</width>
       <height>30</height>
      </rect>
@@ -379,7 +379,7 @@ font: 75 10pt &quot;Malgun Gothic&quot;;</string>
        <string notr="true">border: 1px solid grey;
 border-radius: 5px;
 font: 9pt &quot;Leelawadee UI Semilight&quot;;
-background-color: rgb(255, 255, 255, 0);</string>
+background-color: rgb(255, 255, 255);</string>
       </property>
       <item>
        <property name="text">
@@ -397,7 +397,7 @@ background-color: rgb(255, 255, 255, 0);</string>
        </property>
       </item>
      </widget>
-     <widget class="Line" name="line_3">
+     <widget class="Line" name="lineInfo">
       <property name="geometry">
        <rect>
         <x>320</x>
@@ -413,7 +413,7 @@ background-color: rgb(255, 255, 255, 0);</string>
        <enum>Qt::Horizontal</enum>
       </property>
      </widget>
-     <widget class="QLabel" name="lblFoto_2">
+     <widget class="QLabel" name="lblFotolbl">
       <property name="geometry">
        <rect>
         <x>740</x>
@@ -501,8 +501,8 @@ background-color: rgb(255, 255, 255);</string>
      <widget class="QLabel" name="lblSerie">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>212</y>
+        <x>150</x>
+        <y>210</y>
         <width>55</width>
         <height>31</height>
        </rect>
@@ -518,9 +518,9 @@ font: 75 10pt &quot;Malgun Gothic&quot;;</string>
      <widget class="QComboBox" name="cbSerie">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>150</x>
         <y>240</y>
-        <width>217</width>
+        <width>191</width>
         <height>28</height>
        </rect>
       </property>
@@ -528,80 +528,20 @@ font: 75 10pt &quot;Malgun Gothic&quot;;</string>
        <string notr="true">border: 1px solid grey;
 border-radius: 5px;
 font: 9pt &quot;Leelawadee UI Semilight&quot;;
-background-color: rgb(255, 255, 255, 0);</string>
+background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="currentText">
-       <string>3º ano - Ensino Médio</string>
+       <string/>
       </property>
       <property name="frame">
        <bool>true</bool>
       </property>
-      <item>
-       <property name="text">
-        <string>3º ano - Ensino Médio</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>2º ano - Ensino Médio</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>1º ano - Ensino Médio</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>9º ano - Ensino Fundamental</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>8º ano - Ensino Fundamental</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>7º ano - Ensino Fundamental</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>6º ano - Ensino Fundamental</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>5º ano - Ensino Fundamental</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>4º ano - Ensino Fundamental</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>3º ano - Ensino Fundamental</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>2º ano - Ensino Fundamental</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>1º ano - Ensino Fundamental</string>
-       </property>
-      </item>
      </widget>
      <widget class="QLabel" name="lblTipoSanguineo">
       <property name="geometry">
        <rect>
-        <x>240</x>
-        <y>212</y>
+        <x>10</x>
+        <y>210</y>
         <width>125</width>
         <height>31</height>
        </rect>
@@ -617,9 +557,9 @@ font: 75 10pt &quot;Malgun Gothic&quot;;</string>
      <widget class="QComboBox" name="cbTipoSanguineo">
       <property name="geometry">
        <rect>
-        <x>250</x>
+        <x>10</x>
         <y>240</y>
-        <width>93</width>
+        <width>121</width>
         <height>28</height>
        </rect>
       </property>
@@ -627,7 +567,7 @@ font: 75 10pt &quot;Malgun Gothic&quot;;</string>
        <string notr="true">border: 1px solid grey;
 border-radius: 5px;
 font: 9pt &quot;Leelawadee UI Semilight&quot;;
-background-color: rgb(255, 255, 255, 0);</string>
+background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="currentText">
        <string>A+</string>
@@ -676,8 +616,8 @@ background-color: rgb(255, 255, 255, 0);</string>
      <widget class="QLabel" name="lblTelefone">
       <property name="geometry">
        <rect>
-        <x>374</x>
-        <y>212</y>
+        <x>740</x>
+        <y>210</y>
         <width>105</width>
         <height>31</height>
        </rect>
@@ -693,9 +633,9 @@ font: 75 10pt &quot;Malgun Gothic&quot;;</string>
      <widget class="QLineEdit" name="lineTelefoneAluno">
       <property name="geometry">
        <rect>
-        <x>374</x>
+        <x>740</x>
         <y>240</y>
-        <width>111</width>
+        <width>171</width>
         <height>28</height>
        </rect>
       </property>
@@ -715,8 +655,8 @@ background-color: rgb(255, 255, 255);</string>
      <widget class="QLabel" name="lblEmail">
       <property name="geometry">
        <rect>
-        <x>500</x>
-        <y>212</y>
+        <x>470</x>
+        <y>210</y>
         <width>105</width>
         <height>31</height>
        </rect>
@@ -732,9 +672,9 @@ font: 75 10pt &quot;Malgun Gothic&quot;;</string>
      <widget class="QLineEdit" name="lineEmail">
       <property name="geometry">
        <rect>
-        <x>498</x>
+        <x>470</x>
         <y>240</y>
-        <width>413</width>
+        <width>251</width>
         <height>28</height>
        </rect>
       </property>
@@ -746,6 +686,45 @@ background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblGrupo">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>210</y>
+        <width>55</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(136, 136, 136);
+font: 75 10pt &quot;Malgun Gothic&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Grupo</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cbGrupo">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>240</y>
+        <width>91</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid grey;
+border-radius: 5px;
+font: 9pt &quot;Leelawadee UI Semilight&quot;;
+background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="currentText">
+       <string/>
+      </property>
+      <property name="frame">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -776,7 +755,7 @@ background-color: rgb(255, 255, 255);</string>
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QLabel" name="label">
+     <widget class="QLabel" name="lblEndereco">
       <property name="geometry">
        <rect>
         <x>0</x>
@@ -796,7 +775,7 @@ color: rgb(21, 143, 181);</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="label_11">
+     <widget class="QLabel" name="lblRua">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -813,7 +792,7 @@ color: rgb(136, 136, 136)</string>
        <string>Rua</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_12">
+     <widget class="QLabel" name="lblNumero">
       <property name="geometry">
        <rect>
         <x>740</x>
@@ -830,7 +809,7 @@ color: rgb(136, 136, 136)</string>
        <string>Número</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_13">
+     <widget class="QLabel" name="lblBairro">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -847,7 +826,7 @@ color: rgb(136, 136, 136)</string>
        <string>Bairro</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_14">
+     <widget class="QLabel" name="lblCep">
       <property name="geometry">
        <rect>
         <x>470</x>
@@ -864,7 +843,7 @@ color: rgb(136, 136, 136)</string>
        <string>CEP</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_15">
+     <widget class="QLabel" name="lblCidade">
       <property name="geometry">
        <rect>
         <x>470</x>
@@ -881,7 +860,7 @@ color: rgb(136, 136, 136)</string>
        <string>Cidade</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_16">
+     <widget class="QLabel" name="lblEstado">
       <property name="geometry">
        <rect>
         <x>740</x>
@@ -1082,7 +1061,7 @@ background-color: rgb(255, 255, 255);</string>
        </property>
       </item>
      </widget>
-     <widget class="Line" name="line_2">
+     <widget class="Line" name="lineEndereco">
       <property name="geometry">
        <rect>
         <x>320</x>
@@ -1149,49 +1128,20 @@ font: 9pt &quot;Leelawadee UI Semilight&quot;;
 background-color: rgb(255, 255, 255);</string>
       </property>
      </widget>
-     <widget class="QFrame" name="frameEndereco_2">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>-216</y>
-        <width>931</width>
-        <height>171</height>
-       </rect>
-      </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="layoutDirection">
-       <enum>Qt::LeftToRight</enum>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255)</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-     <zorder>label_11</zorder>
-     <zorder>label_12</zorder>
-     <zorder>label_13</zorder>
-     <zorder>label_14</zorder>
-     <zorder>label_15</zorder>
-     <zorder>label_16</zorder>
+     <zorder>lblRua</zorder>
+     <zorder>lblNumero</zorder>
+     <zorder>lblBairro</zorder>
+     <zorder>lblCep</zorder>
+     <zorder>lblCidade</zorder>
+     <zorder>lblEstado</zorder>
      <zorder>lineRua</zorder>
      <zorder>spinNumero</zorder>
      <zorder>cbEstado</zorder>
-     <zorder>label</zorder>
-     <zorder>line_2</zorder>
+     <zorder>lblEndereco</zorder>
+     <zorder>lineEndereco</zorder>
      <zorder>lineBairro</zorder>
      <zorder>lineCep</zorder>
      <zorder>lineCidade</zorder>
-     <zorder>frameEndereco_2</zorder>
     </widget>
     <widget class="QFrame" name="frameLaranja">
      <property name="geometry">
@@ -1214,7 +1164,7 @@ border-radius: 0.2px;
       <enum>QFrame::Raised</enum>
      </property>
     </widget>
-    <widget class="QFrame" name="frameEndereco_3">
+    <widget class="QFrame" name="framePais">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -1241,11 +1191,11 @@ border-radius: 0.2px;
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="lblPais">
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
+        <y>10</y>
         <width>931</width>
         <height>31</height>
        </rect>
@@ -1261,11 +1211,11 @@ color: rgb(21, 143, 181);</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="Line" name="line_4">
+     <widget class="Line" name="linePais">
       <property name="geometry">
        <rect>
         <x>320</x>
-        <y>30</y>
+        <y>40</y>
         <width>300</width>
         <height>1</height>
        </rect>
@@ -1277,39 +1227,11 @@ color: rgb(21, 143, 181);</string>
        <enum>Qt::Horizontal</enum>
       </property>
      </widget>
-     <widget class="QFrame" name="frameEndereco_4">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>-216</y>
-        <width>931</width>
-        <height>171</height>
-       </rect>
-      </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="layoutDirection">
-       <enum>Qt::LeftToRight</enum>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255)</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
      <widget class="QLabel" name="lblNomePai">
       <property name="geometry">
        <rect>
-        <x>12</x>
-        <y>26</y>
+        <x>10</x>
+        <y>50</y>
         <width>181</width>
         <height>23</height>
        </rect>
@@ -1326,8 +1248,8 @@ color: rgb(136, 136, 136)</string>
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>50</y>
-        <width>711</width>
+        <y>80</y>
+        <width>431</width>
         <height>28</height>
        </rect>
       </property>
@@ -1342,8 +1264,8 @@ background-color: rgb(255, 255, 255);</string>
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>106</y>
-        <width>711</width>
+        <y>150</y>
+        <width>431</width>
         <height>28</height>
        </rect>
       </property>
@@ -1358,7 +1280,7 @@ background-color: rgb(255, 255, 255);</string>
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>82</y>
+        <y>120</y>
         <width>181</width>
         <height>23</height>
        </rect>
@@ -1374,9 +1296,9 @@ color: rgb(136, 136, 136)</string>
      <widget class="QLineEdit" name="lineCpfPai">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>162</y>
-        <width>197</width>
+        <x>470</x>
+        <y>80</y>
+        <width>251</width>
         <height>28</height>
        </rect>
       </property>
@@ -1396,8 +1318,8 @@ background-color: rgb(255, 255, 255);</string>
      <widget class="QLabel" name="lblCpfPai">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>138</y>
+        <x>470</x>
+        <y>50</y>
         <width>181</width>
         <height>23</height>
        </rect>
@@ -1413,8 +1335,8 @@ color: rgb(136, 136, 136)</string>
      <widget class="QLabel" name="lblCpfMae">
       <property name="geometry">
        <rect>
-        <x>224</x>
-        <y>138</y>
+        <x>470</x>
+        <y>120</y>
         <width>181</width>
         <height>23</height>
        </rect>
@@ -1430,9 +1352,9 @@ color: rgb(136, 136, 136)</string>
      <widget class="QLineEdit" name="lineCpfMae">
       <property name="geometry">
        <rect>
-        <x>224</x>
-        <y>162</y>
-        <width>197</width>
+        <x>470</x>
+        <y>150</y>
+        <width>251</width>
         <height>28</height>
        </rect>
       </property>
@@ -1452,8 +1374,8 @@ background-color: rgb(255, 255, 255);</string>
      <widget class="QLabel" name="lblTelefonePai">
       <property name="geometry">
        <rect>
-        <x>436</x>
-        <y>138</y>
+        <x>740</x>
+        <y>50</y>
         <width>123</width>
         <height>23</height>
        </rect>
@@ -1469,9 +1391,9 @@ font: 75 10pt &quot;Malgun Gothic&quot;;</string>
      <widget class="QLineEdit" name="lineTelefonePai">
       <property name="geometry">
        <rect>
-        <x>438</x>
-        <y>162</y>
-        <width>111</width>
+        <x>740</x>
+        <y>80</y>
+        <width>171</width>
         <height>28</height>
        </rect>
       </property>
@@ -1491,9 +1413,9 @@ background-color: rgb(255, 255, 255);</string>
      <widget class="QLineEdit" name="lineTelefoneMae">
       <property name="geometry">
        <rect>
-        <x>578</x>
-        <y>162</y>
-        <width>111</width>
+        <x>740</x>
+        <y>150</y>
+        <width>171</width>
         <height>28</height>
        </rect>
       </property>
@@ -1513,8 +1435,8 @@ background-color: rgb(255, 255, 255);</string>
      <widget class="QLabel" name="lblTelefoneMae">
       <property name="geometry">
        <rect>
-        <x>578</x>
-        <y>138</y>
+        <x>740</x>
+        <y>120</y>
         <width>139</width>
         <height>23</height>
        </rect>
@@ -1531,16 +1453,11 @@ font: 75 10pt &quot;Malgun Gothic&quot;;</string>
     <zorder>frameLaranja</zorder>
     <zorder>framePessoais</zorder>
     <zorder>frameEndereco</zorder>
-    <zorder>frameEndereco_3</zorder>
+    <zorder>framePais</zorder>
    </widget>
    <zorder>framezao</zorder>
    <zorder>btnCadatrar</zorder>
    <zorder>btnCancelar</zorder>
-  </widget>
-  <widget class="QStatusBar" name="statusbar">
-   <property name="styleSheet">
-    <string notr="true">backgroundcolor: #000000</string>
-   </property>
   </widget>
  </widget>
  <resources/>

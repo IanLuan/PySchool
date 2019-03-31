@@ -10,12 +10,13 @@ class Database:
         self.table_materia = self.db['materia']
         self.table_aluno = self.db['aluno']
         self.table_servidor = self.db['servidor']
-        self.table_administrdor = self.db['administrador']
+        self.table_administrador = self.db['administrador']
         self.table_cargo = self.db['cargo']
         self.table_endereco = self.db['endereco']
         self.table_turma = self.db['turma']
         self.table_classe = self.db['classe']
         self.table_ensino = self.db['ensino']
+        self.table_curso = self.db['curso']
 
     #PROFESSOR
     def inserirProfessor(self, professor):
@@ -64,6 +65,13 @@ class Database:
         return materias
 
     #ALUNO
+    def inserirAluno(self,aluno):
+        data = dict(nome=aluno.getNome(), nascimento=aluno.getNascimento(), sexo=aluno.getSexo(),rg=aluno.getRg(),cpf=aluno.getCpf(),
+                    telefone=aluno.getTelefone(), id_endereco = aluno.getEndereco(), email=aluno.getEmail(),estadoCivil=aluno.getEstadoCivil(),
+                    foto=aluno.getFoto(), matricula=aluno.getMatricula(), matriculado=True, nomePai = aluno.getNomePai(), telefonePai=aluno.getTelefonePai(), cpfPai=aluno.getCpfPai(),
+                    nomeMae=aluno.getNomeMae(), telefoneMae=aluno.getTelefoneMae(), cpfMae=aluno.getCpfMae(), idTurma = self.mostrarIdTurma(aluno.getSerie(), aluno.getGrupo()),
+                    tipoSanguineo=aluno.getTipoSanguineo())
+        self.table_aluno.insert(data)
 
     #CARGO
     def inserirCargo(self, nome_cargo):
@@ -108,7 +116,6 @@ class Database:
         statement = 'SELECT DISTINCT serie FROM turma where status=1'
         for row in self.db.query(statement):
             series.append(row['serie'])
-
         return series
 
     def mostrarGruposAtivos(self, serie):
@@ -127,10 +134,19 @@ class Database:
         statement = 'SELECT maxAlunos FROM turma where serie="{}"'.format(serie) + ' and status=1 and grupo="{}"'.format(grupo)
 
         for row in self.db.query(statement):
-            quantidade = row['maxAlunis']
+            quantidade = row['maxAlunos']
 
         return quantidade
 
+    def mostrarIdTurma(self, serie, grupo):
+        id = ""
+        statement = 'SELECT id FROM turma where serie="{}"'.format(
+            serie) + ' and status=1 and grupo="{}"'.format(grupo)
+
+        for row in self.db.query(statement):
+            id = row['id']
+
+        return id
 
     #PESSOA
     def autenticar(self, email, senha):
@@ -159,7 +175,7 @@ class Database:
     #CLASSE (Relação de professor e turma)
     def inserirClasse(self, materias):
         id_professores = []
-        id_turma = retornarUltimoId("turma")
+        id_turma = self.retornarUltimoId("turma")
 
         for x in materias:
             mat_prof = x.split(" - ")
@@ -177,7 +193,7 @@ class Database:
     #ENSINO (Relação de professor e matéria)
     def inserirEnsino(self, id_professor, materias):
         for x in materias:
-            data = dict(id_professor=id_professor, id_materia=retornarIdMateria(x))
+            data = dict(id_professor=id_professor, id_materia=self.retornarIdMateria(x))
             self.table_ensino.insert(data)
 
     def mostrarMateriasProfessor(self):
@@ -209,6 +225,16 @@ class Database:
 
         endereco = Endereco(rua, bairro, numero, cep, cidade, estado)
         return endereco
+
+    #CURSO
+    def inserirCurso(self, id_aluno, id_materia):
+
+
+
+        data = dict(rua=endereco.getRua(), bairro=endereco.getBairro(), numero=endereco.getNumero(),
+                    cep=endereco.getCep(), cidade=endereco.getCidade(),
+                    estado=endereco.getEstado())
+        self.table_endereco.insert(data)
 
     #UTEIS
     def retornarUltimoId(self, tabela):

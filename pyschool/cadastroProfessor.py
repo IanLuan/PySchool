@@ -102,8 +102,6 @@ def carregarFoto(event):
 
 def cadastrarProfessor():
     try:
-        print(tela.spinNumero.text())
-
         endereco = Endereco(tela.lineRua.text(),tela.lineBairro.text(),tela.spinNumero.text(),tela.lineCep.text(),
                         tela.lineCidade.text(),tela.cbEstado.currentText())
         database.inserirEndereco(endereco)

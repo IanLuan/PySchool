@@ -1,8 +1,9 @@
-#from pyschool.pessoa import Pessoa
 from pessoa import Pessoa
+from datetime import datetime
+from database.database import Database
 
 class Aluno(Pessoa):
-    def __init__(self, nome, nascimento, sexo, rg, cpf, telefone, endereco, email, senha, estadoCivil, foto, matricula, matriculado, nomePai, telefonePai, cpfPai, nomeMae, telefoneMae, cpfMae, serie, turma, tipoSanguineo, observacao):
+    def __init__(self, nome, nascimento, sexo, rg, cpf, telefone, endereco, email, senha, estadoCivil, foto, matricula, matriculado, nomePai, telefonePai, cpfPai, nomeMae, telefoneMae, cpfMae, serie, tipoSanguineo,  grupo):
         super().__init__(nome, nascimento, sexo, rg, cpf, telefone, endereco, email, senha, estadoCivil, foto)
         self.setMatricula(matricula)
         self.setMatriculado(matriculado)
@@ -13,16 +14,14 @@ class Aluno(Pessoa):
         self.setTelefoneMae(telefoneMae)
         self.setCpfMae(cpfMae)
         self.setSerie(serie)
-        self.setTurma(turma)
         self.setTipoSanguineo(tipoSanguineo)
-        self.setObservacao(observacao)
+        self.setGrupo(grupo)
 
     def getMatricula(self):
         return self.__matricula
     
     def setMatricula(self, matricula):
-        if matricula == "":
-            raise ValueError
+        self.gerarMatricula()
         self.__matricula = matricula
     
     def getMatriculado(self):
@@ -89,13 +88,11 @@ class Aluno(Pessoa):
             raise ValueError
         self.__serie = serie
     
-    def getTurma(self):
-        return self.__turma
+    def getGrupo(self):
+        return self.__grupo
     
-    def setTurma(self, turma):
-        if turma == "":
-            raise ValueError
-        self.__turma = turma
+    def setGrupo(self, grupo):
+        self.__grupo = grupo
     
     def getTipoSanguineo(self):
         return self.__tipoSanguineo
@@ -104,13 +101,9 @@ class Aluno(Pessoa):
         if tipoSanguineo == "":
             raise ValueError
         self.__tipoSanguineo = tipoSanguineo
-    
-    def getObservacao(self):
-        return self.__observacao
-    
-    def setObservacao(self, observacao):
-        if observacao == "":
-            raise ValueError
-        self.__observacao = observacao
-    
-    
+
+    def gerarMatricula(self):
+        now = datetime.now()
+        database = Database()
+        matricula = str(now.year) + '(database.retornarUltimoId("aluno") + 1)'
+        self.__matricula = matricula
