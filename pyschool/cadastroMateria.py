@@ -1,6 +1,7 @@
 import sys
 from interface.cadastroMateriaWindow import *
 from database import database
+from materia import Materia
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 
@@ -10,8 +11,33 @@ tela = Ui_cadastroMateria()
 tela.setupUi(MainWindow)
 
 def cadastrarMateria():
-    database.inserirMateria(tela.lineMateria.text())
-    tela.lineMateria.setText("")
+    try:
+        materia = Materia(tela.lineMateria.text())
+        database.inserirMateria(materia.getNome())
+        tela.lineMateria.setText("")
+
+        msg = QMessageBox(None)
+        msg.setWindowTitle("Cadastro Realizado")
+        msg.setIcon(QMessageBox.Information)
+        msg.setText("Cadastro realizado com sucesso!")
+        msg.show()
+        msg.exec_()
+
+    except ValueError:
+        msg = QMessageBox(None)
+        msg.setWindowTitle("Erro")
+        msg.setIcon(QMessageBox.Critical)
+        msg.setText("Por favor, primeiro digite o nome da matéria")
+        msg.show()
+        msg.exec_()
+
+    except Warning:
+        msg = QMessageBox(None)
+        msg.setWindowTitle("Erro")
+        msg.setIcon(QMessageBox.Critical)
+        msg.setText("Matéria já cadastrada. Tente novamente.")
+        msg.show()
+        msg.exec_()
 
 tela.btnCadastrar.clicked.connect(cadastrarMateria)
 
