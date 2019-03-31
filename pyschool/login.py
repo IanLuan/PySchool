@@ -35,7 +35,7 @@ def logar():
     except UserWarning:
         msg = QMessageBox(None)
         msg.setWindowTitle("Erro")
-        # msg.setWindowIcon(QtGui.QIcon("key.png"))
+        #msg.setWindowIcon(QtGui.QIcon("key.png"))
         msg.setIcon(QMessageBox.Critical)
         msg.setText("Email ou senha incorretos. Por favor, tente novamente.")
         msg.show()
