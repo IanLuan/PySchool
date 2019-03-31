@@ -12,21 +12,21 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_homeProfessor(object):
     def setupUi(self, homeProfessor):
         homeProfessor.setObjectName("homeProfessor")
-        homeProfessor.resize(680, 367)
+        homeProfessor.resize(680, 380)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(homeProfessor.sizePolicy().hasHeightForWidth())
         homeProfessor.setSizePolicy(sizePolicy)
-        homeProfessor.setMinimumSize(QtCore.QSize(680, 200))
-        homeProfessor.setMaximumSize(QtCore.QSize(680, 400))
+        homeProfessor.setMinimumSize(QtCore.QSize(680, 380))
+        homeProfessor.setMaximumSize(QtCore.QSize(680, 380))
         self.centralwidget = QtWidgets.QWidget(homeProfessor)
         self.centralwidget.setStyleSheet("#centralwidget {\n"
 "background-color:  rgb(21, 143, 181);\n"
 "}")
         self.centralwidget.setObjectName("centralwidget")
         self.btnExit = QtWidgets.QPushButton(self.centralwidget)
-        self.btnExit.setGeometry(QtCore.QRect(638, 332, 32, 32))
+        self.btnExit.setGeometry(QtCore.QRect(638, 338, 32, 32))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
@@ -62,9 +62,55 @@ class Ui_homeProfessor(object):
         self.table.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.table.setCornerButtonEnabled(False)
         self.table.setObjectName("table")
-        self.table.horizontalHeader().setMinimumSectionSize(100)
+        self.table.horizontalHeader().setDefaultSectionSize(0)
+        self.table.horizontalHeader().setMinimumSectionSize(0)
         self.table.verticalHeader().setVisible(False)
-        self.table.verticalHeader().setMinimumSectionSize(100)
+        self.table.verticalHeader().setDefaultSectionSize(0)
+        self.table.verticalHeader().setMinimumSectionSize(0)
+        self.btnTurmas = QtWidgets.QPushButton(self.centralwidget)
+        self.btnTurmas.setGeometry(QtCore.QRect(12, 338, 211, 33))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btnTurmas.sizePolicy().hasHeightForWidth())
+        self.btnTurmas.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.btnTurmas.setFont(font)
+        self.btnTurmas.setFocusPolicy(QtCore.Qt.StrongFocus)
+        self.btnTurmas.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.btnTurmas.setStyleSheet("border: 2px solid rgb(255, 123, 28);;\n"
+"border-radius: 15px;\n"
+"background-color: rgb(255, 123, 28);\n"
+"color: #fff;\n"
+"")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("interface/icons/turma.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.btnTurmas.setIcon(icon1)
+        self.btnTurmas.setObjectName("btnTurmas")
+        self.btnPerfil = QtWidgets.QPushButton(self.centralwidget)
+        self.btnPerfil.setGeometry(QtCore.QRect(488, 338, 143, 33))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btnPerfil.sizePolicy().hasHeightForWidth())
+        self.btnPerfil.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.btnPerfil.setFont(font)
+        self.btnPerfil.setFocusPolicy(QtCore.Qt.StrongFocus)
+        self.btnPerfil.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.btnPerfil.setStyleSheet("border: 2px solid rgb(255, 123, 28);;\n"
+"border-radius: 15px;\n"
+"background-color: rgb(255, 123, 28);\n"
+"color: #fff;\n"
+"")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap("interface/icons/person.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.btnPerfil.setIcon(icon2)
+        self.btnPerfil.setObjectName("btnPerfil")
         homeProfessor.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(homeProfessor)
@@ -74,6 +120,8 @@ class Ui_homeProfessor(object):
         _translate = QtCore.QCoreApplication.translate
         homeProfessor.setWindowTitle(_translate("homeProfessor", "Início"))
         self.btnExit.setToolTip(_translate("homeProfessor", "Sair"))
+        self.btnTurmas.setText(_translate("homeProfessor", "Ver turma selecionada"))
+        self.btnPerfil.setText(_translate("homeProfessor", "Ver Perfil"))
 
 
 
