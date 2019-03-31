@@ -1,5 +1,5 @@
 class Turma:
-    def __init__(self, serie, grupo, maxAlunos, status=False):
+    def __init__(self, serie, maxAlunos, grupo = None, status=False):
         self.__serie = serie
         self.__grupo = grupo
         self.__maxAlunos = maxAlunos
@@ -17,8 +17,6 @@ class Turma:
         return self.__grupo
     
     def setGrupo(self, grupo):
-        if grupo == "":
-            raise ValueError
         self.__grupo = grupo
     
     def getMaxAlunos(self):

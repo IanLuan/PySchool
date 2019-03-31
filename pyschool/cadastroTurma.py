@@ -75,38 +75,58 @@ def escolherSerie():
         tela.lineSerie.setText(tela.cbSerie.currentText())
 
 def cadastrarTurma():
-    # Pegar dados
-    if tela.lineSerie.text() != "":
-        serie = tela.lineSerie.text()
-    else:
-        serie = tela.cbSerie.currentText()
 
-    turma = Turma(serie, tela.lineGrupo.text(), tela.spinMax.text(), True)
+    try:
+        if materias_confirmadas == "":
+            raise ValueError
 
-    # Salvar no Banco
-    database.inserirTurma(turma)
+        # Pegar dados
+        if tela.lineSerie.text() != "":
+            serie = tela.lineSerie.text()
+        else:
+            serie = tela.cbSerie.currentText()
 
-    # Criando classe
-    database.inserirClasse(materias_confirmadas)
+        turma = Turma(serie, tela.spinMax.text(), tela.lineGrupo.text(), True)
 
-    # Limpar campos
-    tela.cbSerie.setCurrentIndex(0)
-    tela.lineSerie.setText("")
-    tela.lineGrupo.setText("")
-    tela.lineMaterias.setText("")
-    tela.spinMax.setValue(30)
+        # Salvar no Banco
+        database.inserirTurma(turma)
 
-    #Limpando checkbox
-    index = dialog.layout.count()
-    for x in range(index):
-        dialog.layout.itemAt(x).widget().setCheckState(False)
+        # Criando classe
+        database.inserirClasse(materias_confirmadas)
 
-    #Setando novas turmas ao cbBox
-    tela.cbSerie.clear()
-    series = []
-    series = database.mostrarSeries()
-    series.append("Outro")
-    tela.cbSerie.addItems(series)
+        # Limpar campos
+        tela.cbSerie.setCurrentIndex(0)
+        tela.lineSerie.setText("")
+        tela.lineGrupo.setText("")
+        tela.lineMaterias.setText("")
+        tela.spinMax.setValue(30)
+
+        #Limpando checkbox
+        index = dialog.layout.count()
+        for x in range(index):
+            dialog.layout.itemAt(x).widget().setCheckState(False)
+
+        #Setando novas turmas ao cbBox
+        tela.cbSerie.clear()
+        series = []
+        series = database.mostrarSeries()
+        series.append("Outro")
+        tela.cbSerie.addItems(series)
+
+        msg = QMessageBox(None)
+        msg.setWindowTitle("Sucesso")
+        msg.setIcon(QMessageBox.Information)
+        msg.setText("Cadastro realizado com sucesso!")
+        msg.show()
+        msg.exec_()
+
+    except ValueError:
+        msg = QMessageBox(None)
+        msg.setWindowTitle("Erro")
+        msg.setIcon(QMessageBox.Critical)
+        msg.setText("Por favor, escolha a(s) matéria(s) da turma")
+        msg.show()
+        msg.exec_()
 
 #Adicionando Séries ao CbBox
 series = database.mostrarSeries()

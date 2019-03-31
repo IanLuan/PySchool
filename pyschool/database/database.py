@@ -20,10 +20,10 @@ def autenticar(email,senha):
         id = row['id']
         type = "servidor"
 
-   # statement = "SELECT id FROM administrador WHERE email='{}' and senha='{}'".format(email, senha)
+    statement = "SELECT id FROM administrador WHERE email='{}' and senha='{}'".format(email, senha)
 
-   #for row in db.query(statement):
-   #     id = row['id']
+    for row in db.query(statement):
+         id = row['id']
 
     return id, type
 
@@ -87,7 +87,16 @@ def inserirServidor(servidor):
 
     data = dict(nome=servidor.getNome(), nascimento=servidor.getNascimento(), sexo=servidor.getSexo(),rg=servidor.getRg(),cpf=servidor.getCpf(),
                 telefone=servidor.getTelefone(), id_endereco = servidor.getEndereco(), email=servidor.getEmail(),senha=servidor.getSenha(),estadoCivil=servidor.getEstadoCivil(),
-                foto=servidor.getFoto(),adm=servidor.getAdm(),cargo=servidor.getCargo())
+                foto=servidor.getFoto(),cargo=servidor.getCargo())
+    table.insert(data)
+
+def inserirAdministrador(administrador):
+    db = dataset.connect('sqlite:///database/database.db')
+    table = db['administrador']
+
+    data = dict(nome=administrador.getNome(), nascimento=administrador.getNascimento(), sexo=administrador.getSexo(),rg=administrador.getRg(),
+                cpf=administrador.getCpf(), telefone=administrador.getTelefone(), id_endereco = administrador.getEndereco(), email=administrador.getEmail(),
+                senha=administrador.getSenha(),estadoCivil=administrador.getEstadoCivil(),foto=administrador.getFoto(),cargo=administrador.getCargo())
     table.insert(data)
 
 def inserirProfessor(professor):

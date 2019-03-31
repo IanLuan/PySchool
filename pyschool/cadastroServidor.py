@@ -13,6 +13,7 @@ from PyQt5.QtGui import *
 from database import database
 from interface.cadastroServidorWindow import *
 from servidor import *
+from administrador import *
 from endereco import *
 
 app = QtWidgets.QApplication(sys.argv)
@@ -68,17 +69,23 @@ def cadastrarServidor():
         id_endereco = database.retornarUltimoId("endereco")
 
         if tela.rbSim.isChecked():
+            administrador = Administrador(tela.lineNome.text(), tela.dateNascimento.text(), tela.cbSexo.currentText(),
+                                          tela.lineRg.text(), tela.lineCpf.text(), tela.lineTelefone.text(),
+                                          id_endereco, tela.lineEmail.text(),
+                                          tela.lineSenha.text(), tela.cbEstadoCivil.currentText(), foto, tela.cbCargo.currentText())
 
+            database.inserirAdministrador(administrador)
+
+        elif tela.rbNao.isChecked():
             servidor = Servidor(tela.lineNome.text(), tela.dateNascimento.text(), tela.cbSexo.currentText(), tela.lineRg.text(),
                                 tela.lineCpf.text(), tela.lineTelefone.text(), id_endereco, tela.lineEmail.text(),
-                                tela.lineSenha.text(), tela.cbEstadoCivil.currentText(), foto, tela.rbSim.isChecked(), tela.cbCargo.currentText())
+                                tela.lineSenha.text(), tela.cbEstadoCivil.currentText(), foto, tela.cbCargo.currentText())
+
 
             database.inserirServidor(servidor)
 
         else:
-
-            pass
-
+            raise ValueError
 
         tela.lineNome.setText("")
         tela.cbSexo.setCurrentIndex(0)
