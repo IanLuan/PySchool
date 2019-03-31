@@ -38,13 +38,10 @@ def inserirClasse(materias):
         professor = mat_prof[1]
         professor = professor.replace('Prof. ', '')
 
-        print(professor)
-
         statement = "SELECT id FROM professor WHERE nome = '{}'".format(professor)
         for row in db.query(statement):
             id_professores.append(row['id'])
 
-    print(id_professores)
     table = db['classe']
 
     for x in id_professores:
@@ -189,3 +186,14 @@ def mostrarMateriasProfessor():
         materias.append((row['materia'],row['professor']))
 
     return materias
+
+def existe(nome, table):
+    db = dataset.connect('sqlite:///database/database.db')
+
+    statement = 'SELECT id FROM {} where nome="{}"'.format(table, nome)
+    existe = False
+
+    for row in db.query(statement):
+        existe = True
+
+    return True

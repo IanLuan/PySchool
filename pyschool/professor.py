@@ -10,6 +10,8 @@ class Professor(Pessoa):
         return self.__materia
         
     def setMateria(self, materia):
+        if materia == "":
+            raise ValueError
         self.__materia = materia
     
     

@@ -13,12 +13,16 @@ class Servidor(Pessoa):
        return self.__adm
 
    def setAdm(self, adm):
+       if adm == "":
+           raise ValueError
        self.__adm = adm
 
    def getCargo(self):
        return self.__cargo
 
    def setCargo(self, cargo):
+       if cargo == "":
+           raise ValueError
        self.__cargo = cargo
 
 

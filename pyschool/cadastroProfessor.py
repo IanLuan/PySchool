@@ -100,41 +100,57 @@ def carregarFoto(event):
         tela.lblFoto.setPixmap(new_pixmap)
 
 def cadastrarProfessor():
-    endereco = Endereco(tela.lineRua.text(),tela.lineBairro.text(),tela.spinNumero.text(),tela.lineCep.text(),
+    try:
+        endereco = Endereco(tela.lineRua.text(),tela.lineBairro.text(),tela.spinNumero.text(),tela.lineCep.text(),
                         tela.lineCidade.text(),tela.cbEstado.currentText())
-    database.inserirEndereco(endereco)
+        database.inserirEndereco(endereco)
 
-    id_endereco = database.retornarUltimoId("endereco")
+        id_endereco = database.retornarUltimoId("endereco")
 
-    professor = Professor(tela.lineNome.text(),tela.dateNascimento.text(),tela.cbSexo.currentText(),tela.lineRg.text(),
+        professor = Professor(tela.lineNome.text(),tela.dateNascimento.text(),tela.cbSexo.currentText(),tela.lineRg.text(),
                         tela.lineCpf.text(),tela.lineTelefone.text(),id_endereco, tela.lineEmail.text(),tela.lineSenha.text(),tela.cbEstadoCivil.currentText(),
                         foto,materias_confirmadas)
-    database.inserirProfessor(professor)
+        database.inserirProfessor(professor)
 
 
-    id_professor = database.retornarUltimoId("professor")
-    database.inserirEnsino(id_professor, materias_confirmadas)
+        id_professor = database.retornarUltimoId("professor")
+        database.inserirEnsino(id_professor, materias_confirmadas)
 
-    tela.lineNome.setText("")
-    tela.cbSexo.setCurrentIndex(0)
-    tela.lineRg.setText("")
-    tela.lineCpf.setText("")
-    tela.lineTelefone.setText("")
-    tela.lineRua.setText("")
-    tela.lineBairro.setText("")
-    tela.spinNumero.setValue(0)
-    tela.lineCep.setText("")
-    tela.lineCidade.setText("")
-    tela.cbEstado.setCurrentIndex(0)
-    tela.lineEmail.setText("")
-    tela.lineSenha.setText("")
-    tela.cbEstadoCivil.setCurrentIndex(0)
-    definirIcone()
-    tela.lineMaterias.setText("")
+        tela.lineNome.setText("")
+        tela.cbSexo.setCurrentIndex(0)
+        tela.lineRg.setText("")
+        tela.lineCpf.setText("")
+        tela.lineTelefone.setText("")
+        tela.lineRua.setText("")
+        tela.lineBairro.setText("")
+        tela.spinNumero.setValue(0)
+        tela.lineCep.setText("")
+        tela.lineCidade.setText("")
+        tela.cbEstado.setCurrentIndex(0)
+        tela.lineEmail.setText("")
+        tela.lineSenha.setText("")
+        tela.cbEstadoCivil.setCurrentIndex(0)
+        definirIcone()
+        tela.lineMaterias.setText("")
 
-    index = dialog.layout.count()
-    for x in range(index):
-        dialog.layout.itemAt(x).widget().setCheckState(False)
+        index = dialog.layout.count()
+        for x in range(index):
+            dialog.layout.itemAt(x).widget().setCheckState(False)
+
+        msg = QMessageBox(None)
+        msg.setWindowTitle("Sucesso")
+        msg.setIcon(QMessageBox.Information)
+        msg.setText("Cadastro realizado com sucesso!")
+        msg.show()
+        msg.exec_()
+
+    except ValueError:
+        msg = QMessageBox(None)
+        msg.setWindowTitle("Erro")
+        msg.setIcon(QMessageBox.Critical)
+        msg.setText("Por favor, preencha todos os campos")
+        msg.show()
+        msg.exec_()
 
 #Definir ícone inicial
 def definirIcone():

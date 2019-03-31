@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from cargo import Cargo
 from database import database
-from interface.cadastroServidorWindow import *
+from interface.cadastroCargoWindow import *
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
@@ -14,7 +14,6 @@ def cadastrarCargo():
 
     try:
         cargo = Cargo(tela.lineCargo.text())
-
         database.inserirCargo(tela.lineCargo.text())
         tela.lineCargo.setText("")
 
@@ -29,10 +28,17 @@ def cadastrarCargo():
         msg = QMessageBox(None)
         msg.setWindowTitle("Erro")
         msg.setIcon(QMessageBox.Critical)
-        msg.setText("Digite o nome do cargo antes de confirmar!")
+        msg.setText("Por favor, primeiro digite o nome do cargo.")
         msg.show()
         msg.exec_()
 
+    except Warning:
+        msg = QMessageBox(None)
+        msg.setWindowTitle("Erro")
+        msg.setIcon(QMessageBox.Critical)
+        msg.setText("Cargo já cadastrado. Tente novamente.")
+        msg.show()
+        msg.exec_()
 
 tela.btnCadastrar.clicked.connect(cadastrarCargo)
 

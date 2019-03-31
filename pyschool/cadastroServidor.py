@@ -60,34 +60,58 @@ def carregarFoto(event):
         tela.lblFoto.setPixmap(new_pixmap)
 
 def cadastrarServidor():
-    endereco = Endereco(tela.lineRua.text(),tela.lineBairro.text(),tela.spinNumero.text(),tela.lineCep.text(),
-                        tela.lineCidade.text(),tela.cbEstado.currentText())
-    database.inserirEndereco(endereco)
+    try:
+        endereco = Endereco(tela.lineRua.text(),tela.lineBairro.text(),tela.spinNumero.text(),tela.lineCep.text(),
+                            tela.lineCidade.text(),tela.cbEstado.currentText())
+        database.inserirEndereco(endereco)
 
-    id_endereco = database.retornarUltimoId("endereco")
+        id_endereco = database.retornarUltimoId("endereco")
 
-    servidor = Servidor(tela.lineNome.text(),tela.dateNascimento.text(),tela.cbSexo.currentText(),tela.lineRg.text(),
-                        tela.lineCpf.text(),tela.lineTelefone.text(),id_endereco, tela.lineEmail.text(),tela.lineSenha.text(),tela.cbEstadoCivil.currentText(),
-                        foto,tela.rbSim.isChecked(),tela.cbCargo.currentText())
-    database.inserirServidor(servidor)
+        if tela.rbSim.isChecked():
 
-    tela.lineNome.setText("")
-    tela.cbSexo.setCurrentIndex(0)
-    tela.lineRg.setText("")
-    tela.lineCpf.setText("")
-    tela.lineTelefone.setText("")
-    tela.lineRua.setText("")
-    tela.lineBairro.setText("")
-    tela.spinNumero.setValue(0)
-    tela.lineCep.setText("")
-    tela.lineCidade.setText("")
-    tela.cbEstado.setCurrentIndex(0)
-    tela.lineEmail.setText("")
-    tela.lineSenha.setText("")
-    tela.cbEstadoCivil.setCurrentIndex(0)
-    definirIcone()
-    tela.rbNao.setChecked(True)
-    tela.cbCargo.setCurrentIndex(0)
+            servidor = Servidor(tela.lineNome.text(), tela.dateNascimento.text(), tela.cbSexo.currentText(), tela.lineRg.text(),
+                                tela.lineCpf.text(), tela.lineTelefone.text(), id_endereco, tela.lineEmail.text(),
+                                tela.lineSenha.text(), tela.cbEstadoCivil.currentText(), foto, tela.rbSim.isChecked(), tela.cbCargo.currentText())
+
+            database.inserirServidor(servidor)
+
+        else:
+
+            pass
+
+
+        tela.lineNome.setText("")
+        tela.cbSexo.setCurrentIndex(0)
+        tela.lineRg.setText("")
+        tela.lineCpf.setText("")
+        tela.lineTelefone.setText("")
+        tela.lineRua.setText("")
+        tela.lineBairro.setText("")
+        tela.spinNumero.setValue(0)
+        tela.lineCep.setText("")
+        tela.lineCidade.setText("")
+        tela.cbEstado.setCurrentIndex(0)
+        tela.lineEmail.setText("")
+        tela.lineSenha.setText("")
+        tela.cbEstadoCivil.setCurrentIndex(0)
+        definirIcone()
+        tela.rbNao.setChecked(True)
+        tela.cbCargo.setCurrentIndex(0)
+
+        msg = QMessageBox(None)
+        msg.setWindowTitle("Sucesso")
+        msg.setIcon(QMessageBox.Information)
+        msg.setText("Cadastro realizado com sucesso!")
+        msg.show()
+        msg.exec_()
+
+    except ValueError:
+        msg = QMessageBox(None)
+        msg.setWindowTitle("Erro")
+        msg.setIcon(QMessageBox.Critical)
+        msg.setText("Por favor, preencha todos os campos")
+        msg.show()
+        msg.exec_()
 
 #Definir ícone inicial
 def definirIcone():
