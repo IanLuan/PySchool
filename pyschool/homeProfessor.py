@@ -38,10 +38,8 @@ def coletarDados():
 # Configurar tabela
 tela.model = QStandardItemModel()  # SELECTING THE MODEL - FRAMEWORK THAT HANDLES QUERIES AND EDITS
 tela.table.setModel(tela.model)  # SETTING THE MODEL
-tela.table.setEditTriggers(QAbstractItemView.NoEditTriggers)
 tela.model.setHorizontalHeaderLabels(['id', 'Turmas', 'Alunos'])
 tela.table.setSelectionBehavior(QAbstractItemView.SelectRows)
-tela.table.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
 tela.table.setColumnWidth(0, 50)
 tela.table.setColumnWidth(1, 560)
 tela.table.setColumnWidth(2, 50)
