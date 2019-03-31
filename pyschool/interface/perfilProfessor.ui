@@ -1,0 +1,1159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>perfilProfessor</class>
+ <widget class="QMainWindow" name="perfilProfessor">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>952</width>
+    <height>654</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>952</width>
+    <height>200</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>952</width>
+    <height>760</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Perfil Professor</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(21, 143, 181)</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+backgroundcolor: rgb(255,255,255)
+}</string>
+   </property>
+   <widget class="QPushButton" name="btnCancelar">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>610</y>
+      <width>111</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::StrongFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 25 10pt &quot;Malgun Gothic Semilight&quot;;
+border: 0.7px solid grey;
+border-radius: 10px;
+background-color: rgb(255, 255, 255);
+box-shadow: 5px -9px 3px #000;</string>
+    </property>
+    <property name="text">
+     <string>Cancelar</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="framezao">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>931</width>
+      <height>601</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame{
+background-color: rgb(255, 255, 255);
+border-radius: 7px;
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="framePessoais">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>30</y>
+       <width>931</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="lblPessoais">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-4</y>
+        <width>931</width>
+        <height>39</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 12pt &quot;Malgun Gothic Semilight&quot;;
+color: rgb(21, 143, 181);</string>
+      </property>
+      <property name="text">
+       <string>Informações Pessoais</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblNome">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>45</y>
+        <width>181</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 75 10pt &quot;Malgun Gothic&quot;;
+color: rgb(136, 136, 136)</string>
+      </property>
+      <property name="text">
+       <string>Nome Completo</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblCpf">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>112</y>
+        <width>55</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(136, 136, 136);
+font: 75 10pt &quot;Malgun Gothic&quot;;</string>
+      </property>
+      <property name="text">
+       <string>CPF</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblEstadoCivil">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>180</y>
+        <width>111</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(136, 136, 136);
+font: 75 10pt &quot;Malgun Gothic&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Estado Civil</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblNascimento">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>180</y>
+        <width>121</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(136, 136, 136);
+font: 75 10pt &quot;Malgun Gothic&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Nascimento</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblRg">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>112</y>
+        <width>55</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(136, 136, 136);
+font: 75 10pt &quot;Malgun Gothic&quot;;</string>
+      </property>
+      <property name="text">
+       <string>RG</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::PlainText</enum>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cbEstadoCivil">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>210</y>
+        <width>431</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid grey;
+border-radius: 5px;
+font: 9pt &quot;Leelawadee UI Semilight&quot;;
+background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="maxVisibleItems">
+       <number>5</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>Solteiro(a)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Casado(a)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Separado(a)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Divorciado(a)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Viúvo(a)</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QDateEdit" name="dateNascimento">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>210</y>
+        <width>171</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid grey;
+border-radius: 5px;
+font: 9pt &quot;Leelawadee UI Semilight&quot;;
+background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="buttonSymbols">
+       <enum>QAbstractSpinBox::NoButtons</enum>
+      </property>
+      <property name="maximumDate">
+       <date>
+        <year>3000</year>
+        <month>12</month>
+        <day>31</day>
+       </date>
+      </property>
+      <property name="minimumDate">
+       <date>
+        <year>1900</year>
+        <month>9</month>
+        <day>14</day>
+       </date>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblSexo">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>180</y>
+        <width>55</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(136, 136, 136);
+font: 75 10pt &quot;Malgun Gothic&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Sexo</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cbSexo">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>210</y>
+        <width>251</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid grey;
+border-radius: 5px;
+font: 9pt &quot;Leelawadee UI Semilight&quot;;
+background-color: rgb(255, 255, 255);</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>Feminino</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Masculino</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Outro</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="Line" name="lineInfo_2">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>32</y>
+        <width>300</width>
+        <height>1</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 123, 28);</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblFotolbl">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>45</y>
+        <width>40</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(136, 136, 136);
+font: 75 10pt &quot;Malgun Gothic&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Foto</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineNome">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>75</y>
+        <width>711</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid grey;
+border-radius: 5px;
+font: 9pt &quot;Leelawadee UI Semilight&quot;;
+background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineCpf">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>140</y>
+        <width>431</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid grey;
+border-radius: 5px;
+font: 9pt &quot;Leelawadee UI Semilight&quot;;
+background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="inputMask">
+       <string>000.000.000-00</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineRg">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>140</y>
+        <width>251</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid grey;
+border-radius: 5px;
+font: 9pt &quot;Leelawadee UI Semilight&quot;;
+background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Mayara</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblFoto">
+      <property name="geometry">
+       <rect>
+        <x>790</x>
+        <y>40</y>
+        <width>121</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 123, 28);
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../../OneDrive/Área de Trabalho/icons/perfil.png</pixmap>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="frameEndereco">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>290</y>
+       <width>931</width>
+       <height>171</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255)</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="lblEndereco">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>931</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 12pt &quot;Malgun Gothic Semilight&quot;;
+color: rgb(21, 143, 181);</string>
+      </property>
+      <property name="text">
+       <string>Endereço</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblRua">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>47</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 10pt &quot;Malgun Gothic Semilight&quot;;
+color: rgb(136, 136, 136)</string>
+      </property>
+      <property name="text">
+       <string>Rua</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblNum">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>50</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 10pt &quot;Malgun Gothic Semilight&quot;;
+color: rgb(136, 136, 136)</string>
+      </property>
+      <property name="text">
+       <string>Número</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblBairro">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>105</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 10pt &quot;Malgun Gothic Semilight&quot;;
+color: rgb(136, 136, 136)</string>
+      </property>
+      <property name="text">
+       <string>Bairro</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblCep">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>47</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 10pt &quot;Malgun Gothic Semilight&quot;;
+color: rgb(136, 136, 136)</string>
+      </property>
+      <property name="text">
+       <string>CEP</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblCidade">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>105</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 10pt &quot;Malgun Gothic Semilight&quot;;
+color: rgb(136, 136, 136)</string>
+      </property>
+      <property name="text">
+       <string>Cidade</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblEstado">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>110</y>
+        <width>55</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 10pt &quot;Malgun Gothic Semilight&quot;;
+color: rgb(136, 136, 136)</string>
+      </property>
+      <property name="text">
+       <string>Estado</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineRua">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>431</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid grey;
+border-radius: 5px;
+font: 9pt &quot;Leelawadee UI Semilight&quot;;
+background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QSpinBox" name="spinNumero">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>70</y>
+        <width>171</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid grey;
+border-radius: 5px;
+font: 9pt &quot;Leelawadee UI Semilight&quot;;
+background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="buttonSymbols">
+       <enum>QAbstractSpinBox::NoButtons</enum>
+      </property>
+      <property name="maximum">
+       <number>5000</number>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cbEstado">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>130</y>
+        <width>171</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid grey;
+border-radius: 5px;
+font: 9pt &quot;Leelawadee UI Semilight&quot;;
+background-color: rgb(255, 255, 255);</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>Acre (AC)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Alagoas (AL)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Amapá (AP)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Amazonas (AM)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Bahia (BA)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Ceará (CE)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Distrito Federal (DF)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Espírito Santos (ES)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Goiás (GO)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Maranhão (MA)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Mato Grosso (MT)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Mato Grosso do Sul (MS)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Minas Gerais (MG)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Pará (PA)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Paraíba (PB)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Paraná (PR)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Pernambuco (PR)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Piauí (PI)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Rio de Janeiro (RJ)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Rio Grande do Norte (RN)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Rondônia (RO)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Roraima (RR)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Santa Catarina (SC)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>São Paulo (SP)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Sergipe (SE)</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Tocantins (TO)</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="Line" name="lineEndereco">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>35</y>
+        <width>300</width>
+        <height>1</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 123, 28);</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineBairro">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>130</y>
+        <width>431</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid grey;
+border-radius: 5px;
+font: 9pt &quot;Leelawadee UI Semilight&quot;;
+background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineCep">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>70</y>
+        <width>251</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid grey;
+border-radius: 5px;
+font: 9pt &quot;Leelawadee UI Semilight&quot;;
+background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="inputMask">
+       <string>00000-000</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineCidade">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>130</y>
+        <width>251</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid grey;
+border-radius: 5px;
+font: 9pt &quot;Leelawadee UI Semilight&quot;;
+background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <zorder>lblRua</zorder>
+     <zorder>lblNum</zorder>
+     <zorder>lblBairro</zorder>
+     <zorder>lblCep</zorder>
+     <zorder>lblCidade</zorder>
+     <zorder>lblEstado</zorder>
+     <zorder>lineRua</zorder>
+     <zorder>spinNumero</zorder>
+     <zorder>cbEstado</zorder>
+     <zorder>lblEndereco</zorder>
+     <zorder>lineEndereco</zorder>
+     <zorder>lineBairro</zorder>
+     <zorder>lineCep</zorder>
+     <zorder>lineCidade</zorder>
+    </widget>
+    <widget class="QFrame" name="frameComplementares">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>460</y>
+       <width>931</width>
+       <height>201</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QFrame{
+background-color: rgb(255, 255, 255)
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="lblInfoComplementares">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>10</y>
+        <width>931</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 12pt &quot;Malgun Gothic Semilight&quot;;
+color: rgb(21, 143, 181);</string>
+      </property>
+      <property name="text">
+       <string>Informações Complementares</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblMaterias">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>81</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 10pt &quot;Malgun Gothic Semilight&quot;;
+color: rgb(136, 136, 136)</string>
+      </property>
+      <property name="text">
+       <string>Matérias</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblEmail">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>60</y>
+        <width>55</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 10pt &quot;Malgun Gothic Semilight&quot;;
+color: rgb(136, 136, 136)</string>
+      </property>
+      <property name="text">
+       <string>Email</string>
+      </property>
+     </widget>
+     <widget class="Line" name="lineInfo">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>50</y>
+        <width>300</width>
+        <height>1</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 123, 28);</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lblTelefone">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>60</y>
+        <width>91</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(136, 136, 136);
+font: 75 10pt &quot;Malgun Gothic&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Telefone</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEmail">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>90</y>
+        <width>491</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid grey;
+border-radius: 5px;
+font: 9pt &quot;Leelawadee UI Semilight&quot;;
+background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineTelefone">
+      <property name="geometry">
+       <rect>
+        <x>740</x>
+        <y>90</y>
+        <width>161</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid grey;
+border-radius: 5px;
+font: 9pt &quot;Leelawadee UI Semilight&quot;;
+background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhNone</set>
+      </property>
+      <property name="inputMask">
+       <string>(00) 0 0000-0000</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnMaterias">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>90</y>
+        <width>201</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::StrongFocus</enum>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 25 10pt &quot;Malgun Gothic Semilight&quot;;
+border: 0.7px solid grey;
+border-radius: 10px;
+background-color: rgb(255, 123, 28);
+box-shadow: 5px -9px 3px #000;
+</string>
+      </property>
+      <property name="text">
+       <string>Ver Matérias</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="frameLaranja">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>931</width>
+       <height>9</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 123, 28);
+border-radius: 0.2px;
+</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+    </widget>
+    <zorder>frameLaranja</zorder>
+    <zorder>framePessoais</zorder>
+    <zorder>frameEndereco</zorder>
+    <zorder>frameComplementares</zorder>
+   </widget>
+   <zorder>framezao</zorder>
+   <zorder>btnCancelar</zorder>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
