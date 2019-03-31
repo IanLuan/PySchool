@@ -21,7 +21,9 @@ class Aluno(Pessoa):
         return self.__matricula
     
     def setMatricula(self, matricula):
-        self.gerarMatricula()
+        matricula = self.gerarMatricula()
+        if matricula == "":
+            raise ValueError
         self.__matricula = matricula
     
     def getMatriculado(self):
@@ -105,5 +107,8 @@ class Aluno(Pessoa):
     def gerarMatricula(self):
         now = datetime.now()
         database = Database()
-        matricula = str(now.year) + '(database.retornarUltimoId("aluno") + 1)'
-        self.__matricula = matricula
+        print(now.year)
+        print(database.retornarUltimoId("aluno"))
+        matricula = str(now.year) + str(int(database.retornarUltimoId("aluno")) + 1)
+        print(matricula)
+        return matricula
