@@ -1,6 +1,7 @@
 import dataset
 from endereco import *
 from professor import *
+from administrador import *
 from servidor import *
 
 class Database:
@@ -17,7 +18,6 @@ class Database:
         self.table_turma = self.db['turma']
         self.table_classe = self.db['classe']
         self.table_ensino = self.db['ensino']
-        self.table_curso = self.db['curso']
 
     #PROFESSOR
     def inserirProfessor(self, professor):
@@ -45,7 +45,7 @@ class Database:
             telefone = row['telefone']
             materias.append(row['materia'])
 
-        professor = Professor(nome, nascimento, sexo, rg, cpf, telefone, self.mostrarEndereco(id), email, None, estadoCivil, foto, materias)
+        professor = Professor(nome, nascimento, sexo, rg, cpf, telefone, self.mostrarEndereco(id, "professor"), email, None, estadoCivil, foto, materias)
         return professor
 
     #MATÉRIA
@@ -108,7 +108,7 @@ class Database:
             telefone = row['telefone']
             cargo = row['cargo']
 
-        servidor = Servidor(nome, nascimento, sexo, rg, cpf, telefone, self.mostrarEndereco(id), email, None, estadoCivil, foto, cargo)
+        servidor = Servidor(nome, nascimento, sexo, rg, cpf, telefone, self.mostrarEndereco(id, "servidor"), email, None, estadoCivil, foto, cargo)
         return servidor
 
     #ADMINISTRADOR
@@ -117,6 +117,36 @@ class Database:
                     cpf=administrador.getCpf(), telefone=administrador.getTelefone(), id_endereco = administrador.getEndereco(), email=administrador.getEmail(),
                     senha=administrador.getSenha(),estadoCivil=administrador.getEstadoCivil(),foto=administrador.getFoto(),cargo=administrador.getCargo())
         self.table_administrador.insert(data)
+
+    def updateAdministrador(self, id, administrador):
+        data = dict(id= id, nome=administrador.getNome(), nascimento=administrador.getNascimento(),
+                    sexo=administrador.getSexo(), rg=administrador.getRg(),
+                    cpf=administrador.getCpf(), telefone=administrador.getTelefone(),
+                    id_endereco=administrador.getEndereco(), email=administrador.getEmail(),
+                    senha=administrador.getSenha(), estadoCivil=administrador.getEstadoCivil(),
+                    foto=administrador.getFoto(), cargo=administrador.getCargo())
+        self.table_administrador.update(data, ['id'])
+
+    def mostrarDadosAdministrador(self, id):
+        statement = "select administrador.nome as nome, nascimento, cargo, sexo, rg, cpf, telefone, email, senha, estadoCivil, foto " \
+                    "from administrador where administrador.id = '{}'".format(id)
+
+        for row in self.db.query(statement):
+            nome = row['nome']
+            nascimento = row['nascimento']
+            sexo = row['sexo']
+            rg = row['rg']
+            email = row['email']
+            senha = row['senha']
+            estadoCivil = row['estadoCivil']
+            foto = row['foto']
+            cpf = row['cpf']
+            telefone = row['telefone']
+            cargo = row['cargo']
+
+        administrador = Administrador(nome, nascimento, sexo, rg, cpf, telefone, self.mostrarEndereco(id, "administrador"), email,
+                            senha, estadoCivil, foto, cargo)
+        return administrador
 
     #TURMA
     def inserirTurma(self, turma):
@@ -233,8 +263,8 @@ class Database:
                     estado=endereco.getEstado())
         self.table_endereco.insert(data)
 
-    def mostrarEndereco(self, id):
-        statement = "select rua, numero, bairro, cidade, estado, cep from professor, ensino, endereco where professor.id = '{}' and ensino.id_professor = '{}' and professor.id_endereco = endereco.id".format(id, id)
+    def mostrarEndereco(self, id, table):
+        statement = "select rua, numero, bairro, cidade, estado, cep from {}, endereco where {}.id = '{}' and {}.id_endereco = endereco.id".format(table, table, id, table)
 
         for row in self.db.query(statement):
             rua = row['rua']
@@ -247,15 +277,22 @@ class Database:
         endereco = Endereco(rua, bairro, numero, cep, cidade, estado)
         return endereco
 
-    #CURSO
-    def inserirCurso(self, id_aluno, id_materia):
+    def updateEndereco(self, endereco, id, table):
 
-
-
-        data = dict(rua=endereco.getRua(), bairro=endereco.getBairro(), numero=endereco.getNumero(),
-                    cep=endereco.getCep(), cidade=endereco.getCidade(),
+        id_endereco = self.retornarIdEndereco(id, table)
+        data = dict(id=id_endereco, rua=endereco.getRua(),bairro=endereco.getBairro(),numero=endereco.getNumero(),cep=endereco.getCep(),cidade=endereco.getCidade(),
                     estado=endereco.getEstado())
-        self.table_endereco.insert(data)
+
+        self.table_endereco.update(data, ['id'])
+
+    def retornarIdEndereco(self, id, table):
+        print(id)
+        statement = "select distinct endereco.id from endereco, {} where {}.id = '{}' and {}.id_endereco = endereco.id".format(table, table, id, table)
+
+        for row in self.db.query(statement):
+            id_endereco = row['id']
+
+        return id_endereco
 
     #UTEIS
     def retornarUltimoId(self, tabela):

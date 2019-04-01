@@ -20,10 +20,12 @@ def voltarHome(id):
     MainWindow.close()
     homeServidor.startHomeServidor(id)
 
-
 # Inicializar tela
 def startPerfilServidor(id):
     servidor = database.mostrarDadosServidor(id)
+
+    cargos = database.mostrarCargos()
+    tela.cbCargo.addItems(cargos)
 
     tela.lineNome.setText(servidor.getNome())
     tela.cbSexo.setCurrentText(servidor.getSexo())

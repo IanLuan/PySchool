@@ -31,8 +31,6 @@ def logar():
 
         id, type = database.autenticar(email, senha)
 
-        print(type)
-
         if id == None:
             raise UserWarning
 
