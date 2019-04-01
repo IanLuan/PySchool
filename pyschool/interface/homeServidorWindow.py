@@ -9,7 +9,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_MainWindow(object):
+class Ui_homeServidor(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(680, 350)
@@ -36,7 +36,7 @@ class Ui_MainWindow(object):
 "background-color: rgb(255, 123, 28);\n"
 "color: #fff;")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("icons/matricula.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("interface/icons/matricula.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnMatricula.setIcon(icon)
         self.btnMatricula.setIconSize(QtCore.QSize(32, 32))
         self.btnMatricula.setFlat(False)
@@ -52,7 +52,7 @@ class Ui_MainWindow(object):
 "background-color: rgb(255, 123, 28);\n"
 "color: #fff;")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("icons/rematricula.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("interface/icons/rematricula.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnRematricula.setIcon(icon1)
         self.btnRematricula.setIconSize(QtCore.QSize(32, 32))
         self.btnRematricula.setObjectName("btnRematricula")
@@ -67,7 +67,7 @@ class Ui_MainWindow(object):
 "background-color: rgb(255, 123, 28);\n"
 "color: #fff;")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("icons/alunos.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap("interface/icons/alunos.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnAlunos.setIcon(icon2)
         self.btnAlunos.setIconSize(QtCore.QSize(32, 32))
         self.btnAlunos.setObjectName("btnAlunos")
@@ -82,7 +82,7 @@ class Ui_MainWindow(object):
 "background-color: rgb(255, 123, 28);\n"
 "color: #fff;")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("icons/materias.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon3.addPixmap(QtGui.QPixmap("interface/icons/materias.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnMaterias.setIcon(icon3)
         self.btnMaterias.setIconSize(QtCore.QSize(32, 32))
         self.btnMaterias.setObjectName("btnMaterias")
@@ -110,7 +110,7 @@ class Ui_MainWindow(object):
 "background-color: rgb(255, 123, 28);\n"
 "color: #fff;")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("icons/turma.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon4.addPixmap(QtGui.QPixmap("interface/icons/turma.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnTurmas.setIcon(icon4)
         self.btnTurmas.setIconSize(QtCore.QSize(32, 32))
         self.btnTurmas.setObjectName("btnTurmas")
@@ -125,7 +125,7 @@ class Ui_MainWindow(object):
 "background-color: rgb(255, 123, 28);\n"
 "color: #fff;")
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("icons/person.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon5.addPixmap(QtGui.QPixmap("interface/icons/person.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnPerfil.setIcon(icon5)
         self.btnPerfil.setIconSize(QtCore.QSize(32, 32))
         self.btnPerfil.setObjectName("btnPerfil")
@@ -138,7 +138,7 @@ class Ui_MainWindow(object):
         self.btnExit.setStyleSheet("")
         self.btnExit.setText("")
         icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("icons/exit.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon6.addPixmap(QtGui.QPixmap("interface/icons/exit.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnExit.setIcon(icon6)
         self.btnExit.setIconSize(QtCore.QSize(32, 32))
         self.btnExit.setFlat(True)
@@ -167,7 +167,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
+    ui = Ui_homeServidor()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
