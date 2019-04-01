@@ -169,6 +169,7 @@ class Database:
 
         for row in self.db.query(statement):
             id = row['id']
+            type = "administrador"
 
         return id, type
 
