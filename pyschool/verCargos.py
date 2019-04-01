@@ -26,6 +26,7 @@ def voltarHome(id, type):
 
 def adicionarCargos():
 
+	# SELECT AQUI PARA ME RETORNAR A LISTA DE TODOS OS CARGOS
     cargos = ["professor", "adm", "secretário"]
 
     for cargo in cargos:
@@ -37,7 +38,7 @@ def startCargos(id):
     tela.model = QStandardItemModel()  
     tela.tableCargos.setModel(tela.model)
     tela.model.setHorizontalHeaderLabels(['Cargos'])
-    tela.tableCargos.setSelectionBehavior(QAbstractItemView.SelectRows)
+    #tela.tableCargos.setSelectionBehavior(QAbstractItemView.SelectRows)
     tela.tableCargos.setColumnWidth(0, 350)
     adicionarCargos()
 
