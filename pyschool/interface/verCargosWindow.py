@@ -67,6 +67,9 @@ class Ui_verCargos(object):
         self.btnCargo.setObjectName("btnCargo")
         self.tableCargos = QtWidgets.QTableView(self.centralwidget)
         self.tableCargos.setGeometry(QtCore.QRect(10, 10, 351, 311))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.tableCargos.setFont(font)
         self.tableCargos.setStyleSheet("QHeaderView::section {\n"
 "border: 2px solid rgb(255, 123, 28);\n"
 "border-radius: 15px;\n"
@@ -81,6 +84,10 @@ class Ui_verCargos(object):
 "selection-color: #fff;\n"
 "color: rgb(255, 123, 28); }")
         self.tableCargos.setObjectName("tableCargos")
+        self.tableCargos.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.tableCargos.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        self.tableCargos.setCornerButtonEnabled(False)
+        self.tableCargos.verticalHeader().setVisible(False)
         verCargos.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(verCargos)

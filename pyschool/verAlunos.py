@@ -9,7 +9,6 @@ import matriculaAluno
 import homeServidor
 import homeAdm
 
-
 # tela
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()

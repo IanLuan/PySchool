@@ -30,7 +30,7 @@ def voltarHome(id, type):
 def adicionarProfessores():
 
 	# SELECT AQUI PARA ME RETORNAR A LISTA DE TODOS OS ALUNOS
-    professores = ["João", "marcos"]
+    professores = ["João", "marcos", "fabiana", "lalala","teste"]
 
     for professor in professores:
         tela.model.appendRow(QStandardItem(professor))

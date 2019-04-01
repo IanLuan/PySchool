@@ -16,26 +16,26 @@ MainWindow = QtWidgets.QMainWindow()
 tela = Ui_verCargos()
 tela.setupUi(MainWindow)
 
+database = Database()
 
-def cadastrarCargos(id):
-	cadastroCargo.startCadastroCargo(id)
 
-def voltarHome(id):
+def voltarHome(id, type):
 	MainWindow.close()
 	homeAdm.startHomeAdm(id)
 
 def adicionarCargos():
-
-	# SELECT AQUI PARA ME RETORNAR A LISTA DE TODOS OS CARGOS
-    cargos = ["professor", "adm", "secretário"]
-
+    cargos = []
+    cargos = database.mostrarCargos()
     for cargo in cargos:
         tela.model.appendRow(QStandardItem(cargo))
+
+def cadastrarCargos(id):
+    cadastroCargo.startCadastroCargo(id)
 
 def startCargos(id):
 
     # Configurar tabela
-    tela.model = QStandardItemModel()  
+    tela.model = QStandardItemModel()
     tela.tableCargos.setModel(tela.model)
     tela.model.setHorizontalHeaderLabels(['Cargos'])
     #tela.tableCargos.setSelectionBehavior(QAbstractItemView.SelectRows)
@@ -47,7 +47,6 @@ def startCargos(id):
 
     # Voltar
     tela.btnVoltar.clicked.connect(partial(voltarHome, id))
-
 
     # run
     MainWindow.show()

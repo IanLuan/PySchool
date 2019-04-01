@@ -427,7 +427,7 @@ class Ui_perfilProfessor(object):
     def retranslateUi(self, perfilProfessor):
         _translate = QtCore.QCoreApplication.translate
         perfilProfessor.setWindowTitle(_translate("perfilProfessor", "Perfil Professor"))
-        self.btnCancelar.setText(_translate("perfilProfessor", "Cancelar"))
+        self.btnCancelar.setText(_translate("perfilProfessor", "Voltar"))
         self.lblPessoais.setText(_translate("perfilProfessor", "Informações Pessoais"))
         self.lblNome.setText(_translate("perfilProfessor", "Nome Completo"))
         self.lblCpf.setText(_translate("perfilProfessor", "CPF"))

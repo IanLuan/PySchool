@@ -39,7 +39,6 @@ def verPerfil(id):
     MainWindow.close()
     perfilServidor.startPerfilServidor(id)
 
-
 def startHomeServidor(id):
 
     # Ver Perfil
