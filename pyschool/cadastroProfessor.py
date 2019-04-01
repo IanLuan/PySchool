@@ -6,14 +6,17 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 
 #from interface.escolherMateriasDialog import *
-from pyschool.interface.escolherMateriasDialog import *
+from interface.escolherMateriasDialog import *
 from database.database import Database
 #from interface.cadastroProfessorWindow import *
-from pyschool.interface.cadastroProfessorWindow import *
+from interface.cadastroProfessorWindow import *
 #from endereco import *
-from pyschool.endereco import *
+from endereco import *
 #from professor import *
-from pyschool.professor import *
+from professor import *
+
+import homeAdm
+import homeServidor
 
 database = Database()
 
@@ -25,6 +28,16 @@ tela.setupUi(MainWindow)
 Dialog = QtWidgets.QDialog()
 dialog = Ui_Dialog()
 dialog.setupUi(Dialog)
+
+
+def voltarHome():
+    MainWindow.close()
+
+    if type == "administrador":
+        homeAdm.startHomeAdm(id)
+    else:
+        homeServidor.startHomeServidor(id)
+
 
 def confirmarMaterias():
 
@@ -162,20 +175,24 @@ def definirIcone():
     tela.lblFoto.setPixmap(new_pixmap)
     foto = os.path.dirname(os.path.abspath(__file__))+"/interface/icons/perfil.png"
 
-#Bloqueando line edit
-tela.lineMaterias.setReadOnly(True)
 
-#Definindo ícone inicial
-definirIcone()
+def startCadastroProfessor(id):
+    #Bloqueando line edit
+    tela.lineMaterias.setReadOnly(True)
 
-#Evento de carregar foto
-tela.lblFoto.mousePressEvent = carregarFoto
+    #Definindo ícone inicial
+    definirIcone()
 
-#Botão cadastrar acionado
-tela.btnCadatrar.clicked.connect(cadastrarProfessor)
+    #Evento de carregar foto
+    tela.lblFoto.mousePressEvent = carregarFoto
 
-#Botão matérias acionado
-tela.btnMaterias.clicked.connect(escolherMaterias)
+    #Botão cadastrar acionado
+    tela.btnCadatrar.clicked.connect(cadastrarProfessor)
 
-MainWindow.show()
-sys.exit(app.exec_())
+    #Botão matérias acionado
+    tela.btnMaterias.clicked.connect(escolherMaterias)
+
+    # voltar
+    tela.btnCancelar.clicked.connect(voltarHome)
+
+    MainWindow.show()

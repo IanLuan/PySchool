@@ -20,7 +20,7 @@ tela.setupUi(MainWindow)
 def cadastrarCargos(id):
 	cadastroCargo.startCadastroCargo(id)
 
-def voltarHome(id, type):
+def voltarHome(id):
 	MainWindow.close()
 	homeAdm.startHomeAdm(id)
 

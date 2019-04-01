@@ -7,6 +7,8 @@ from interface.homeServidorWindow import *
 
 import perfilServidor
 import matriculaAluno
+import verTurmas
+import verAlunos
 
 
 # tela
@@ -15,6 +17,13 @@ MainWindow = QtWidgets.QMainWindow()
 tela = Ui_homeServidor()
 tela.setupUi(MainWindow)
 
+def alunos(id, type):
+    MainWindow.close()
+    verAlunos.startAlunos(id, type)
+
+def turmas(id, type):
+    MainWindow.close()
+    verTurmas.startTurmas(id, type)
 
 def matricula(id, type):
     MainWindow.close()
@@ -32,5 +41,11 @@ def startHomeServidor(id):
 
     # Matrícula
     tela.btnMatricula.clicked.connect(partial(matricula, id, "servidor"))
+
+    # Turmas
+    tela.btnTurmas.clicked.connect(partial(turmas, id, "servidor"))
+
+    # Alunos
+    tela.btnAlunos.clicked.connect(partial(alunos, id, "servidor"))
 
     MainWindow.show()
