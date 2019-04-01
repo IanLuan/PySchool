@@ -6,16 +6,22 @@ from functools import partial
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 
-from pyschool.interface.perfilAdministradorWindow import *
+from interface.perfilAdministradorWindow import *
 from database.database import Database
 from administrador import *
 from endereco import *
+import homeAdm
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
 tela = Ui_perfilAdministrador()
 tela.setupUi(MainWindow)
 database = Database()
+
+
+def voltarHome(id):
+    MainWindow.close()
+    homeAdm.startHomeAdm(id)
 
 
 def carregarFoto(event):
@@ -87,7 +93,7 @@ def editarAdministrador(id):
         msg.show()
         msg.exec_()
 
-def startPerfilServidor(id):
+def startPerfilAdm(id):
     administrador = database.mostrarDadosAdministrador(id)
 
     cargos = database.mostrarCargos()
