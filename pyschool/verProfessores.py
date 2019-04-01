@@ -3,7 +3,7 @@ from functools import partial
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from database.database import Database
-from interface.verAlunosWindow import *
+from interface.verProfessoresWindow import *
 
 import homeServidor
 import homeAdm
@@ -12,12 +12,12 @@ import cadastroProfessor
 # tela
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
-tela = Ui_verAlunos()
+tela = Ui_verProfessores()
 tela.setupUi(MainWindow)
 
 def cadastrarProfessores(id, type):
     MainWindow.close()
-    matriculaAluno.startMatriculaAluno(id, type)
+    cadastroProfessor.startCadastroProfessor(id)
 
 def voltarHome(id, type):
     MainWindow.close()
@@ -27,15 +27,15 @@ def voltarHome(id, type):
     else:
         homeServidor.startHomeServidor(id)
 
-def adicionarAlunos():
+def adicionarProfessores():
 
 	# SELECT AQUI PARA ME RETORNAR A LISTA DE TODOS OS ALUNOS
-    alunos = ["João", "marcos"]
+    professores = ["João", "marcos"]
 
-    for aluno in alunos:
-        tela.model.appendRow(QStandardItem(aluno))
+    for professor in professores:
+        tela.model.appendRow(QStandardItem(professor))
 
-def startAlunos(id, type):
+def startProfessor(id, type):
 
     # Configurar tabela
     tela.model = QStandardItemModel()  
@@ -43,10 +43,10 @@ def startAlunos(id, type):
     tela.model.setHorizontalHeaderLabels(['Alunos'])
     #tela.table.setSelectionBehavior(QAbstractItemView.SelectRows)
     tela.table.setColumnWidth(0, 350)
-    adicionarAlunos()
+    adicionarProfessores()
 
     # Cadastrar Cargo
-    tela.btnTurma.clicked.connect(partial(cadastrarAlunos, id, type))
+    tela.btnProfessores.clicked.connect(partial(cadastrarProfessores, id, type))
 
     # Voltar
     tela.btnVoltar.clicked.connect(partial(voltarHome, id, type))

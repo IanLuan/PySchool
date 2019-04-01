@@ -9,28 +9,28 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_verAlunos(object):
-    def setupUi(self, verAlunos):
-        verAlunos.setObjectName("verAlunos")
-        verAlunos.resize(370, 380)
+class Ui_verProfessores(object):
+    def setupUi(self, verProfessores):
+        verProfessores.setObjectName("verProfessores")
+        verProfessores.resize(370, 380)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(verAlunos.sizePolicy().hasHeightForWidth())
-        verAlunos.setSizePolicy(sizePolicy)
-        verAlunos.setMinimumSize(QtCore.QSize(370, 380))
-        verAlunos.setMaximumSize(QtCore.QSize(370, 380))
-        self.centralwidget = QtWidgets.QWidget(verAlunos)
+        sizePolicy.setHeightForWidth(verProfessores.sizePolicy().hasHeightForWidth())
+        verProfessores.setSizePolicy(sizePolicy)
+        verProfessores.setMinimumSize(QtCore.QSize(370, 380))
+        verProfessores.setMaximumSize(QtCore.QSize(370, 380))
+        self.centralwidget = QtWidgets.QWidget(verProfessores)
         self.centralwidget.setStyleSheet("#centralwidget {\n"
 "background-color:  rgb(21, 143, 181);\n"
 "}")
         self.centralwidget.setObjectName("centralwidget")
-        self.tableCargos = QtWidgets.QTableView(self.centralwidget)
-        self.tableCargos.setGeometry(QtCore.QRect(10, 10, 350, 321))
+        self.table = QtWidgets.QTableView(self.centralwidget)
+        self.table.setGeometry(QtCore.QRect(10, 10, 350, 321))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.tableCargos.setFont(font)
-        self.tableCargos.setStyleSheet("QHeaderView::section {\n"
+        self.table.setFont(font)
+        self.table.setStyleSheet("QHeaderView::section {\n"
 "border: 2px solid rgb(255, 123, 28);\n"
 "border-radius: 15px;\n"
 "background-color: rgb(255, 123, 28);\n"
@@ -43,16 +43,16 @@ class Ui_verAlunos(object):
 "selection-background-color: rgb(255, 123, 28);\n"
 "selection-color: #fff;\n"
 "color: rgb(255, 123, 28); }")
-        self.tableCargos.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-        self.tableCargos.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
-        self.tableCargos.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
-        self.tableCargos.setCornerButtonEnabled(False)
-        self.tableCargos.setObjectName("tableCargos")
-        self.tableCargos.horizontalHeader().setDefaultSectionSize(0)
-        self.tableCargos.horizontalHeader().setMinimumSectionSize(0)
-        self.tableCargos.verticalHeader().setVisible(False)
-        self.tableCargos.verticalHeader().setDefaultSectionSize(0)
-        self.tableCargos.verticalHeader().setMinimumSectionSize(0)
+        self.table.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.table.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        self.table.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.table.setCornerButtonEnabled(False)
+        self.table.setObjectName("table")
+        self.table.horizontalHeader().setDefaultSectionSize(0)
+        self.table.horizontalHeader().setMinimumSectionSize(0)
+        self.table.verticalHeader().setVisible(False)
+        self.table.verticalHeader().setDefaultSectionSize(0)
+        self.table.verticalHeader().setMinimumSectionSize(0)
         self.btnVoltar = QtWidgets.QPushButton(self.centralwidget)
         self.btnVoltar.setGeometry(QtCore.QRect(12, 338, 123, 33))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Expanding)
@@ -72,38 +72,38 @@ class Ui_verAlunos(object):
 "color: #fff;\n"
 "")
         self.btnVoltar.setObjectName("btnVoltar")
-        self.btnAlunos = QtWidgets.QPushButton(self.centralwidget)
-        self.btnAlunos.setGeometry(QtCore.QRect(210, 338, 149, 33))
+        self.btnProfessores = QtWidgets.QPushButton(self.centralwidget)
+        self.btnProfessores.setGeometry(QtCore.QRect(210, 338, 149, 33))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.btnAlunos.sizePolicy().hasHeightForWidth())
-        self.btnAlunos.setSizePolicy(sizePolicy)
+        sizePolicy.setHeightForWidth(self.btnProfessores.sizePolicy().hasHeightForWidth())
+        self.btnProfessores.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
-        self.btnAlunos.setFont(font)
-        self.btnAlunos.setFocusPolicy(QtCore.Qt.StrongFocus)
-        self.btnAlunos.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.btnAlunos.setStyleSheet("border: 2px solid rgb(255, 123, 28);;\n"
+        self.btnProfessores.setFont(font)
+        self.btnProfessores.setFocusPolicy(QtCore.Qt.StrongFocus)
+        self.btnProfessores.setLayoutDirection(QtCore.Qt.LeftToRight)
+        self.btnProfessores.setStyleSheet("border: 2px solid rgb(255, 123, 28);;\n"
 "border-radius: 15px;\n"
 "background-color: rgb(255, 123, 28);\n"
 "color: #fff;\n"
 "")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("icons/alunos.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.btnAlunos.setIcon(icon)
-        self.btnAlunos.setObjectName("btnAlunos")
-        verAlunos.setCentralWidget(self.centralwidget)
+        self.btnProfessores.setIcon(icon)
+        self.btnProfessores.setObjectName("btnProfessores")
+        verProfessores.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(verAlunos)
-        QtCore.QMetaObject.connectSlotsByName(verAlunos)
+        self.retranslateUi(verProfessores)
+        QtCore.QMetaObject.connectSlotsByName(verProfessores)
 
-    def retranslateUi(self, verAlunos):
+    def retranslateUi(self, verProfessores):
         _translate = QtCore.QCoreApplication.translate
-        verAlunos.setWindowTitle(_translate("verAlunos", "Alunos"))
-        self.btnVoltar.setText(_translate("verAlunos", "Voltar"))
-        self.btnAlunos.setText(_translate("verAlunos", "+ Professores"))
+        verProfessores.setWindowTitle(_translate("verProfessores", "Professores"))
+        self.btnVoltar.setText(_translate("verProfessores", "Voltar"))
+        self.btnProfessores.setText(_translate("verProfessores", "+ Professores"))
 
 
 
@@ -111,8 +111,8 @@ class Ui_verAlunos(object):
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    verAlunos = QtWidgets.QMainWindow()
-    ui = Ui_verAlunos()
-    ui.setupUi(verAlunos)
-    verAlunos.show()
+    verProfessores = QtWidgets.QMainWindow()
+    ui = Ui_verProfessores()
+    ui.setupUi(verProfessores)
+    verProfessores.show()
     sys.exit(app.exec_())

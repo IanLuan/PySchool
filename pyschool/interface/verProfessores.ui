@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>verAlunos</class>
- <widget class="QMainWindow" name="verAlunos">
+ <class>verProfessores</class>
+ <widget class="QMainWindow" name="verProfessores">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -29,7 +29,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Alunos</string>
+   <string>Professores</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
@@ -37,7 +37,7 @@
 background-color:  rgb(21, 143, 181);
 }</string>
    </property>
-   <widget class="QTableView" name="tableCargos">
+   <widget class="QTableView" name="table">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -132,7 +132,7 @@ color: #fff;
      <string>Voltar</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnAlunos">
+   <widget class="QPushButton" name="btnProfessores">
     <property name="geometry">
      <rect>
       <x>210</x>

@@ -9,6 +9,7 @@ import verCargos
 import perfilAdministrador
 import verTurmas
 import verAlunos
+import verProfessores
 
 # tela
 app = QtWidgets.QApplication(sys.argv)
@@ -19,6 +20,7 @@ tela.setupUi(MainWindow)
 
 def professores(id, type):
     MainWindow.close()
+    verProfessores.startProfessor(id, type)
 
 def alunos(id, type):
     MainWindow.close()
