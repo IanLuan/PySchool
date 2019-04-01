@@ -37,63 +37,6 @@
 background-color:  rgb(21, 143, 181);
 }</string>
    </property>
-   <widget class="QTableView" name="tableCargos">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>350</width>
-      <height>321</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QHeaderView::section {
-border: 2px solid rgb(255, 123, 28);
-border-radius: 15px;
-background-color: rgb(255, 123, 28);
-color: #fff;
-font-size: 12px;
- }
-
-QTableView {
-background-color: #fff;
-selection-background-color: rgb(255, 123, 28);
-selection-color: #fff;
-color: rgb(255, 123, 28); }</string>
-    </property>
-    <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="sizeAdjustPolicy">
-     <enum>QAbstractScrollArea::AdjustToContents</enum>
-    </property>
-    <property name="editTriggers">
-     <set>QAbstractItemView::NoEditTriggers</set>
-    </property>
-    <property name="cornerButtonEnabled">
-     <bool>false</bool>
-    </property>
-    <attribute name="horizontalHeaderDefaultSectionSize">
-     <number>0</number>
-    </attribute>
-    <attribute name="horizontalHeaderMinimumSectionSize">
-     <number>0</number>
-    </attribute>
-    <attribute name="verticalHeaderVisible">
-     <bool>false</bool>
-    </attribute>
-    <attribute name="verticalHeaderDefaultSectionSize">
-     <number>0</number>
-    </attribute>
-    <attribute name="verticalHeaderMinimumSectionSize">
-     <number>0</number>
-    </attribute>
-   </widget>
    <widget class="QPushButton" name="btnVoltar">
     <property name="geometry">
      <rect>
@@ -172,6 +115,31 @@ color: #fff;
     <property name="icon">
      <iconset>
       <normaloff>icons/work.png</normaloff>icons/work.png</iconset>
+    </property>
+   </widget>
+   <widget class="QTableView" name="tableCargos">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>351</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QHeaderView::section {
+border: 2px solid rgb(255, 123, 28);
+border-radius: 15px;
+background-color: rgb(255, 123, 28);
+color: #fff;
+font-size: 12px;
+ }
+
+QTableView {
+background-color: #fff;
+selection-background-color: rgb(255, 123, 28);
+selection-color: #fff;
+color: rgb(255, 123, 28); }</string>
     </property>
    </widget>
   </widget>
