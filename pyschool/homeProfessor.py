@@ -38,8 +38,7 @@ def coletarDados():
 def verPerfil():
     # abrir a tela do perfil
     MainWindow.close()
-    start() # função para inicializar a nova tela
-
+    start(2) # função para inicializar a nova tela
 
 # Configurar tabela
 tela.model = QStandardItemModel()  

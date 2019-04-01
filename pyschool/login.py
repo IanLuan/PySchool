@@ -2,7 +2,7 @@ import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 
-#from interface.loginWindow import *
+from interface.loginWindow import *
 from database.database import Database
 from pessoa import Pessoa
 
@@ -12,23 +12,32 @@ app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
 tela = Ui_login()
 tela.setupUi(MainWindow)
+database = Database()
 
 def logar():
 
     email = tela.lineEmail.text()
     senha = tela.lineSenha.text()
-    sucessful = False
 
     try:
-        pessoa = Pessoa(None, None, None, None, None, None, None, email, senha, None, None)
-        id, type = pessoa.autenticar(email, senha)
+        if email == "":
+            raise ValueError
+        if senha == "":
+            raise ValueError
+
+        id, type = database.autenticar(email, senha)
+
+        print(type)
+
+        if id == None:
+            raise UserWarning
 
         if type == "professor":
             pass
 
         elif type == "servidor":
             pass
-            
+
         elif type == "administrador":
             pass
 

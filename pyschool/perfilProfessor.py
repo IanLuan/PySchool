@@ -2,6 +2,7 @@ import sys
 import os.path
 import shutil
 
+from functools import partial
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 
@@ -15,7 +16,7 @@ tela.setupUi(MainWindow)
 database_professor = Database()
 
 
-def verMaterias():
+def verMaterias(professor):
     msg = QMessageBox()
     msg.setWindowTitle("Matérias")
     msg.setIcon(QMessageBox.Information)
@@ -24,8 +25,8 @@ def verMaterias():
     msg.exec_()
 
 # Inicializar tela
-def start():
-    professor = database_professor.mostrarDadosProfessor(4)
+def start(id):
+    professor = database_professor.mostrarDadosProfessor(id)
     tela.lineNome.setText(professor.getNome())
     tela.cbSexo.setCurrentText(professor.getSexo())
     tela.lineRg.setText(professor.getRg())
@@ -46,7 +47,6 @@ def start():
     new_pixmap = pixmap.scaled(120, 110, QtCore.Qt.IgnoreAspectRatio)
     tela.lblFoto.setPixmap(new_pixmap)
 
-
-    tela.btnMaterias.clicked.connect(verMaterias)
+    tela.btnMaterias.clicked.connect(partial(verMaterias,professor))
 
     MainWindow.show()

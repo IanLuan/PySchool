@@ -100,13 +100,4 @@ class Pessoa:
     def setFoto(self, foto):
         self.__foto = foto
 
-    def autenticar(self, nome, email):
-        #database = Database()
-        #id, type = database.autenticar(nome, email)
-
-        if id == None:
-            raise UserWarning
-
-        return id, type
-
 
