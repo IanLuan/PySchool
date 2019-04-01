@@ -6,9 +6,9 @@ from interface.loginWindow import *
 from database.database import Database
 from pessoa import Pessoa
 
-from homeProfessor import *
-from homeServidor import *
-from homeAdm import *
+import homeProfessor
+import homeServidor
+import homeAdm
 
 database = Database()
 
@@ -38,15 +38,15 @@ def logar():
 
         if type == "professor":
             MainWindow.close()
-            startHomeProfessor(id)
+            homeProfessor.startHomeProfessor(id)
 
         elif type == "servidor":
             MainWindow.close()
-            startHomeServidor(id)
+            homeServidor.startHomeServidor(id)
 
         elif type == "administrador":
             MainWindow.close()
-            startHomeAdm(id)
+            homeAdm.startHomeAdm(id)
 
     except UserWarning:
         msg = QMessageBox(None)

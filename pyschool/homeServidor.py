@@ -1,10 +1,12 @@
 import sys
+from functools import partial
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from database.database import Database
 from interface.homeServidorWindow import *
 
-from perfilServidor import *
+import perfilServidor
+import matriculaAluno
 
 
 # tela
@@ -14,14 +16,21 @@ tela = Ui_homeServidor()
 tela.setupUi(MainWindow)
 
 
+def matricula(id, type):
+    MainWindow.close()
+    matriculaAluno.startMatriculaAluno(id, type)
+
 def verPerfil(id):
     MainWindow.close()
-    startPerfilServidor(id)
-    
+    perfilServidor.startPerfilServidor(id)
+
 
 def startHomeServidor(id):
 
     # Ver Perfil
     tela.btnPerfil.clicked.connect(partial(verPerfil,id))
+
+    # Matrícula
+    tela.btnMatricula.clicked.connect(partial(matricula, id, "servidor"))
 
     MainWindow.show()

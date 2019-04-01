@@ -75,45 +75,10 @@ color: #fff;</string>
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnRematricula">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>20</y>
-      <width>200</width>
-      <height>90</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border: 2px solid rgb(255, 123, 28);
-border-radius: 15px;
-background-color: rgb(255, 123, 28);
-color: #fff;</string>
-    </property>
-    <property name="text">
-     <string>Rematrícula</string>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>icons/rematricula.png</normaloff>icons/rematricula.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>32</width>
-      <height>32</height>
-     </size>
-    </property>
-   </widget>
    <widget class="QPushButton" name="btnAlunos">
     <property name="geometry">
      <rect>
-      <x>460</x>
+      <x>240</x>
       <y>20</y>
       <width>200</width>
       <height>90</height>
@@ -218,8 +183,8 @@ color: #fff;</string>
    <widget class="QPushButton" name="btnTurmas">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>130</y>
+      <x>460</x>
+      <y>20</y>
       <width>200</width>
       <height>90</height>
      </rect>
@@ -254,7 +219,7 @@ color: #fff;</string>
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>240</y>
+      <y>130</y>
       <width>200</width>
       <height>90</height>
      </rect>
@@ -326,7 +291,7 @@ color: #fff;</string>
    <widget class="QPushButton" name="btnCargos">
     <property name="geometry">
      <rect>
-      <x>240</x>
+      <x>20</x>
       <y>240</y>
       <width>200</width>
       <height>90</height>
@@ -361,7 +326,7 @@ color: #fff;</string>
    <widget class="QPushButton" name="btnPerfil">
     <property name="geometry">
      <rect>
-      <x>460</x>
+      <x>240</x>
       <y>240</y>
       <width>200</width>
       <height>90</height>

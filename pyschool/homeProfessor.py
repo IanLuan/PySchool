@@ -1,9 +1,10 @@
 import sys
+from functools import partial
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from database.database import Database
 from interface.homeProfessorWindow import *
-from perfilProfessor import *
+import perfilProfessor
 
 
 # tela
@@ -35,10 +36,10 @@ def coletarDados():
     
     print(idTurma, turma, qtdAlunos)
 
-def verPerfil():
+def verPerfil(id):
     # abrir a tela do perfil
     MainWindow.close()
-    startPerfilProfessor(2) # função para inicializar a nova tela
+    perfilProfessor.startPerfilProfessor(id) 
 
 def startHomeProfessor(id):
 
@@ -56,7 +57,7 @@ def startHomeProfessor(id):
     tela.btnTurmas.clicked.connect(coletarDados)
 
     # Ver perfil
-    tela.btnPerfil.clicked.connect(verPerfil)
+    tela.btnPerfil.clicked.connect(partial(verPerfil,id))
 
 
     # run

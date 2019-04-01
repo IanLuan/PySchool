@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from interface.perfilServidorWindow import *
 from database.database import Database
-from homeServidor import *
+import homeServidor
 
 
 app = QtWidgets.QApplication(sys.argv)
@@ -16,10 +16,9 @@ tela.setupUi(MainWindow)
 database = Database()
 
 
-
 def voltarHome(id):
     MainWindow.close()
-    startHomeServidor(id)
+    homeServidor.startHomeServidor(id)
 
 
 # Inicializar tela

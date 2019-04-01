@@ -1,15 +1,18 @@
 import sys
 import os.path
 import shutil
+from functools import partial
 
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 
 from database.database import Database
 #from interface.matriculaWindow import *
-from pyschool.interface.matriculaWindow import *
+from interface.matriculaWindow import *
 from endereco import *
 from aluno import *
+import homeServidor
+import homeAdm
 
 database = Database()
 
@@ -132,21 +135,32 @@ def cadastrarAluno():
         msg.show()
         msg.exec_()
 
-#Definindo ícone inicial
-definirIcone()
+def voltarHome(id, type):
+    MainWindow.close()
+    if type == "administrador":
+        homeAdm.startHomeAdm(id)
+    else:
+        homeServidor.startHomeServidor(id)
 
-#Definindo séries
-series = database.mostrarSeriesAtivas()
-tela.cbSerie.addItems(series)
 
-#Evento de carregar foto
-tela.lblFoto.mousePressEvent = carregarFoto
+def startMatriculaAluno(id, type):
+    #Definindo ícone inicial
+    definirIcone()
 
-#Botão matricular acionado
-tela.btnCadatrar.clicked.connect(cadastrarAluno)
+    #Definindo séries
+    series = database.mostrarSeriesAtivas()
+    tela.cbSerie.addItems(series)
 
-#Escolhendo série e grupo
-tela.cbSerie.currentTextChanged.connect(escolherSerie)
+    #Evento de carregar foto
+    tela.lblFoto.mousePressEvent = carregarFoto
 
-MainWindow.show()
-sys.exit(app.exec_())
+    #Botão matricular acionado
+    tela.btnCadatrar.clicked.connect(cadastrarAluno)
+
+    #Escolhendo série e grupo
+    tela.cbSerie.currentTextChanged.connect(escolherSerie)
+
+    # Cancelar
+    tela.btnCancelar.clicked.connect(partial(voltarHome, id, type))
+
+    MainWindow.show()

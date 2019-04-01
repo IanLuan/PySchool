@@ -8,6 +8,7 @@ from PyQt5.QtGui import *
 
 from interface.perfilProfessorWindow import *
 from database.database import Database
+import homeProfessor
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
@@ -15,6 +16,10 @@ tela = Ui_perfilProfessor()
 tela.setupUi(MainWindow)
 database_professor = Database()
 
+
+def voltarHome(id):
+    MainWindow.close()
+    homeProfessor.startHomeProfessor(id)
 
 def verMaterias(professor):
     msg = QMessageBox()
@@ -48,5 +53,6 @@ def startPerfilProfessor(id):
     tela.lblFoto.setPixmap(new_pixmap)
 
     tela.btnMaterias.clicked.connect(partial(verMaterias,professor))
+    tela.btnCancelar.clicked.connect(partial(voltarHome, id))
 
     MainWindow.show()
