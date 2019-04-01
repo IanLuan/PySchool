@@ -308,4 +308,4 @@ class Database:
         for row in self.db.query(statement):
             existe = True
 
-        return True
+        return existe
