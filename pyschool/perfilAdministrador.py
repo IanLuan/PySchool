@@ -125,5 +125,7 @@ def startPerfilAdm(id):
     tela.btnEditar.clicked.connect(partial(editarAdministrador, id))
     tela.lblFoto.mousePressEvent = carregarFoto
 
+    tela.btnVoltar.clicked.connect(partial(voltarHome, id))
+
     MainWindow.show()
 
