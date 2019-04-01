@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from database.database import Database
 from interface.homeProfessorWindow import *
-import random
+import perfilProfessor
 
 # tela
 app = QtWidgets.QApplication(sys.argv)
@@ -33,11 +33,17 @@ def coletarDados():
     
     print(idTurma, turma, qtdAlunos)
 
+def verPerfil():
+   
+    #perfilProfessor.MainWindow.show()
+    #perfilProfessor.MainWindow.exec_()
+
+
 
 
 # Configurar tabela
-tela.model = QStandardItemModel()  # SELECTING THE MODEL - FRAMEWORK THAT HANDLES QUERIES AND EDITS
-tela.table.setModel(tela.model)  # SETTING THE MODEL
+tela.model = QStandardItemModel()  
+tela.table.setModel(tela.model)
 tela.model.setHorizontalHeaderLabels(['id', 'Turmas', 'Alunos'])
 tela.table.setSelectionBehavior(QAbstractItemView.SelectRows)
 tela.table.setColumnWidth(0, 50)
@@ -47,6 +53,9 @@ adicionarTurmas()
 
 # Coletar Dados da turma
 tela.btnTurmas.clicked.connect(coletarDados)
+
+# Ver perfil
+tela.btnPerfil.clicked.connect(verPerfil)
 
 
 
