@@ -1,13 +1,13 @@
 import sys
 import os.path
 import shutil
-
 from functools import partial
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
-
 from interface.perfilServidorWindow import *
 from database.database import Database
+from homeServidor import *
+
 
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
@@ -15,8 +15,15 @@ tela = Ui_perfilServidor()
 tela.setupUi(MainWindow)
 database = Database()
 
+
+
+def voltarHome(id):
+    MainWindow.close()
+    startHomeServidor(id)
+
+
 # Inicializar tela
-def start(id):
+def startPerfilServidor(id):
     servidor = database.mostrarDadosServidor(id)
 
     tela.lineNome.setText(servidor.getNome())
@@ -39,5 +46,7 @@ def start(id):
     pixmap = QPixmap(foto)
     new_pixmap = pixmap.scaled(120, 110, QtCore.Qt.IgnoreAspectRatio)
     tela.lblFoto.setPixmap(new_pixmap)
+
+    tela.btnVoltar.clicked.connect(partial(voltarHome,id))
 
     MainWindow.show()
