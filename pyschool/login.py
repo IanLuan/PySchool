@@ -6,6 +6,10 @@ from interface.loginWindow import *
 from database.database import Database
 from pessoa import Pessoa
 
+from homeProfessor import *
+from homeServidor import *
+from homeAdm import *
+
 database = Database()
 
 app = QtWidgets.QApplication(sys.argv)
@@ -33,13 +37,16 @@ def logar():
             raise UserWarning
 
         if type == "professor":
-            pass
+            MainWindow.close()
+            startHomeProfessor(id)
 
         elif type == "servidor":
-            pass
+            MainWindow.close()
+            startHomeServidor(id)
 
         elif type == "administrador":
-            pass
+            MainWindow.close()
+            startHomeAdm(id)
 
     except UserWarning:
         msg = QMessageBox(None)

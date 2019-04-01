@@ -38,25 +38,26 @@ def coletarDados():
 def verPerfil():
     # abrir a tela do perfil
     MainWindow.close()
-    start(2) # função para inicializar a nova tela
+    startPerfilProfessor(2) # função para inicializar a nova tela
 
-# Configurar tabela
-tela.model = QStandardItemModel()  
-tela.table.setModel(tela.model)
-tela.model.setHorizontalHeaderLabels(['id', 'Turmas', 'Alunos'])
-tela.table.setSelectionBehavior(QAbstractItemView.SelectRows)
-tela.table.setColumnWidth(0, 50)
-tela.table.setColumnWidth(1, 560)
-tela.table.setColumnWidth(2, 50)
-adicionarTurmas()
+def startHomeProfessor(id):
 
-# Coletar Dados da turma
-tela.btnTurmas.clicked.connect(coletarDados)
+    # Configurar tabela
+    tela.model = QStandardItemModel()  
+    tela.table.setModel(tela.model)
+    tela.model.setHorizontalHeaderLabels(['id', 'Turmas', 'Alunos'])
+    tela.table.setSelectionBehavior(QAbstractItemView.SelectRows)
+    tela.table.setColumnWidth(0, 50)
+    tela.table.setColumnWidth(1, 560)
+    tela.table.setColumnWidth(2, 50)
+    adicionarTurmas()
 
-# Ver perfil
-tela.btnPerfil.clicked.connect(verPerfil)
+    # Coletar Dados da turma
+    tela.btnTurmas.clicked.connect(coletarDados)
+
+    # Ver perfil
+    tela.btnPerfil.clicked.connect(verPerfil)
 
 
-# run
-MainWindow.show()
-sys.exit(app.exec_())
+    # run
+    MainWindow.show()
