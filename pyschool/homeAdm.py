@@ -5,6 +5,7 @@ from PyQt5.QtGui import *
 from database.database import Database
 from interface.homeAdmWindow import *
 import matriculaAluno
+import verCargos
 
 
 # tela
@@ -13,6 +14,9 @@ MainWindow = QtWidgets.QMainWindow()
 tela = Ui_homeAdm()
 tela.setupUi(MainWindow)
 
+def cargos(id):
+    MainWindow.close()
+    verCargos.startCargos(id)
 
 def matricula(id, type):
     MainWindow.close()
@@ -22,5 +26,8 @@ def startHomeAdm(id):
 
     # matricula
     tela.btnMatricula.clicked.connect(partial(matricula, id, "administrador"))
+    
+    # Cargos
+    tela.btnCargos.clicked.connect(partial(cargos, id))
 
     MainWindow.show()

@@ -12,6 +12,8 @@ MainWindow = QtWidgets.QMainWindow()
 tela = Ui_cadastroCargo()
 tela.setupUi(MainWindow)
 
+
+
 def cadastrarCargo():
 
     try:
@@ -42,7 +44,7 @@ def cadastrarCargo():
         msg.show()
         msg.exec_()
 
-tela.btnCadastrar.clicked.connect(cadastrarCargo)
+def startCadastroCargo(id):
+    tela.btnCadastrar.clicked.connect(cadastrarCargo)
 
-MainWindow.show()
-sys.exit(app.exec_())
+    MainWindow.show()
