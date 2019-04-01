@@ -115,7 +115,7 @@ def startPerfilAdm(id):
     tela.cbCargo.setCurrentText(administrador.getCargo())
     tela.lineSenha.setText(administrador.getSenha())
 
-
+    global foto
     split = administrador.getFoto().split("pyschool/")
     foto = os.path.dirname(os.path.abspath(__file__)) + "/" + split[1]
     pixmap = QPixmap(foto)
