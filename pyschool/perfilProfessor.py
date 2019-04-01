@@ -14,26 +14,6 @@ tela = Ui_perfilProfessor()
 tela.setupUi(MainWindow)
 database_professor = Database()
 
-professor = database_professor.mostrarDadosProfessor(4)
-tela.lineNome.setText(professor.getNome())
-tela.cbSexo.setCurrentText(professor.getSexo())
-tela.lineRg.setText(professor.getRg())
-tela.lineCpf.setText(professor.getCpf())
-tela.lineTelefone.setText(professor.getTelefone())
-tela.lineRua.setText(professor.getEndereco().getRua())
-tela.lineBairro.setText(professor.getEndereco().getBairro())
-tela.spinNumero.setValue(int(professor.getEndereco().getNumero()))
-tela.lineCep.setText(professor.getEndereco().getCep())
-tela.lineCidade.setText(professor.getEndereco().getCidade())
-tela.cbEstado.setCurrentText(professor.getEndereco().getEstado())
-tela.lineEmail.setText(professor.getEmail())
-tela.cbEstadoCivil.setCurrentText(professor.getEstadoCivil())
-
-split = professor.getFoto().split("pyschool/")
-foto = os.path.dirname(os.path.abspath(__file__)) + "/" + split[1]
-pixmap = QPixmap(foto)
-new_pixmap = pixmap.scaled(120, 110, QtCore.Qt.IgnoreAspectRatio)
-tela.lblFoto.setPixmap(new_pixmap)
 
 def verMaterias():
     msg = QMessageBox()
@@ -43,7 +23,30 @@ def verMaterias():
     msg.show()
     msg.exec_()
 
-tela.btnMaterias.clicked.connect(verMaterias)
+# Inicializar tela
+def start():
+    professor = database_professor.mostrarDadosProfessor(4)
+    tela.lineNome.setText(professor.getNome())
+    tela.cbSexo.setCurrentText(professor.getSexo())
+    tela.lineRg.setText(professor.getRg())
+    tela.lineCpf.setText(professor.getCpf())
+    tela.lineTelefone.setText(professor.getTelefone())
+    tela.lineRua.setText(professor.getEndereco().getRua())
+    tela.lineBairro.setText(professor.getEndereco().getBairro())
+    tela.spinNumero.setValue(int(professor.getEndereco().getNumero()))
+    tela.lineCep.setText(professor.getEndereco().getCep())
+    tela.lineCidade.setText(professor.getEndereco().getCidade())
+    tela.cbEstado.setCurrentText(professor.getEndereco().getEstado())
+    tela.lineEmail.setText(professor.getEmail())
+    tela.cbEstadoCivil.setCurrentText(professor.getEstadoCivil())
 
-MainWindow.show()
-sys.exit(app.exec_())
+    split = professor.getFoto().split("pyschool/")
+    foto = os.path.dirname(os.path.abspath(__file__)) + "/" + split[1]
+    pixmap = QPixmap(foto)
+    new_pixmap = pixmap.scaled(120, 110, QtCore.Qt.IgnoreAspectRatio)
+    tela.lblFoto.setPixmap(new_pixmap)
+
+
+    tela.btnMaterias.clicked.connect(verMaterias)
+
+    MainWindow.show()

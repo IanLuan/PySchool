@@ -3,13 +3,15 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from database.database import Database
 from interface.homeProfessorWindow import *
-import perfilProfessor
+from perfilProfessor import *
+
 
 # tela
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
 tela = Ui_homeProfessor()
 tela.setupUi(MainWindow)
+
 
 def adicionarTurmas():
 
@@ -34,11 +36,9 @@ def coletarDados():
     print(idTurma, turma, qtdAlunos)
 
 def verPerfil():
-   
-    #perfilProfessor.MainWindow.show()
-    #perfilProfessor.MainWindow.exec_()
-
-
+    # abrir a tela do perfil
+    MainWindow.close()
+    start() # função para inicializar a nova tela
 
 
 # Configurar tabela
@@ -56,7 +56,6 @@ tela.btnTurmas.clicked.connect(coletarDados)
 
 # Ver perfil
 tela.btnPerfil.clicked.connect(verPerfil)
-
 
 
 # run
