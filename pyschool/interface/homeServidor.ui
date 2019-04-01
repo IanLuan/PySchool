@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>homeServidor</class>
+ <widget class="QMainWindow" name="homeServidor">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>680</width>
-    <height>350</height>
+    <height>260</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,13 +19,13 @@
   <property name="minimumSize">
    <size>
     <width>680</width>
-    <height>200</height>
+    <height>260</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>680</width>
-    <height>400</height>
+    <height>260</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -75,45 +75,10 @@ color: #fff;</string>
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnRematricula">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>20</y>
-      <width>200</width>
-      <height>90</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border: 2px solid rgb(255, 123, 28);
-border-radius: 15px;
-background-color: rgb(255, 123, 28);
-color: #fff;</string>
-    </property>
-    <property name="text">
-     <string>Rematrícula</string>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>icons/rematricula.png</normaloff>icons/rematricula.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>32</width>
-      <height>32</height>
-     </size>
-    </property>
-   </widget>
    <widget class="QPushButton" name="btnAlunos">
     <property name="geometry">
      <rect>
-      <x>460</x>
+      <x>240</x>
       <y>20</y>
       <width>200</width>
       <height>90</height>
@@ -148,7 +113,7 @@ color: #fff;</string>
    <widget class="QPushButton" name="btnMaterias">
     <property name="geometry">
      <rect>
-      <x>460</x>
+      <x>240</x>
       <y>130</y>
       <width>200</width>
       <height>90</height>
@@ -183,7 +148,7 @@ color: #fff;</string>
    <widget class="QPushButton" name="btnProfessores">
     <property name="geometry">
      <rect>
-      <x>240</x>
+      <x>20</x>
       <y>130</y>
       <width>200</width>
       <height>90</height>
@@ -218,8 +183,8 @@ color: #fff;</string>
    <widget class="QPushButton" name="btnTurmas">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>130</y>
+      <x>460</x>
+      <y>20</y>
       <width>200</width>
       <height>90</height>
      </rect>
@@ -253,8 +218,8 @@ color: #fff;</string>
    <widget class="QPushButton" name="btnPerfil">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>240</y>
+      <x>460</x>
+      <y>130</y>
       <width>200</width>
       <height>90</height>
      </rect>
@@ -289,7 +254,7 @@ color: #fff;</string>
     <property name="geometry">
      <rect>
       <x>620</x>
-      <y>293</y>
+      <y>224</y>
       <width>32</width>
       <height>32</height>
      </rect>

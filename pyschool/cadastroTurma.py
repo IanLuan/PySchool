@@ -130,21 +130,21 @@ def cadastrarTurma():
         msg.show()
         msg.exec_()
 
-#Adicionando Séries ao CbBox
-series = database.mostrarSeries()
-series.append("Outro")
-tela.cbSerie.addItems(series)
+def startCadastroTurma(id):
+    #Adicionando Séries ao CbBox
+    series = database.mostrarSeries()
+    series.append("Outro")
+    tela.cbSerie.addItems(series)
 
-# Escolhendo Série
-tela.lineSerie.setText(tela.cbSerie.currentText())
-tela.cbSerie.currentTextChanged.connect(escolherSerie)
-tela.btnMaterias.clicked.connect(escolherMaterias)
-tela.btnCadastrar.clicked.connect(cadastrarTurma)
+    # Escolhendo Série
+    tela.lineSerie.setText(tela.cbSerie.currentText())
+    tela.cbSerie.currentTextChanged.connect(escolherSerie)
+    tela.btnMaterias.clicked.connect(escolherMaterias)
+    tela.btnCadastrar.clicked.connect(cadastrarTurma)
 
-# Verificar
-tela.lineMaterias.mousePressEvent = verificarMaterias
+    # Verificar
+    tela.lineMaterias.mousePressEvent = verificarMaterias
 
 
-MainWindow.show()
-sys.exit(app.exec_())
+    MainWindow.show()
 
