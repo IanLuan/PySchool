@@ -25,8 +25,8 @@ def verMaterias(professor):
     msg.exec_()
 
 # Inicializar tela
-def start():
-    professor = database_professor.mostrarDadosProfessor(4)
+def start(id):
+    professor = database_professor.mostrarDadosProfessor(id)
     tela.lineNome.setText(professor.getNome())
     tela.cbSexo.setCurrentText(professor.getSexo())
     tela.lineRg.setText(professor.getRg())
