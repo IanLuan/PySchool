@@ -1,6 +1,7 @@
 import dataset
 from endereco import *
 from professor import *
+from servidor import *
 
 class Database:
 
@@ -90,6 +91,25 @@ class Database:
                     telefone=servidor.getTelefone(), id_endereco = servidor.getEndereco(), email=servidor.getEmail(),senha=servidor.getSenha(),estadoCivil=servidor.getEstadoCivil(),
                     foto=servidor.getFoto(),cargo=servidor.getCargo())
         self.table_servidor.insert(data)
+
+    def mostrarDadosServidor(self, id):
+        statement = "select servidor.nome as nome, nascimento, cargo, sexo, rg, cpf, telefone, email, estadoCivil, foto " \
+                    "from servidor where servidor.id = '{}'".format(id)
+
+        for row in self.db.query(statement):
+            nome = row['nome']
+            nascimento = row['nascimento']
+            sexo = row['sexo']
+            rg = row['rg']
+            email = row['email']
+            estadoCivil = row['estadoCivil']
+            foto = row['foto']
+            cpf = row['cpf']
+            telefone = row['telefone']
+            cargo = row['cargo']
+
+        servidor = Servidor(nome, nascimento, sexo, rg, cpf, telefone, self.mostrarEndereco(id), email, None, estadoCivil, foto, cargo)
+        return servidor
 
     #ADMINISTRADOR
     def inserirAdministrador(self, administrador):
