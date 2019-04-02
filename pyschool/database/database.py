@@ -74,6 +74,12 @@ class Database:
                     tipoSanguineo=aluno.getTipoSanguineo())
         self.table_aluno.insert(data)
 
+    def mostrarTodosAlunos(self):
+        alunos = []
+        for x in self.db['aluno']:
+            alunos.append(x['nome'])
+        return alunos
+
     #CARGO
     def inserirCargo(self, nome_cargo):
         data = dict(nome=nome_cargo)
