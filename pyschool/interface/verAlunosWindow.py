@@ -43,15 +43,12 @@ class Ui_verAlunos(object):
 "selection-background-color: rgb(255, 123, 28);\n"
 "selection-color: #fff;\n"
 "color: rgb(255, 123, 28); }")
-<<<<<<< HEAD
         self.table.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.table.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
         self.table.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.table.setCornerButtonEnabled(False)
         self.table.setObjectName("table")
         self.table.verticalHeader().setVisible(False)
-=======
->>>>>>> master
         self.btnVoltar = QtWidgets.QPushButton(self.centralwidget)
         self.btnVoltar.setGeometry(QtCore.QRect(12, 338, 123, 33))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Expanding)
@@ -75,36 +72,20 @@ class Ui_verAlunos(object):
         self.tableAlunos.setGeometry(QtCore.QRect(10, 10, 351, 311))
         self.tableAlunos.verticalHeader().setVisible(False)
         self.tableAlunos.setStyleSheet("QHeaderView::section {\n"
-                                       "border: 2px solid rgb(255, 123, 28);\n"
-                                       "border-radius: 15px;\n"
-                                       "background-color: rgb(255, 123, 28);\n"
-                                       "color: #fff;\n"
-                                       "font-size: 12px;\n"
-                                       " }\n"
-                                       "\n"
-                                       "QTableView {\n"
-                                       "background-color: #fff;\n"
-                                       "selection-background-color: rgb(255, 123, 28);\n"
-                                       "selection-color: #fff;\n"
-                                       "color: rgb(255, 123, 28); }")
+        "border: 2px solid rgb(255, 123, 28);\n"
+        "border-radius: 15px;\n"
+        "background-color: rgb(255, 123, 28);\n"
+        "color: #fff;\n"
+        "font-size: 12px;\n"
+        " }\n"
+        "\n"
+        "QTableView {\n"
+        "background-color: #fff;\n"
+        "selection-background-color: rgb(255, 123, 28);\n"
+        "selection-color: #fff;\n"
+        "color: rgb(255, 123, 28); }")
         self.tableAlunos.setFont(font)
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        self.btnAlunos.setFont(font)
-        self.btnAlunos.setFocusPolicy(QtCore.Qt.StrongFocus)
-        self.btnAlunos.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.btnAlunos.setStyleSheet("border: 2px solid rgb(255, 123, 28);;\n"
-"border-radius: 15px;\n"
-"background-color: rgb(255, 123, 28);\n"
-"color: #fff;\n"
-"")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("interface/icons/alunos.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.btnAlunos.setIcon(icon)
-        self.btnAlunos.setObjectName("btnAlunos")
         verAlunos.setCentralWidget(self.centralwidget)
-
         self.retranslateUi(verAlunos)
         QtCore.QMetaObject.connectSlotsByName(verAlunos)
 

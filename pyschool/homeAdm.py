@@ -13,6 +13,7 @@ import verAlunos
 import verProfessores
 import verMaterias
 import login
+import verServidores
 
 
 # tela
@@ -25,6 +26,10 @@ tela.setupUi(MainWindow)
 def professores(id, type):
     MainWindow.close()
     verProfessores.startProfessor(id, type)
+
+def servidores(id):
+    MainWindow.close()
+    verServidores.startServidores(id)
 
 def alunos(id, type):
     MainWindow.close()
@@ -76,6 +81,9 @@ def startHomeAdm(id):
 
     # Matérias
     tela.btnMaterias.clicked.connect(partial(materias, id, "administrador"))
+
+    # Servidores
+    tela.btnServidores.clicked.connect(partial(servidores, id))
 
     # Sair
     tela.btnExit.clicked.connect(sair)

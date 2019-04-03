@@ -39,7 +39,7 @@ def startMaterias(id, type):
     # Configurar tabela
     tela.model = QStandardItemModel()
     tela.table.setModel(tela.model)
-    tela.model.setHorizontalHeaderLabels(['Cargos'])
+    tela.model.setHorizontalHeaderLabels(['Matérias'])
     tela.table.setColumnWidth(0, 350)
     adicionarMaterias()
 

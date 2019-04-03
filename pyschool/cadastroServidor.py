@@ -1,6 +1,7 @@
 import sys
 import os.path
 import shutil
+from functools import partial
 
 #from pyschool.interface.cadastroServidorWindow import *
 #from pyschool.servidor import *
@@ -16,12 +17,18 @@ from servidor import *
 from administrador import *
 from endereco import *
 
+import homeAdm
+
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
 tela = Ui_cadastroServidor()
 tela.setupUi(MainWindow)
 
 database = Database()
+
+def voltarHome(id):
+    MainWindow.close()
+    homeAdm.startHomeAdm(id)
 
 def carregarFoto(event):
     global foto
@@ -131,18 +138,21 @@ def definirIcone():
     tela.lblFoto.setPixmap(new_pixmap)
     foto = os.path.dirname(os.path.abspath(__file__))+"/interface/icons/perfil.png"
 
-#Setando cargos no combobox Cargo
-cargos = database.mostrarCargos()
-tela.cbCargo.addItems(cargos)
+def startCadastroServidor(id):
+    #Setando cargos no combobox Cargo
+    cargos = database.mostrarCargos()
+    tela.cbCargo.addItems(cargos)
 
-definirIcone()
+    definirIcone()
 
-#Evento de carregar foto
-tela.lblFoto.mousePressEvent = carregarFoto
+    #Evento de carregar foto
+    tela.lblFoto.mousePressEvent = carregarFoto
 
-#Botão cadastrar acionado
-tela.btnCadastrar.clicked.connect(cadastrarServidor)
+    #Botão cadastrar acionado
+    tela.btnCadastrar.clicked.connect(cadastrarServidor)
 
-MainWindow.show()
-sys.exit(app.exec_())
+    # Voltar
+    tela.btnCancelar.clicked.connect(partial(voltarHome, id))
+
+    MainWindow.show()
 
