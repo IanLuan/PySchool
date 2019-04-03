@@ -15,9 +15,6 @@ MainWindow = QtWidgets.QMainWindow()
 tela = Ui_verAlunos()
 tela.setupUi(MainWindow)
 
-def cadastrarAlunos(id, type):
-    MainWindow.close()
-    matriculaAluno.startMatriculaAluno(id, type)
 
 def voltarHome(id, type):
     MainWindow.close()
@@ -42,14 +39,17 @@ def startAlunos(id, type):
 
     # Configurar tabela
     tela.model = QStandardItemModel()  
-    tela.table.setModel(tela.model)
+    tela.tableAlunos.setModel(tela.model)
     tela.model.setHorizontalHeaderLabels(['Alunos'])
     #tela.table.setSelectionBehavior(QAbstractItemView.SelectRows)
-    tela.table.setColumnWidth(0, 350)
+    tela.tableAlunos.setColumnWidth(0, 350)
     adicionarAlunos(type)
 
+<<<<<<< HEAD
     # Cadastrar Cargo
     tela.btnAlunos.clicked.connect(partial(cadastrarAlunos, id, type))
+=======
+>>>>>>> master
 
     # Voltar
     tela.btnVoltar.clicked.connect(partial(voltarHome, id, type))

@@ -82,8 +82,8 @@ def editarAdministrador(id):
         msg.setWindowTitle("Sucesso")
         msg.setIcon(QMessageBox.Information)
         msg.setText("Dados atualizados com sucesso!")
-        msg.show()
         msg.exec_()
+        msg.show()
 
     except ValueError:
         msg = QMessageBox(None)

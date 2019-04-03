@@ -28,10 +28,13 @@ def voltarHome(id, type):
     else:
         homeServidor.startHomeServidor(id)
 
-def adicionarTurmas():
+def adicionarTurmas(id, type):
 
-	# SELECT AQUI PARA ME RETORNAR A LISTA DE TODAS AS TURMAS
-    turmas = ["2º ano", "alfabetização"]
+    database = Database()
+
+    if type == "administrador" or type == "servidor":
+        turmas = database.mostrarTodasTurmas()
+        # elif type == "professor":
 
     for turma in turmas:
         tela.model.appendRow(QStandardItem(turma))
@@ -44,14 +47,13 @@ def startTurmas(id, type):
     tela.model.setHorizontalHeaderLabels(['Turmas'])
     #tela.table.setSelectionBehavior(QAbstractItemView.SelectRows)
     tela.table.setColumnWidth(0, 350)
-    adicionarTurmas()
+    adicionarTurmas(id,type)
 
     # Cadastrar Cargo
     tela.btnTurma.clicked.connect(partial(cadastrarTurmas, id))
 
     # Voltar
     tela.btnVoltar.clicked.connect(partial(voltarHome, id, type))
-
 
     # run
     MainWindow.show()

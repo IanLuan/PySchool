@@ -204,6 +204,14 @@ class Database:
 
         return id
 
+    def mostrarTodasTurmas(self):
+        turmas = []
+
+        statement = "SELECT DISTINCT serie, grupo FROM turma where status = 1 order by serie"
+        for row in self.db.query(statement):
+            turmas.append(row['serie'] + " " +row['grupo'])
+        return turmas
+
     #PESSOA
     def autenticar(self, email, senha):
         statement = "SELECT id FROM professor WHERE email='{}' and senha='{}'".format(email, senha)
@@ -292,7 +300,6 @@ class Database:
         self.table_endereco.update(data, ['id'])
 
     def retornarIdEndereco(self, id, table):
-        print(id)
         statement = "select distinct endereco.id from endereco, {} where {}.id = '{}' and {}.id_endereco = endereco.id".format(table, table, id, table)
 
         for row in self.db.query(statement):
