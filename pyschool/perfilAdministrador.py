@@ -79,20 +79,22 @@ def editarAdministrador(id):
                                       tela.cbCargo.currentText())
         database.updateAdministrador(id, administrador)
 
-        msg = QMessageBox(None)
-        msg.setWindowTitle("Sucesso")
-        msg.setIcon(QMessageBox.Information)
-        msg.setText("Dados atualizados com sucesso!")
-        msg.exec_()
-        msg.show()
+        #msg = QMessageBox(None)
+        #msg.setWindowTitle("Sucesso")
+        #msg.setIcon(QMessageBox.Information)
+        #msg.setText("Dados atualizados com sucesso!")
+        print("Dados atualizados com sucesso!")
+        #msg.exec_()
+        #msg.show()
 
     except ValueError:
-        msg = QMessageBox(None)
-        msg.setWindowTitle("Erro")
-        msg.setIcon(QMessageBox.Critical)
-        msg.setText("Por favor, preencha todos os campos")
-        msg.exec_()
-        msg.show()
+        #msg = QMessageBox(None)
+        #msg.setWindowTitle("Erro")
+        #msg.setIcon(QMessageBox.Critical)
+        #msg.setText("Por favor, preencha todos os campos")
+        print("Por favor, preencha todos os campos")
+        #msg.exec_()
+        #msg.show()
 
 
 def startPerfilAdm(id):

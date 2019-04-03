@@ -34,7 +34,6 @@ def adicionarTurmas(id, type):
 
     if type == "administrador" or type == "servidor":
         turmas = database.mostrarTodasTurmas()
-        # elif type == "professor":
 
     for turma in turmas:
         tela.model.appendRow(QStandardItem(turma))

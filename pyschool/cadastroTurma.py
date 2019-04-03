@@ -66,8 +66,8 @@ def verificarMaterias(event):
     msg.setWindowTitle("Matérias")
     msg.setIcon(QMessageBox.Information)
     msg.setText("\n".join(materias_confirmadas))
-    msg.exec_()
     msg.show()
+    msg.exec_()
 
 
 def escolherSerie():
@@ -117,20 +117,22 @@ def cadastrarTurma():
         series.append("Outro")
         tela.cbSerie.addItems(series)
 
-        msg = QMessageBox(None)
-        msg.setWindowTitle("Sucesso")
-        msg.setIcon(QMessageBox.Information)
-        msg.setText("Cadastro realizado com sucesso!")
-        msg.exec_()
-        msg.show()
+        #msg = QMessageBox(None)
+        #msg.setWindowTitle("Sucesso")
+        #msg.setIcon(QMessageBox.Information)
+        #msg.setText("Cadastro realizado com sucesso!")
+        #msg.show()
+        #msg.exec_()
+        print("Cadastro realizado com sucesso.")
 
     except ValueError:
-        msg = QMessageBox(None)
-        msg.setWindowTitle("Erro")
-        msg.setIcon(QMessageBox.Critical)
-        msg.setText("Por favor, escolha a(s) matéria(s) da turma")
-        msg.exec_()
-        msg.show()
+        #msg = QMessageBox(None)
+        #msg.setWindowTitle("Erro")
+        #msg.setIcon(QMessageBox.Critical)
+        #msg.setText("Por favor, escolha a(s) matéria(s) da turma")
+        #msg.show()
+        #msg.exec_()
+        print("Por favor, escolha a matéria da turma")
 
 def startCadastroTurma(id):
     #Adicionando Séries ao CbBox

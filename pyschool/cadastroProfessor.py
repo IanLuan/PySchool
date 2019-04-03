@@ -153,21 +153,22 @@ def cadastrarProfessor():
         for x in range(index):
             dialog.layout.itemAt(x).widget().setCheckState(False)
 
-        msg = QMessageBox(None)
-        msg.setWindowTitle("Sucesso")
-        msg.setIcon(QMessageBox.Information)
-        msg.setText("Cadastro realizado com sucesso!")
-        msg.exec_()
-        msg.show()
-
+        #msg = QMessageBox(None)
+        #msg.setWindowTitle("Sucesso")
+        #msg.setIcon(QMessageBox.Information)
+        #msg.setText("Cadastro realizado com sucesso!")
+        #msg.exec_()
+        #msg.show()
+        print("Cadastro realizado com sucesso")
 
     except ValueError:
-        msg = QMessageBox(None)
-        msg.setWindowTitle("Erro")
-        msg.setIcon(QMessageBox.Critical)
-        msg.setText("Por favor, preencha todos os campos")
-        msg.exec_()
-        msg.show()
+        #msg = QMessageBox(None)
+        #msg.setWindowTitle("Erro")
+        #msg.setIcon(QMessageBox.Critical)
+        #msg.setText("Por favor, preencha todos os campos")
+        #msg.exec_()
+        #msg.show()
+        print("Por favor, preencha todos os campos")
 
 
 #Definir ícone inicial

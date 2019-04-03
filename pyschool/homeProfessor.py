@@ -46,12 +46,13 @@ def coletar(id,type):
     try:
         coletarDados(id,type)
     except UserWarning:
-        msg = QMessageBox(None)
-        msg.setWindowTitle("Erro")
-        msg.setIcon(QMessageBox.Critical)
-        msg.setText("Por favor, primeiro selecione uma turma.")
-        msg.exec_()
-        msg.show()
+        #msg = QMessageBox(None)
+        #msg.setWindowTitle("Erro")
+        #msg.setIcon(QMessageBox.Critical)
+        #msg.setText("Por favor, primeiro selecione uma turma.")
+        #msg.exec_()
+        #msg.show()
+        print("Por favor, primeiro selecione uma turma.")
 
 def verPerfil(id):
     # abrir a tela do perfil

@@ -51,12 +51,13 @@ def startAlunos(id, idTurma, type):
     try:
         adicionarAlunos(id, idTurma, type)
     except UserWarning:
-        msg = QMessageBox(None)
-        msg.setWindowTitle("Turma Vazia")
-        msg.setIcon(QMessageBox.Information)
-        msg.setText("Não existem alunos matriculados nessa turma.")
-        msg.exec_()
-        msg.show()
+        print("Não existem alunos matriculados nessa turma.")
+        #msg = QMessageBox(None)
+        #msg.setWindowTitle("Turma Vazia")
+        #msg.setIcon(QMessageBox.Information)
+        #msg.setText("Não existem alunos matriculados nessa turma.")
+        #msg.exec_()
+        #msg.show()
 
     # Voltar
     tela.btnVoltar.clicked.connect(partial(voltarHome, id, type))

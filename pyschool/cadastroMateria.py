@@ -18,30 +18,32 @@ def cadastrarMateria():
         database.inserirMateria(materia.getNome())
         tela.lineMateria.setText("")
 
-        msg = QMessageBox(None)
-        msg.setWindowTitle("Cadastro Realizado")
-        msg.setIcon(QMessageBox.Information)
-        msg.setText("Cadastro realizado com sucesso!")
-        msg.exec_()
-        msg.show()
+        #msg = QMessageBox(None)
+        #msg.setWindowTitle("Cadastro Realizado")
+        #msg.setIcon(QMessageBox.Information)
+        #msg.setText("Cadastro realizado com sucesso!")
+        #msg.show()
+        #msg.exec_()
 
 
     except ValueError:
-        msg = QMessageBox(None)
-        msg.setWindowTitle("Erro")
-        msg.setIcon(QMessageBox.Critical)
-        msg.setText("Por favor, primeiro digite o nome da matéria")
-        msg.exec_()
-        msg.show()
+        print("Por favor, primeiro digite o nome da matéria.")
+        #msg = QMessageBox(None)
+        #msg.setWindowTitle("Erro")
+        #msg.setIcon(QMessageBox.Critical)
+        #msg.setText("Por favor, primeiro digite o nome da matéria")
+        #msg.show()
+        #msg.exec_()
 
 
-    except Warning:
-        msg = QMessageBox(None)
-        msg.setWindowTitle("Erro")
-        msg.setIcon(QMessageBox.Critical)
-        msg.setText("Matéria já cadastrada. Tente novamente.")
-        msg.exec_()
-        msg.show()
+    except UserWarning:
+        print("Matéria já cadastrada. Tente novamente.")
+        #msg = QMessageBox(None)
+        #msg.setWindowTitle("Erro")
+        #msg.setIcon(QMessageBox.Critical)
+        #msg.setText("Matéria já cadastrada. Tente novamente.")
+        #msg.show()
+        #msg.exec_()
 
 
 def startCadastroMateria(id):

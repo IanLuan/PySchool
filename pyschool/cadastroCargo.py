@@ -21,29 +21,31 @@ def cadastrarCargo():
         database.inserirCargo(tela.lineCargo.text())
         tela.lineCargo.setText("")
 
-        msg = QMessageBox(None)
-        msg.setWindowTitle("Cadastro Realizado")
-        msg.setIcon(QMessageBox.Information)
-        msg.setText("Cadastro realizado com sucesso!")
-        msg.exec_()
-        msg.show()
+        #msg = QMessageBox(None)
+        #msg.setWindowTitle("Cadastro Realizado")
+        #msg.setIcon(QMessageBox.Information)
+        #msg.setText("Cadastro realizado com sucesso!")
+        #msg.exec_()
+        #msg.show()
+        print("Cadastro realizado com sucesso")
 
     except ValueError:
-        msg = QMessageBox(None)
-        msg.setWindowTitle("Erro")
-        msg.setIcon(QMessageBox.Critical)
-        msg.setText("Por favor, primeiro digite o nome do cargo.")
-        msg.exec_()
-        msg.show()
-
+        #msg = QMessageBox(None)
+        #msg.setWindowTitle("Erro")
+        #msg.setIcon(QMessageBox.Critical)
+        #msg.setText("Por favor, primeiro digite o nome do cargo.")
+        #msg.exec_()
+        #msg.show()
+        print("Por favor, primeiro digite o nome do cargo")
 
     except Warning:
-        msg = QMessageBox(None)
-        msg.setWindowTitle("Erro")
-        msg.setIcon(QMessageBox.Critical)
-        msg.setText("Cargo já cadastrado. Tente novamente.")
-        msg.exec_()
-        msg.show()
+        #msg = QMessageBox(None)
+        #msg.setWindowTitle("Erro")
+        #msg.setIcon(QMessageBox.Critical)
+        #msg.setText("Cargo já cadastrado. Tente novamente.")
+        #msg.exec_()
+        #msg.show()
+        print("Cargo já cadastrado. Tente novamente")
 
 
 def startCadastroCargo(id):

@@ -120,20 +120,22 @@ def cadastrarAluno():
         tela.cbSerie.setCurrentIndex(0)
         definirIcone()
 
-        msg = QMessageBox(None)
-        msg.setWindowTitle("Sucesso")
-        msg.setIcon(QMessageBox.Information)
-        msg.setText("Cadastro realizado com sucesso!")
-        msg.exec_()
-        msg.show()
+        #msg = QMessageBox(None)
+        #msg.setWindowTitle("Sucesso")
+        #msg.setIcon(QMessageBox.Information)
+        #msg.setText("Cadastro realizado com sucesso!")
+        #msg.exec_()
+        #msg.show()
+        print("Cadastro realizado com suceso!")
 
     except ValueError:
-        msg = QMessageBox(None)
-        msg.setWindowTitle("Erro")
-        msg.setIcon(QMessageBox.Critical)
-        msg.setText("Por favor, preencha todos os campos")
-        msg.exec_()
-        msg.show()
+        #msg = QMessageBox(None)
+        #msg.setWindowTitle("Erro")
+        #msg.setIcon(QMessageBox.Critical)
+        #msg.setText("Por favor, preencha todos os campos")
+        #msg.exec_()
+        #msg.show()
+        print("Por favor, preencha todos os campos.")
 
 
 def voltarHome(id, type):
