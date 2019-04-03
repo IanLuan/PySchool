@@ -119,16 +119,16 @@ def cadastrarTurma():
         msg.setWindowTitle("Sucesso")
         msg.setIcon(QMessageBox.Information)
         msg.setText("Cadastro realizado com sucesso!")
-        msg.show()
         msg.exec_()
+        msg.show()
 
     except ValueError:
         msg = QMessageBox(None)
         msg.setWindowTitle("Erro")
         msg.setIcon(QMessageBox.Critical)
         msg.setText("Por favor, escolha a(s) matéria(s) da turma")
-        msg.show()
         msg.exec_()
+        msg.show()
 
 def startCadastroTurma(id):
     #Adicionando Séries ao CbBox
