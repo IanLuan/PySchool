@@ -10,7 +10,8 @@ import matriculaAluno
 import verTurmas
 import verAlunos
 import verProfessores
-
+import verMaterias
+import login
 
 # tela
 app = QtWidgets.QApplication(sys.argv)
@@ -39,6 +40,15 @@ def verPerfil(id):
     MainWindow.close()
     perfilServidor.startPerfilServidor(id)
 
+def materias(id, type):
+    MainWindow.close()
+    verMaterias.startMaterias(id, type)
+
+def sair():
+    MainWindow.close()
+    login.startLogin()
+
+
 def startHomeServidor(id):
 
     # Ver Perfil
@@ -55,5 +65,11 @@ def startHomeServidor(id):
 
     # Professores
     tela.btnProfessores.clicked.connect(partial(professores, id, "servidor"))
+
+    # Matérias
+    tela.btnMaterias.clicked.connect(partial(materias, id, "servidor"))
+
+    # Sair
+    tela.btnExit.clicked.connect(sair)
 
     MainWindow.show()

@@ -62,9 +62,9 @@ def logar():
         msg.show()
         msg.exec_()
 
-tela.btnEntrar.clicked.connect(logar)
+def startLogin():
+    tela.btnEntrar.clicked.connect(logar)
 
-MainWindow.show()
-sys.exit(app.exec_())
+    MainWindow.show()
 
 

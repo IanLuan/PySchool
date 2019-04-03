@@ -17,7 +17,7 @@ tela.setupUi(MainWindow)
 
 def cadastrarProfessores(id, type):
     MainWindow.close()
-    cadastroProfessor.startCadastroProfessor(id)
+    cadastroProfessor.startCadastroProfessor(id, type)
 
 def voltarHome(id, type):
     MainWindow.close()

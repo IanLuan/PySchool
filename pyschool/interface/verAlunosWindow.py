@@ -25,12 +25,12 @@ class Ui_verAlunos(object):
 "background-color:  rgb(21, 143, 181);\n"
 "}")
         self.centralwidget.setObjectName("centralwidget")
-        self.tableCargos = QtWidgets.QTableView(self.centralwidget)
-        self.tableCargos.setGeometry(QtCore.QRect(10, 10, 350, 321))
+        self.table = QtWidgets.QTableView(self.centralwidget)
+        self.table.setGeometry(QtCore.QRect(10, 10, 350, 321))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.tableCargos.setFont(font)
-        self.tableCargos.setStyleSheet("QHeaderView::section {\n"
+        self.table.setFont(font)
+        self.table.setStyleSheet("QHeaderView::section {\n"
 "border: 2px solid rgb(255, 123, 28);\n"
 "border-radius: 15px;\n"
 "background-color: rgb(255, 123, 28);\n"
@@ -43,12 +43,12 @@ class Ui_verAlunos(object):
 "selection-background-color: rgb(255, 123, 28);\n"
 "selection-color: #fff;\n"
 "color: rgb(255, 123, 28); }")
-        self.tableCargos.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-        self.tableCargos.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
-        self.tableCargos.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
-        self.tableCargos.setCornerButtonEnabled(False)
-        self.tableCargos.setObjectName("tableCargos")
-        self.tableCargos.verticalHeader().setVisible(False)
+        self.table.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.table.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        self.table.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+        self.table.setCornerButtonEnabled(False)
+        self.table.setObjectName("table")
+        self.table.verticalHeader().setVisible(False)
         self.btnVoltar = QtWidgets.QPushButton(self.centralwidget)
         self.btnVoltar.setGeometry(QtCore.QRect(12, 338, 123, 33))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Expanding)
@@ -87,7 +87,7 @@ class Ui_verAlunos(object):
 "color: #fff;\n"
 "")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("icons/alunos.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("interface/icons/alunos.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnAlunos.setIcon(icon)
         self.btnAlunos.setObjectName("btnAlunos")
         verAlunos.setCentralWidget(self.centralwidget)

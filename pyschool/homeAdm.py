@@ -4,12 +4,16 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from database.database import Database
 from interface.homeAdmWindow import *
+
 import matriculaAluno
 import verCargos
 import perfilAdministrador
 import verTurmas
 import verAlunos
 import verProfessores
+import verMaterias
+import login
+
 
 # tela
 app = QtWidgets.QApplication(sys.argv)
@@ -42,6 +46,14 @@ def matricula(id, type):
     MainWindow.close()
     matriculaAluno.startMatriculaAluno(id, type)
 
+def materias(id, type):
+    MainWindow.close()
+    verMaterias.startMaterias(id, type)
+
+def sair():
+    MainWindow.close()
+    login.startLogin()
+
 def startHomeAdm(id):
 
     # Matricula
@@ -61,5 +73,11 @@ def startHomeAdm(id):
 
     # Professores
     tela.btnProfessores.clicked.connect(partial(professores, id, "administrador"))
+
+    # Matérias
+    tela.btnMaterias.clicked.connect(partial(materias, id, "administrador"))
+
+    # Sair
+    tela.btnExit.clicked.connect(sair)
 
     MainWindow.show()

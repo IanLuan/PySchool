@@ -3,7 +3,7 @@ from functools import partial
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
 from database.database import Database
-from interface.verTodasTurmas import *
+from interface.verAlunosWindow import *
 
 import matriculaAluno
 import homeServidor
@@ -12,7 +12,7 @@ import homeAdm
 # tela
 app = QtWidgets.QApplication(sys.argv)
 MainWindow = QtWidgets.QMainWindow()
-tela = Ui_verTurmas()
+tela = Ui_verAlunos()
 tela.setupUi(MainWindow)
 
 def cadastrarAlunos(id, type):
@@ -49,7 +49,7 @@ def startAlunos(id, type):
     adicionarAlunos(type)
 
     # Cadastrar Cargo
-    tela.btnTurma.clicked.connect(partial(cadastrarAlunos, id, type))
+    tela.btnAlunos.clicked.connect(partial(cadastrarAlunos, id, type))
 
     # Voltar
     tela.btnVoltar.clicked.connect(partial(voltarHome, id, type))

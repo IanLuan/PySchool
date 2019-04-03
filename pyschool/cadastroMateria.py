@@ -41,8 +41,8 @@ def cadastrarMateria():
         msg.show()
         msg.exec_()
 
-tela.btnCadastrar.clicked.connect(cadastrarMateria)
+def startCadastroMateria(id):
+    tela.btnCadastrar.clicked.connect(cadastrarMateria)
 
-MainWindow.show()
-sys.exit(app.exec_())
+    MainWindow.show()
 

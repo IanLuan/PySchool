@@ -1,6 +1,7 @@
 import sys
 import os.path
 import shutil
+from functools import partial
 
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
@@ -30,7 +31,7 @@ dialog = Ui_Dialog()
 dialog.setupUi(Dialog)
 
 
-def voltarHome():
+def voltarHome(id, type):
     MainWindow.close()
 
     if type == "administrador":
@@ -176,7 +177,7 @@ def definirIcone():
     foto = os.path.dirname(os.path.abspath(__file__))+"/interface/icons/perfil.png"
 
 
-def startCadastroProfessor(id):
+def startCadastroProfessor(id, type):
     #Bloqueando line edit
     tela.lineMaterias.setReadOnly(True)
 
@@ -193,6 +194,6 @@ def startCadastroProfessor(id):
     tela.btnMaterias.clicked.connect(escolherMaterias)
 
     # voltar
-    tela.btnCancelar.clicked.connect(voltarHome)
+    tela.btnCancelar.clicked.connect(partial(voltarHome, id, type))
 
     MainWindow.show()
