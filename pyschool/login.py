@@ -23,29 +23,34 @@ def logar():
     email = tela.lineEmail.text()
     senha = tela.lineSenha.text()
 
+    if email == "":
+        raise ValueError
+    if senha == "":
+        raise ValueError
+
+    id, type = database.autenticar(email, senha)
+
+    if id == None:
+        raise UserWarning
+
+    if type == "professor":
+        MainWindow.close()
+        homeProfessor.startHomeProfessor(id)
+
+    elif type == "servidor":
+        MainWindow.close()
+        homeServidor.startHomeServidor(id)
+
+    elif type == "administrador":
+        MainWindow.close()
+        homeAdm.startHomeAdm(id)
+
+
+def logarCheck():
+
     try:
-        if email == "":
-            raise ValueError
-        if senha == "":
-            raise ValueError
-
-        id, type = database.autenticar(email, senha)
-
-        if id == None:
-            raise UserWarning
-
-        if type == "professor":
-            MainWindow.close()
-            homeProfessor.startHomeProfessor(id)
-
-        elif type == "servidor":
-            MainWindow.close()
-            homeServidor.startHomeServidor(id)
-
-        elif type == "administrador":
-            MainWindow.close()
-            homeAdm.startHomeAdm(id)
-
+        logar()
+    
     except UserWarning:
         msg = QMessageBox(None)
         msg.setWindowTitle("Erro")
@@ -65,7 +70,7 @@ def logar():
 
 
 def startLogin():
-    tela.btnEntrar.clicked.connect(logar)
+    tela.btnEntrar.clicked.connect(logarCheck)
 
     MainWindow.show()
 
