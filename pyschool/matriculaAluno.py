@@ -93,6 +93,8 @@ def cadastrarAluno():
                       tela.cbTipoSanguineo.currentText(), tela.cbGrupo.currentText())
         database.inserirAluno(aluno)
 
+        
+
         #id_aluno = database.retornarUltimoId("aluno")
         #database.inserirEnsino(id_aluno, materias_confirmadas)
 
@@ -136,7 +138,6 @@ def cadastrarAluno():
         #msg.exec_()
         #msg.show()
         print("Por favor, preencha todos os campos.")
-
 
 def voltarHome(id, type):
     MainWindow.close()
