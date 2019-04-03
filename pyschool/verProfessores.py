@@ -17,7 +17,7 @@ tela.setupUi(MainWindow)
 
 def cadastrarProfessores(id, type):
     MainWindow.close()
-    cadastroProfessor.startCadastroProfessor(id)
+    cadastroProfessor.startCadastroProfessor(id, type)
 
 def voltarHome(id, type):
     MainWindow.close()
@@ -41,7 +41,7 @@ def startProfessor(id, type):
     # Configurar tabela
     tela.model = QStandardItemModel()  
     tela.table.setModel(tela.model)
-    tela.model.setHorizontalHeaderLabels(['Alunos'])
+    tela.model.setHorizontalHeaderLabels(['Professores'])
     #tela.table.setSelectionBehavior(QAbstractItemView.SelectRows)
     tela.table.setColumnWidth(0, 350)
     adicionarProfessores()

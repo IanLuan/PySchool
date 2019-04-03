@@ -85,7 +85,7 @@ class Ui_verProfessores(object):
 "color: #fff;\n"
 "")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("icons/alunos.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("interface/icons/alunos.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnProfessores.setIcon(icon)
         self.btnProfessores.setObjectName("btnProfessores")
         verProfessores.setCentralWidget(self.centralwidget)

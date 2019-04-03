@@ -117,14 +117,3 @@ class Ui_login(object):
         self.lineSenha.setPlaceholderText(_translate("login", "senha"))
         self.btnEntrar.setText(_translate("login", "Entrar"))
         self.lblEsqueceu.setText(_translate("login", "Esqueceu a senha?"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    login = QtWidgets.QMainWindow()
-    ui = Ui_login()
-    ui.setupUi(login)
-    login.show()
-    sys.exit(app.exec_())
-

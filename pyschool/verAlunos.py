@@ -45,7 +45,6 @@ def startAlunos(id, type):
     tela.tableAlunos.setColumnWidth(0, 350)
     adicionarAlunos(type)
 
-
     # Voltar
     tela.btnVoltar.clicked.connect(partial(voltarHome, id, type))
 
