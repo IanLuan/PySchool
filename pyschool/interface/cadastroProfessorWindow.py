@@ -37,7 +37,6 @@ class Ui_cadastroProfessor(object):
 "border: 0.7px solid grey;\n"
 "border-radius: 10px;\n"
 "background-color: rgb(255, 123, 28);\n"
-"box-shadow: 5px -9px 3px #000;\n"
 "")
         self.btnCadatrar.setObjectName("btnCadatrar")
         self.btnCancelar = QtWidgets.QPushButton(self.centralwidget)
@@ -51,8 +50,7 @@ class Ui_cadastroProfessor(object):
         self.btnCancelar.setStyleSheet("font: 25 10pt \"Malgun Gothic Semilight\";\n"
 "border: 0.7px solid grey;\n"
 "border-radius: 10px;\n"
-"background-color: rgb(255, 255, 255);\n"
-"box-shadow: 5px -9px 3px #000;")
+"background-color: rgb(255, 255, 255);\n")
         self.btnCancelar.setObjectName("btnCancelar")
         self.framezao = QtWidgets.QFrame(self.centralwidget)
         self.framezao.setGeometry(QtCore.QRect(10, 0, 931, 647))

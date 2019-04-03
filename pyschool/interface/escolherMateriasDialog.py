@@ -10,7 +10,7 @@ class Ui_Dialog(object):
 
         self.btnConfirmar = QtWidgets.QPushButton(Dialog)
         self.btnConfirmar.setGeometry(QtCore.QRect(140, 370, 111, 31))
-        self.btnConfirmar.setStyleSheet("font: 25 10pt \"Malgun Gothic Semilight\";\n""border: 0.7px solid grey;\n""border-radius: 10px;\n""background-color: rgb(255, 123, 28);\n""box-shadow: 5px -9px 3px #000;\n""\n""\n""")
+        self.btnConfirmar.setStyleSheet("font: 25 10pt \"Malgun Gothic Semilight\";\n""border: 0.7px solid grey;\n""border-radius: 10px;\n""background-color: rgb(255, 123, 28);\n")
         self.btnConfirmar.setObjectName("btnConfirmar")
 
         self.frameLaranja = QtWidgets.QFrame(Dialog)
