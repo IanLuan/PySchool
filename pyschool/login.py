@@ -51,16 +51,18 @@ def logar():
         msg.setWindowTitle("Erro")
         msg.setIcon(QMessageBox.Critical)
         msg.setText("Email ou senha incorretos. Por favor, tente novamente.")
-        msg.show()
         msg.exec_()
+        msg.show()
+
 
     except ValueError:
         msg = QMessageBox(None)
         msg.setWindowTitle("Erro")
         msg.setIcon(QMessageBox.Critical)
         msg.setText("Por favor, preencha todos os campos.")
-        msg.show()
         msg.exec_()
+        msg.show()
+
 
 def startLogin():
     tela.btnEntrar.clicked.connect(logar)

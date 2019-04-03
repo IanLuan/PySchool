@@ -118,16 +118,18 @@ def cadastrarServidor():
         msg.setWindowTitle("Sucesso")
         msg.setIcon(QMessageBox.Information)
         msg.setText("Cadastro realizado com sucesso!")
-        msg.show()
         msg.exec_()
+        msg.show()
+
 
     except ValueError:
         msg = QMessageBox(None)
         msg.setWindowTitle("Erro")
         msg.setIcon(QMessageBox.Critical)
         msg.setText("Por favor, preencha todos os campos")
-        msg.show()
         msg.exec_()
+        msg.show()
+
 
 #Definir ícone inicial
 def definirIcone():

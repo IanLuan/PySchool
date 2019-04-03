@@ -124,6 +124,14 @@ class Database:
         servidor = Servidor(nome, nascimento, sexo, rg, cpf, telefone, self.mostrarEndereco(id, "servidor"), email, None, estadoCivil, foto, cargo)
         return servidor
 
+
+    def mostrarServidores(self):
+        servidores = []
+        for x in self.db['servidor']:
+            servidores.append(x['nome'])
+        return servidores
+
+
     #ADMINISTRADOR
     def inserirAdministrador(self, administrador):
         data = dict(nome=administrador.getNome(), nascimento=administrador.getNascimento(), sexo=administrador.getSexo(),rg=administrador.getRg(),

@@ -38,8 +38,9 @@ def escolherMaterias():
 
     dialog.btnConfirmar.clicked.connect(confirmarMaterias)
 
-    Dialog.show()
     Dialog.exec_()
+    Dialog.show()
+
 
 def confirmarMaterias():
 
@@ -65,8 +66,9 @@ def verificarMaterias(event):
     msg.setWindowTitle("Matérias")
     msg.setIcon(QMessageBox.Information)
     msg.setText("\n".join(materias_confirmadas))
-    msg.show()
     msg.exec_()
+    msg.show()
+
 
 def escolherSerie():
     if tela.cbSerie.currentText() == "Outro":
