@@ -91,7 +91,6 @@ class Ui_verAlunos(object):
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
-<<<<<<< HEAD
         self.btnAlunos.setFont(font)
         self.btnAlunos.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.btnAlunos.setLayoutDirection(QtCore.Qt.LeftToRight)
@@ -104,8 +103,6 @@ class Ui_verAlunos(object):
         icon.addPixmap(QtGui.QPixmap("interface/icons/alunos.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btnAlunos.setIcon(icon)
         self.btnAlunos.setObjectName("btnAlunos")
-=======
->>>>>>> master
         verAlunos.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(verAlunos)

@@ -45,11 +45,8 @@ def startAlunos(id, type):
     tela.tableAlunos.setColumnWidth(0, 350)
     adicionarAlunos(type)
 
-<<<<<<< HEAD
     # Cadastrar Cargo
     tela.btnAlunos.clicked.connect(partial(cadastrarAlunos, id, type))
-=======
->>>>>>> master
 
     # Voltar
     tela.btnVoltar.clicked.connect(partial(voltarHome, id, type))
