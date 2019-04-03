@@ -48,6 +48,13 @@ class Database:
         professor = Professor(nome, nascimento, sexo, rg, cpf, telefone, self.mostrarEndereco(id, "professor"), email, None, estadoCivil, foto, materias)
         return professor
 
+    def mostrarProfessores(self):
+        professores = []
+        for x in self.db['professor']:
+            professores.append(x['nome'])
+        return professores
+
+
     #MATÉRIA
     def retornarIdMateria(self, materia):
         statement = "SELECT id FROM materia WHERE nome='{}'".format(materia)

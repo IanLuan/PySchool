@@ -29,8 +29,9 @@ def voltarHome(id, type):
 
 def adicionarProfessores():
 
-	# SELECT AQUI PARA ME RETORNAR A LISTA DE TODOS OS ALUNOS
-    professores = ["João", "marcos", "fabiana", "lalala","teste"]
+    database = Database()
+
+    professores = database.mostrarProfessores()
 
     for professor in professores:
         tela.model.appendRow(QStandardItem(professor))
