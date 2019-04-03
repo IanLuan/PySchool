@@ -13,7 +13,6 @@ class Ui_confirmarMateria(object):
 "border: 0.7px solid grey;\n"
 "border-radius: 10px;\n"
 "background-color: rgb(255, 123, 28);\n"
-"box-shadow: 5px -9px 3px #000;\n"
 "\n"
 "\n"
 "")
