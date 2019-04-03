@@ -48,12 +48,21 @@ class Database:
         professor = Professor(nome, nascimento, sexo, rg, cpf, telefone, self.mostrarEndereco(id, "professor"), email, None, estadoCivil, foto, materias)
         return professor
 
+    def mostrarAlunosProf(self, id_turma):
+        alunos = []
+        print(id_turma)
+        statement = "select aluno.nome as nome from aluno, turma where turma.id = aluno.idTurma and idTurma = {}".format(id_turma)
+
+        for row in self.db.query(statement):
+            alunos.append(row['nome'])
+
+        return alunos
+
     def mostrarProfessores(self):
         professores = []
         for x in self.db['professor']:
             professores.append(x['nome'])
         return professores
-
 
     #MATÉRIA
     def retornarIdMateria(self, materia):
@@ -227,6 +236,16 @@ class Database:
             turmas.append(row['serie'] + " " +row['grupo'])
         return turmas
 
+    def mostrarTurmasProf(self, id):
+        turmas = []
+        statement = "select distinct turma.id as id, turma.serie as serie, turma.grupo as grupo from classe, turma, ensino  where classe.id_professor = {} and ensino.id_professor = {} and turma.id = classe.id_turma".format(
+            id, id)
+
+        for row in self.db.query(statement):
+            turmas.append((row['id'],(row['serie'] + " - " + row['grupo'])))
+
+        return turmas
+
     #PESSOA
     def autenticar(self, email, senha):
         statement = "SELECT id FROM professor WHERE email='{}' and senha='{}'".format(email, senha)
@@ -264,11 +283,13 @@ class Database:
 
             statement = "SELECT id FROM professor WHERE nome = '{}'".format(professor)
             for row in self.db.query(statement):
+                print(row['id'])
                 id_professores.append(row['id'])
 
         for x in id_professores:
             data = dict(id_professor=x, id_turma=id_turma)
             self.table_classe.insert(data)
+
 
     #ENSINO (Relação de professor e matéria)
     def inserirEnsino(self, id_professor, materias):

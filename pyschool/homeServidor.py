@@ -24,9 +24,9 @@ def professores(id, type):
     MainWindow.close()
     verProfessores.startProfessor(id, type)
 
-def alunos(id, type):
+def alunos(id, idTurma, type):
     MainWindow.close()
-    verAlunos.startAlunos(id, type)
+    verAlunos.startAlunos(id, idTurma, type)
 
 def turmas(id, type):
     MainWindow.close()
@@ -61,7 +61,7 @@ def startHomeServidor(id):
     tela.btnTurmas.clicked.connect(partial(turmas, id, "servidor"))
 
     # Alunos
-    tela.btnAlunos.clicked.connect(partial(alunos, id, "servidor"))
+    tela.btnAlunos.clicked.connect(partial(alunos, id, None, "servidor"))
 
     # Professores
     tela.btnProfessores.clicked.connect(partial(professores, id, "servidor"))

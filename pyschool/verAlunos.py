@@ -24,30 +24,42 @@ def voltarHome(id, type):
     else:
         homeServidor.startHomeServidor(id)
 
-def adicionarAlunos(type):
-
+def adicionarAlunos(id, idTurma, type):
+    alunos = []
     database = Database()
 
     if type == "administrador" or type == "servidor":
         alunos = database.mostrarTodosAlunos()
-    #elif type == "professor":
+    elif type == "professor":
+        print(type)
+        alunos = database.mostrarAlunosProf(idTurma)
+
+    if alunos == []:
+        raise UserWarning
 
     for aluno in alunos:
         tela.model.appendRow(QStandardItem(aluno))
 
-def startAlunos(id, type):
+def startAlunos(id, idTurma, type):
 
     # Configurar tabela
     tela.model = QStandardItemModel()  
     tela.tableAlunos.setModel(tela.model)
     tela.model.setHorizontalHeaderLabels(['Alunos'])
-    #tela.table.setSelectionBehavior(QAbstractItemView.SelectRows)
     tela.tableAlunos.setColumnWidth(0, 350)
-    adicionarAlunos(type)
+
+    try:
+        adicionarAlunos(id, idTurma, type)
+    except UserWarning:
+        msg = QMessageBox(None)
+        msg.setWindowTitle("Turma Vazia")
+        msg.setIcon(QMessageBox.Information)
+        msg.setText("Não existem alunos matriculados nessa turma.")
+        msg.exec_()
+        msg.show()
 
     # Voltar
     tela.btnVoltar.clicked.connect(partial(voltarHome, id, type))
-
 
     # run
     MainWindow.show()

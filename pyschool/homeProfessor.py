@@ -5,6 +5,7 @@ from PyQt5.QtGui import *
 from database.database import Database
 from interface.homeProfessorWindow import *
 import perfilProfessor
+import verAlunos
 
 
 # tela
@@ -14,27 +15,43 @@ tela = Ui_homeProfessor()
 tela.setupUi(MainWindow)
 
 
-def adicionarTurmas():
+def adicionarTurmas(id):
 
-    turmas = [(0, "história", 50), (0, "matemática", 25), (0, "ciências", 35)] 
+    database = Database()
+    turmas = []
+    turmas = database.mostrarTurmasProf(id)
 
     for tupla in turmas:
         row = []
         row.append(QStandardItem(str(tupla[0])))
         row.append(QStandardItem(tupla[1]))
-        row.append(QStandardItem(str(tupla[2])))
         tela.model.appendRow(row)
 
-def coletarDados():
+def coletarDados(id,type):
     indexes = tela.table.selectionModel().selectedRows()
 
+    idTurma = ""
     for index in indexes:
         row = index.row()
         idTurma = tela.model.data(tela.model.index(row, 0))
-        turma = tela.model.data(tela.model.index(row, 1))          
-        qtdAlunos = tela.model.data(tela.model.index(row, 2))          
-    
-    print(idTurma, turma, qtdAlunos)
+
+    if idTurma == "":
+        raise UserWarning
+
+    #Abra aqui a turma
+    MainWindow.close()
+    verAlunos.startAlunos(id, idTurma, type)
+
+def coletar(id,type):
+    try:
+        coletarDados(id,type)
+    except UserWarning:
+        msg = QMessageBox(None)
+        msg.setWindowTitle("Erro")
+        msg.setIcon(QMessageBox.Critical)
+        msg.setText("Por favor, primeiro selecione uma turma.")
+        msg.exec_()
+        msg.show()
 
 def verPerfil(id):
     # abrir a tela do perfil
@@ -46,19 +63,17 @@ def startHomeProfessor(id):
     # Configurar tabela
     tela.model = QStandardItemModel()  
     tela.table.setModel(tela.model)
-    tela.model.setHorizontalHeaderLabels(['id', 'Turmas', 'Alunos'])
+    tela.model.setHorizontalHeaderLabels(['id', 'Turmas'])
     tela.table.setSelectionBehavior(QAbstractItemView.SelectRows)
     tela.table.setColumnWidth(0, 50)
-    tela.table.setColumnWidth(1, 560)
-    tela.table.setColumnWidth(2, 50)
-    adicionarTurmas()
+    tela.table.setColumnWidth(1, 620)
+    adicionarTurmas(id)
 
     # Coletar Dados da turma
-    tela.btnTurmas.clicked.connect(coletarDados)
+    tela.btnTurmas.clicked.connect(partial(coletar,id,"professor"))
 
     # Ver perfil
     tela.btnPerfil.clicked.connect(partial(verPerfil,id))
-
 
     # run
     MainWindow.show()

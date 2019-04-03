@@ -127,7 +127,6 @@ def cadastrarAluno():
         msg.exec_()
         msg.show()
 
-
     except ValueError:
         msg = QMessageBox(None)
         msg.setWindowTitle("Erro")
