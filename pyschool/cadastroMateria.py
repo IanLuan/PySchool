@@ -22,24 +22,27 @@ def cadastrarMateria():
         msg.setWindowTitle("Cadastro Realizado")
         msg.setIcon(QMessageBox.Information)
         msg.setText("Cadastro realizado com sucesso!")
-        msg.show()
         msg.exec_()
+        msg.show()
+
 
     except ValueError:
         msg = QMessageBox(None)
         msg.setWindowTitle("Erro")
         msg.setIcon(QMessageBox.Critical)
         msg.setText("Por favor, primeiro digite o nome da matéria")
-        msg.show()
         msg.exec_()
+        msg.show()
+
 
     except Warning:
         msg = QMessageBox(None)
         msg.setWindowTitle("Erro")
         msg.setIcon(QMessageBox.Critical)
         msg.setText("Matéria já cadastrada. Tente novamente.")
-        msg.show()
         msg.exec_()
+        msg.show()
+
 
 def startCadastroMateria(id):
     tela.btnCadastrar.clicked.connect(cadastrarMateria)
