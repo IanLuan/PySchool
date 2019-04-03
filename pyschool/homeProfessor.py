@@ -6,6 +6,7 @@ from database.database import Database
 from interface.homeProfessorWindow import *
 import perfilProfessor
 import verAlunos
+import login
 
 
 # tela
@@ -43,20 +44,19 @@ def coletarDados(id,type):
     verAlunos.startAlunos(id, idTurma, type)
 
 def coletar(id,type):
-    try:
-        coletarDados(id,type)
-    except UserWarning:
-        msg = QMessageBox(None)
-        msg.setWindowTitle("Erro")
-        msg.setIcon(QMessageBox.Critical)
-        msg.setText("Por favor, primeiro selecione uma turma.")
-        msg.exec_()
-        msg.show()
+
+    coletarDados(id,type)
+
 
 def verPerfil(id):
     # abrir a tela do perfil
     MainWindow.close()
     perfilProfessor.startPerfilProfessor(id) 
+
+def sair():
+    MainWindow.close()
+    login.startLogin()
+
 
 def startHomeProfessor(id):
 
@@ -66,7 +66,7 @@ def startHomeProfessor(id):
     tela.model.setHorizontalHeaderLabels(['id', 'Turmas'])
     tela.table.setSelectionBehavior(QAbstractItemView.SelectRows)
     tela.table.setColumnWidth(0, 50)
-    tela.table.setColumnWidth(1, 620)
+    tela.table.setColumnWidth(1, 605)
     adicionarTurmas(id)
 
     # Coletar Dados da turma
@@ -74,6 +74,9 @@ def startHomeProfessor(id):
 
     # Ver perfil
     tela.btnPerfil.clicked.connect(partial(verPerfil,id))
+
+    # Sair
+    tela.btnExit.clicked.connect(sair)
 
     # run
     MainWindow.show()

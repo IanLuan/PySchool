@@ -8,6 +8,7 @@ from interface.verAlunosWindow import *
 import matriculaAluno
 import homeServidor
 import homeAdm
+import homeProfessor
 
 # tela
 app = QtWidgets.QApplication(sys.argv)
@@ -21,8 +22,11 @@ def voltarHome(id, type):
 
     if type == "administrador":
         homeAdm.startHomeAdm(id)
-    else:
+    elif type == "servidor":
         homeServidor.startHomeServidor(id)
+    else:
+        homeProfessor.startHomeProfessor(id)
+
 
 def adicionarAlunos(id, idTurma, type):
     alunos = []
@@ -33,9 +37,6 @@ def adicionarAlunos(id, idTurma, type):
     elif type == "professor":
         print(type)
         alunos = database.mostrarAlunosProf(idTurma)
-
-    if alunos == []:
-        raise UserWarning
 
     for aluno in alunos:
         tela.model.appendRow(QStandardItem(aluno))
@@ -48,15 +49,7 @@ def startAlunos(id, idTurma, type):
     tela.model.setHorizontalHeaderLabels(['Alunos'])
     tela.tableAlunos.setColumnWidth(0, 350)
 
-    try:
-        adicionarAlunos(id, idTurma, type)
-    except UserWarning:
-        msg = QMessageBox(None)
-        msg.setWindowTitle("Turma Vazia")
-        msg.setIcon(QMessageBox.Information)
-        msg.setText("Não existem alunos matriculados nessa turma.")
-        msg.exec_()
-        msg.show()
+    adicionarAlunos(id, idTurma, type)
 
     # Voltar
     tela.btnVoltar.clicked.connect(partial(voltarHome, id, type))
