@@ -5,6 +5,7 @@ import shutil
 from functools import partial
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
+from PyQt5 import QtCore
 
 from interface.perfilProfessorWindow import *
 from database.database import Database
@@ -32,6 +33,10 @@ def verMaterias(professor):
 # Inicializar tela
 def startPerfilProfessor(id):
     professor = database_professor.mostrarDadosProfessor(id)
+
+    data= professor.getNascimento()
+    dia, mes, ano = data.split("/")
+    tela.dateNascimento.setDate(QtCore.QDate(int(ano), int(mes), int(dia)))
     tela.lineNome.setText(professor.getNome())
     tela.cbSexo.setCurrentText(professor.getSexo())
     tela.lineRg.setText(professor.getRg())

@@ -4,6 +4,8 @@ import shutil
 from functools import partial
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
+from PyQt5 import QtCore
+
 from interface.perfilServidorWindow import *
 from database.database import Database
 import homeServidor
@@ -27,6 +29,9 @@ def startPerfilServidor(id):
     cargos = database.mostrarCargos()
     tela.cbCargo.addItems(cargos)
 
+    data= servidor.getNascimento()
+    dia, mes, ano = data.split("/")
+    tela.dateNascimento.setDate(QtCore.QDate(int(ano), int(mes), int(dia)))
     tela.lineNome.setText(servidor.getNome())
     tela.cbSexo.setCurrentText(servidor.getSexo())
     tela.lineRg.setText(servidor.getRg())
