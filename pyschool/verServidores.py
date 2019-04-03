@@ -24,7 +24,7 @@ def voltarHome(id):
 
 def adicionarServidores():
     servidores = []
-    #servidores = database.mostrarServidores()
+    servidores = database.mostrarServidores()
     for servidor in servidores:
         tela.model.appendRow(QStandardItem(servidor))
 

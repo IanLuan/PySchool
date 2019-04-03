@@ -91,8 +91,9 @@ def editarAdministrador(id):
         msg.setWindowTitle("Erro")
         msg.setIcon(QMessageBox.Critical)
         msg.setText("Por favor, preencha todos os campos")
-        msg.show()
         msg.exec_()
+        msg.show()
+
 
 def startPerfilAdm(id):
     administrador = database.mostrarDadosAdministrador(id)
