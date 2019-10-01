@@ -2,17 +2,25 @@
 An Open Source system for school management
 
 ## Features
-####* Home
+### Home
+
 ![Home](https://i.imgur.com/YJZ3Y13.png)
-####*  Authentication
+
+### Authentication
+
 ![Auth](https://imgur.com/Kmk0FnU.png)
-####* Registration
+
+### Registration
+
 ![](https://imgur.com/zQ2Qs0E.png)
 
 ![](https://imgur.com/fenkZNM.png)
-####* Tables
+
+### Tables
+
 ![](https://imgur.com/0aHln1v.png)
 
 ![](https://imgur.com/DcAVcxA.png)
-####* Profile
+
+### Profile
 ![](https://imgur.com/dZyXmVx.png)
